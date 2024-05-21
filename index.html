@@ -702,5 +702,11 @@
 
       </script>
     <!-- End Cloudflare Web Analytics -->
+    <script> 
+      var link = document.createElement('meta');
+      link.setAttribute('property', 'og:url');
+      link.content = document.location;
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
   </body>
 </html>
