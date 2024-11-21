@@ -5,112 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual: Aceder Remotamente ao Computador via RDP Usando Cloudflare Tunnel</title>
     <style>
-        
+        /* Layout Geral */
         body {
             font-family: Arial, sans-serif;
-            background-color: #111;
-            color: white;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            flex-direction: column;
-            text-align: left;
+            background-color: #000;
+            color: #fff;
         }
 
-        .container {
+        header {
+            background-color: #111;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Menu Lateral */
+        .side-menu {
+            width: 250px;
             background-color: #222;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.1), 0 0 40px rgba(0, 0, 255, 0.1);
-            max-width: 900px;
-            width: 100%;
-            margin-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 10px;
         }
 
-        h1 {
-            color: #ff4747;
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        .side-menu a {
+            color: #f00;
+            display: block;
+            text-decoration: none;
+            padding: 8px;
+            margin: 6px 0;
+            border-radius: 4px;
         }
 
-        h2 {
-            color: #0070f3;
-            font-size: 2em;
-            margin-top: 30px;
-            margin-bottom: 10px;
+        .side-menu a:hover {
+            background-color: #444;
+        }
+
+        /* Conteúdo */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #f00;
         }
 
         h3 {
-            color: #ff4747;
-            font-size: 1.5em;
-            margin-top: 20px;
+            color: #00f;
         }
 
-        p {
-            font-size: 1.1em;
-            color: #bbb;
-            margin-bottom: 20px;
+        p, ul {
+            font-size: 16px;
         }
 
         pre {
-            background-color: #333;
-            color: #fff;
-            padding: 15px;
+            background-color: #222;
+            padding: 10px;
             border-radius: 5px;
-            overflow-x: auto;
+            color: #00f;
+            font-family: monospace;
         }
 
-        .button {
-            background-color: #0070f3;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-            box-shadow: 0 0 20px rgba(0, 0, 255, 0.4);
-        }
-
-        .footer {
+        footer {
+            background-color: #111;
+            color: #888;
+            text-align: center;
+            padding: 10px;
             position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ff4747;
-            font-size: 1em;
+            bottom: 0;
+            width: 100%;
         }
-
-        .content {
-            margin-bottom: 20px;
-        }
-    
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Manual: Aceder Remotamente ao Computador via RDP Usando Cloudflare Tunnel</h1>
+    <!-- Cabeçalho -->
+    <header>
+        Manual: Aceder Remotamente ao Computador via RDP Usando Cloudflare Tunnel
+    </header>
 
+    <!-- Menu Lateral -->
+    <div class="side-menu">
+        <a href="#requisitos">Requisitos</a>
+        <a href="#verificarRDP">Verificar RDP</a>
+        <a href="#instalar">Instalar Cloudflare Tunnel</a>
+        <a href="#configuracao">Configuração do Tunnel</a>
+        <a href="#aceder">Aceder ao Computador via RDP</a>
+        <a href="#arranque">Tornar o Tunnel Ativo no Arranque</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="content">
+        <a name="requisitos"></a>
         <h2>1. Requisitos</h2>
         <p>Certifica-te de que tens os seguintes requisitos antes de começar:</p>
         <ul>
             <li>1. Um computador Windows com o RDP ativado.</li>
             <li>2. Acesso root ou permissões de sudo no servidor.</li>
-            <li>3. Uma conta Cloudflare (criar gratuitamente em <a href="https://www.cloudflare.com" target="_blank">cloudflare.com</a>).</li>
+            <li>3. Uma conta Cloudflare (criar gratuitamente em <a href="https://www.cloudflare.com" target="_blank" style="color: #00f;">cloudflare.com</a>).</li>
         </ul>
 
+        <a name="verificarRDP"></a>
         <h2>2. Verificar o Serviço RDP no Computador de Casa</h2>
         <p>1. No Windows, vai a Configurações > Sistema > Área de Trabalho Remota.</p>
         <p>2. Ativa a opção "Ativar Área de Trabalho Remota".</p>
         <p>3. Certifica-te de que o computador está configurado para aceitar conexões RDP.</p>
 
+        <a name="instalar"></a>
         <h2>3. Instalar e Configurar o Cloudflare Tunnel</h2>
 
         <h3>3.1. Instalar o Cloudflared</h3>
@@ -157,21 +163,24 @@ cloudflared tunnel run meu_tunnel_rdp
         </pre>
         <p>A partir deste momento, a conexão RDP será encaminhada para a porta 3389 do teu computador de casa.</p>
 
+        <a name="aceder"></a>
         <h2>4. Aceder ao Computador de Casa Usando RDP</h2>
         <p>Após configurar o túnel, podes aceder ao teu computador de casa com o seguinte endereço RDP:</p>
         <pre>
 rdp-<subdominio>.trycloudflare.com:3389
         </pre>
 
+        <a name="arranque"></a>
         <h2>5. Tornar o Tunnel Ativo no Arranque</h2>
         <p>Para garantir que o túnel seja iniciado automaticamente após reinicializações, usa o comando abaixo:</p>
         <pre>
 sudo systemctl enable cloudflared
         </pre>
-
-        <div class="footer">
-            <p>&copy; 2024 Todos os direitos reservados</p>
-        </div>
     </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>
