@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração de qBittorrent, Radarr e Sonarr</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+        }
+        header {
+            background-color: #004080; /* Azul escuro */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #202020; /* Cinza escuro */
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+        nav a {
+            display: block;
+            color: #f00; /* Vermelho */
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #004080; /* Azul escuro */
+            color: #fff;
+        }
+        main {
+            margin-left: 220px; /* Espaço para o menu lateral */
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #202020; /* Cinza escuro */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        section h2 {
+            color: #f00; /* Vermelho */
+        }
+        pre, code {
+            background-color: #000; /* Preto */
+            color: #00f; /* Azul */
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            background-color: #004080; /* Azul escuro */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Instalação e Configuração: qBittorrent, Radarr e Sonarr</h1>
+        <p>Configura o teu sistema para downloads automáticos e gestão de conteúdos.</p>
+    </header>
+    <nav>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#passo1">Instalar qBittorrent</a>
+        <a href="#passo2">Configurar qBittorrent</a>
+        <a href="#passo3">Instalar Radarr</a>
+        <a href="#passo4">Configurar Radarr</a>
+        <a href="#passo5">Instalar Sonarr</a>
+        <a href="#passo6">Configurar Sonarr</a>
+    </nav>
+    <main>
+        <section id="requisitos">
+            <h2>Requisitos</h2>
+            <ul>
+                <li>Servidor com Debian 11 ou 12.</li>
+                <li>Permissões administrativas (root ou sudo).</li>
+                <li>Acesso à Internet para instalar os pacotes necessários.</li>
+            </ul>
+        </section>
+
+        <section id="passo1">
+            <h2>Passo 1: Instalar qBittorrent</h2>
+            <p>Instala o cliente qBittorrent no servidor:</p>
+            <pre><code>#!/bin/bash
+# Atualizar sistema
+apt update && apt upgrade -y
+
+# Instalar qBittorrent-nox (modo sem interface gráfica)
+apt install -y qbittorrent-nox</code></pre>
+        </section>
+
+        <section id="passo2">
+            <h2>Passo 2: Configurar qBittorrent</h2>
+            <p>Inicia o qBittorrent no modo de configuração inicial:</p>
+            <pre><code>qbittorrent-nox</code></pre>
+            <p>Após iniciar, abre o navegador e acede ao IP do servidor na porta 8080:</p>
+            <pre><code>http://IP_DO_SERVIDOR:8080</code></pre>
+            <p><strong>Credenciais padrão:</strong></p>
+            <ul>
+                <li>Utilizador: admin</li>
+                <li>Password: adminadmin</li>
+            </ul>
+            <p>Altera a password no menu de configurações e configura a pasta de downloads.</p>
+        </section>
+
+        <section id="passo3">
+            <h2>Passo 3: Instalar Radarr</h2>
+            <p>Instala o Radarr (gestão de filmes):</p>
+            <pre><code>#!/bin/bash
+# Adicionar chave e repositório do Radarr
+curl -fsSL https://apt.sonarr.tv/sonarr.asc | tee /usr/share/keyrings/sonarr.asc
+echo "deb [signed-by=/usr/share/keyrings/sonarr.asc] https://apt.sonarr.tv/ master main" | tee /etc/apt/sources.list.d/sonarr.list
+
+# Atualizar pacotes e instalar Radarr
+apt update
+apt install -y radarr</code></pre>
+        </section>
+
+        <section id="passo4">
+            <h2>Passo 4: Configurar Radarr</h2>
+            <p>Inicia o Radarr:</p>
+            <pre><code>systemctl start radarr</code></pre>
+            <p>Configura o arranque automático:</p>
+            <pre><code>systemctl enable radarr</code></pre>
+            <p>Acede ao Radarr no navegador:</p>
+            <pre><code>http://IP_DO_SERVIDOR:7878</code></pre>
+            <p>No Radarr, configura o cliente qBittorrent para downloads:</p>
+            <ol>
+                <li>Vai a <em>Settings</em> > <em>Download Clients</em>.</li>
+                <li>Adiciona o qBittorrent com as credenciais configuradas.</li>
+                <li>Define a pasta de destino dos downloads.</li>
+            </ol>
+        </section>
+
+        <section id="passo5">
+            <h2>Passo 5: Instalar Sonarr</h2>
+            <p>Instala o Sonarr (gestão de séries):</p>
+            <pre><code>#!/bin/bash
+# Adicionar chave e repositório do Sonarr
+curl -fsSL https://apt.sonarr.tv/sonarr.asc | tee /usr/share/keyrings/sonarr.asc
+echo "deb [signed-by=/usr/share/keyrings/sonarr.asc] https://apt.sonarr.tv/ master main" | tee /etc/apt/sources.list.d/sonarr.list
+
+# Atualizar pacotes e instalar Sonarr
+apt update
+apt install -y sonarr</code></pre>
+        </section>
+
+        <section id="passo6">
+            <h2>Passo 6: Configurar Sonarr</h2>
+            <p>Inicia o Sonarr:</p>
+            <pre><code>systemctl start sonarr</code></pre>
+            <p>Configura o arranque automático:</p>
+            <pre><code>systemctl enable sonarr</code></pre>
+            <p>Acede ao Sonarr no navegador:</p>
+            <pre><code>http://IP_DO_SERVIDOR:8989</code></pre>
+            <p>Configura o cliente qBittorrent no Sonarr:</p>
+            <ol>
+                <li>Vai a <em>Settings</em> > <em>Download Clients</em>.</li>
+                <li>Adiciona o qBittorrent com as credenciais configuradas.</li>
+                <li>Define a pasta de destino dos downloads.</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 David Ferreira - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
