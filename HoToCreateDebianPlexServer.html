@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuração de Servidor Debian com Plex</title>
-    <link rel="stylesheet" href="https://www.davidferreira.eu/style.css">
+    <title>Configuração Completa do Servidor Plex</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #000; /* Fundo preto */
-            color: #fff; /* Texto principal branco */
+            color: #fff; /* Texto branco */
         }
         header {
-            background-color: #004080; /* Azul */
+            background-color: #004080; /* Azul escuro */
             color: #fff;
             padding: 20px;
             text-align: center;
-        }
-        header h1 {
-            margin: 0;
         }
         nav {
             position: fixed;
@@ -57,7 +53,7 @@
         section h2 {
             color: #f00; /* Vermelho */
         }
-        section pre, section code {
+        pre, code {
             background-color: #000; /* Preto */
             color: #00f; /* Azul */
             padding: 10px;
@@ -78,17 +74,17 @@
 </head>
 <body>
     <header>
-        <h1>Configuração de Servidor Debian com Plex</h1>
-        <p>Um guia completo para configurar o Plex no Debian a partir do Windows.</p>
+        <h1>Configuração Completa do Servidor Plex</h1>
+        <p>Configura o Plex no Debian com suporte para NAS, USB e discos internos.</p>
     </header>
     <nav>
         <a href="#requisitos">Requisitos</a>
         <a href="#passo1">Configurar Debian</a>
         <a href="#passo2">Instalar Plex</a>
         <a href="#passo3">Configurar Discos</a>
-        <a href="#passo4">Permissões</a>
-        <a href="#passo5">Aceder ao Plex</a>
-        <a href="#passo6">Automatizar</a>
+        <a href="#passo4">Automatizar Montagem</a>
+        <a href="#passo5">Permissões e Arranque</a>
+        <a href="#passo6">Testes e Resolução</a>
     </nav>
     <main>
         <section id="requisitos">
@@ -96,55 +92,88 @@
             <ul>
                 <li>Uma máquina virtual ou física com Debian 11 ou 12.</li>
                 <li>Ligação à internet.</li>
-                <li>Discos disponíveis para armazenamento (NAS, USB ou internos).</li>
+                <li>Discos disponíveis (NAS, USB ou internos).</li>
                 <li>Permissões administrativas para configurar o servidor.</li>
             </ul>
         </section>
 
         <section id="passo1">
             <h2>Passo 1: Configurar Debian</h2>
+            <p>Atualiza o sistema e prepara o servidor:</p>
             <pre><code>#!/bin/bash
-# Atualizar sistema
+# Atualizar o sistema
 apt update && apt upgrade -y
-apt install -y sudo vim curl wget git ufw
-read -p "Nome do novo utilizador: " USERNAME
+
+# Instalar ferramentas essenciais
+apt install -y sudo vim curl wget git ufw cifs-utils
+
+# Criar um novo utilizador
+read -p "Insere o nome do novo utilizador: " USERNAME
 adduser $USERNAME
 usermod -aG sudo $USERNAME
+
+# Configurar firewall
 ufw allow OpenSSH
 ufw enable</code></pre>
         </section>
 
         <section id="passo2">
             <h2>Passo 2: Instalar Plex</h2>
+            <p>Instala o Plex Media Server:</p>
             <pre><code>#!/bin/bash
+# Adicionar o repositório do Plex
 echo "deb [signed-by=/usr/share/keyrings/plexmediaserver-archive-keyring.gpg] https://downloads.plex.tv/repo/deb public main" \
 | tee /etc/apt/sources.list.d/plexmediaserver.list
 curl https://downloads.plex.tv/plex-keys/PlexSign.key | gpg --dearmor -o /usr/share/keyrings/plexmediaserver-archive-keyring.gpg
+
+# Atualizar pacotes e instalar Plex
 apt update
 apt install -y plexmediaserver</code></pre>
         </section>
 
         <section id="passo3">
             <h2>Passo 3: Configurar Discos</h2>
-            <p>Seguem os comandos para montagem de discos.</p>
+            <h3>Montar Discos Internos</h3>
+            <p>Adiciona os discos internos no ficheiro <code>/etc/fstab</code>:</p>
+            <pre><code>/dev/sdX1 /mnt/interno ext4 defaults 0 0</code></pre>
+            
+            <h3>Montar NAS</h3>
+            <p>Configura o NAS no <code>/etc/fstab</code>:</p>
+            <pre><code>//IP_DO_NAS/partilha /mnt/nas cifs username=USER,password=PASS,iocharset=utf8,uid=plex,gid=plex 0 0</code></pre>
+            
+            <h3>Montar USB</h3>
+            <p>Adiciona a configuração no <code>/etc/fstab</code>:</p>
+            <pre><code>/dev/sdX1 /mnt/usb ext4 defaults 0 0</code></pre>
         </section>
 
         <section id="passo4">
-            <h2>Passo 4: Configurar Permissões</h2>
-            <p>Adicione permissões e configure os discos para o Plex.</p>
+            <h2>Passo 4: Automatizar Montagem</h2>
+            <p>Cria um script para verificar e montar os discos no arranque:</p>
+            <pre><code>#!/bin/bash
+# Montar todos os discos configurados no fstab
+mount -a
+
+# Reiniciar o Plex Media Server
+systemctl restart plexmediaserver</code></pre>
+            <p>Guarda o ficheiro em <code>/usr/local/bin/montagem-e-arranque.sh</code>, e torna-o executável:</p>
+            <pre><code>chmod +x /usr/local/bin/montagem-e-arranque.sh</code></pre>
+            <p>Adiciona o script ao <code>/etc/rc.local</code> para ser executado no arranque.</p>
         </section>
 
         <section id="passo5">
-            <h2>Passo 5: Aceder ao Plex</h2>
-            <p>Abra o navegador e aceda ao Plex em <a href="http://IP_DO_SERVIDOR:32400/web" style="color: #00f;">http://IP_DO_SERVIDOR:32400/web</a>.</p>
+            <h2>Passo 5: Permissões e Arranque</h2>
+            <p>Garante que o Plex tem acesso aos discos:</p>
+            <pre><code>chown -R plex:plex /mnt/interno
+chown -R plex:plex /mnt/nas
+chown -R plex:plex /mnt/usb</code></pre>
         </section>
 
         <section id="passo6">
-            <h2>Passo 6: Automatizar Montagem e Arranque</h2>
-            <h3>Montagem Automática dos Discos</h3>
-            <pre><code>//IP_DO_NAS/partilha /mnt/nas cifs username=USER,password=PASS,iocharset=utf8,uid=plex,gid=plex 0 0
-/dev/sdX1 /mnt/usb ext4 defaults 0 0
-/dev/sdX /mnt/interno ext4 defaults 0 0</code></pre>
+            <h2>Passo 6: Testes e Resolução</h2>
+            <p>Para testar a montagem, usa:</p>
+            <pre><code>sudo mount -a</code></pre>
+            <p>Para verificar o estado do Plex:</p>
+            <pre><code>sudo systemctl status plexmediaserver</code></pre>
         </section>
     </main>
     <footer>
