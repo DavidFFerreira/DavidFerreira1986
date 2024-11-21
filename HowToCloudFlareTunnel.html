@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manual: Expor o Servidor Plex com Cloudflare Tunnel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .container {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.1), 0 0 40px rgba(0, 0, 255, 0.1);
+            max-width: 900px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #ff4747;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0070f3;
+            font-size: 2em;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #ff4747;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .button {
+            background-color: #0070f3;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.4);
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff4747;
+            font-size: 1em;
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manual: Como Expor o Seu Servidor Plex à Internet Usando Cloudflare Tunnel</h1>
+
+        <div class="content">
+            <p>Este manual explica como configurar o Cloudflare Tunnel para expor o seu servidor Plex (ou qualquer outro serviço) à internet, mesmo sem um domínio próprio. Usaremos um script automático para configurar o túnel no seu servidor Debian e torná-lo acessível à Internet através de um subdomínio Cloudflare gratuito.</p>
+
+            <h2>1. Requisitos</h2>
+            <p>Antes de começar, certifique-se de que tem os seguintes requisitos:</p>
+            <ul>
+                <li>Um servidor Debian com Plex instalado.</li>
+                <li>Acesso root ou permissões de sudo no servidor.</li>
+                <li>Uma conta Cloudflare (pode criar uma gratuitamente em <a href="https://www.cloudflare.com" target="_blank" style="color: #0070f3;">https://www.cloudflare.com</a>).</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>2. Passos para Configurar o Cloudflare Tunnel</h2>
+
+            <h3>2.1. Criar uma Conta na Cloudflare (sem domínio)</h3>
+            <p>Para usar o Cloudflare Tunnel sem um domínio próprio, precisa primeiro de criar uma conta no Cloudflare e aceder ao serviço de túnel. Aqui estão os passos:</p>
+            <ol>
+                <li>Acesse <a href="https://www.cloudflare.com" target="_blank" style="color: #0070f3;">https://www.cloudflare.com</a> e crie uma conta gratuita.</li>
+                <li>Após criar a conta, faça login e aceda ao painel de controlo.</li>
+                <li>No painel da Cloudflare, clique em "Zero Trust" no menu superior.</li>
+                <li>No submenu, escolha "Access" e depois "Tunnels".</li>
+                <li>Clique em "Create a Tunnel" e siga as instruções.</li>
+                <li>Quando solicitado a adicionar um domínio, ignore esta opção, pois iremos usar o subdomínio gratuito do Cloudflare.</li>
+                <li>Clique em "Create Tunnel" para gerar o seu túnel sem a necessidade de um domínio próprio.</li>
+            </ol>
+        </div>
+
+        <div class="content">
+            <h3>2.2. Criar o Script Automático</h3>
+            <p>Para simplificar o processo de configuração, criamos um script automático que fará todo o trabalho para si. Crie um novo arquivo chamado <code>cloudflared_tunnel_setup.sh</code> e cole o seguinte conteúdo nele:</p>
+            <pre>
+#!/bin/bash
+
+# Verificar se o script está a ser executado com permissões de root
+if [ "$(id -u)" -ne 0 ]; then
+  echo "Este script deve ser executado como root. Use sudo."
+  exit 1
+fi
+
+# Instalar o cloudflared (se não estiver instalado)
+if ! command -v cloudflared &> /dev/null
+then
+  echo "cloudflared não encontrado. Instalando..."
+  curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -o cloudflared.deb
+  dpkg -i cloudflared.deb
+  rm cloudflared.deb
+else
+  echo "cloudflared já está instalado."
+fi
+
+# Autenticar no Cloudflare
+echo "Autenticando no Cloudflare..."
+cloudflared login
+
+# Criar o tunnel
+TUNNEL_NAME="meu_tunnel"
+echo "Criando o túnel com o nome $TUNNEL_NAME..."
+cloudflared tunnel create $TUNNEL_NAME
+
+# Obter as credenciais e configurar o túnel
+echo "Configuração do túnel..."
+TUNNEL_JSON_FILE="/etc/cloudflared/${TUNNEL_NAME}.json"
+echo "credentials-file: $TUNNEL_JSON_FILE" > /etc/cloudflared/config.yml
+
+# Configurar o serviço local para o túnel
+echo "Configurando o serviço local (localhost:32400 para Plex)..."
+cat &lt;&lt;EOF >> /etc/cloudflared/config.yml
+tunnel: $TUNNEL_NAME
+credentials-file: $TUNNEL_JSON_FILE
+
+ingress:
+  - service: http://localhost:32400
+  - service: http_status:404
+EOF
+
+# Iniciar o túnel
+echo "Iniciando o túnel..."
+cloudflared tunnel run $TUNNEL_NAME
+
+echo "O túnel foi iniciado com sucesso! Acesse o Plex em: https://$TUNNEL_NAME.trycloudflare.com"
+            </pre>
+        </div>
+
+        <div class="content">
+            <h3>2.3. Tornar o Script Executável</h3>
+            <p>Após criar o arquivo, torne-o executável com o seguinte comando no terminal:</p>
+            <pre>chmod +x cloudflared_tunnel_setup.sh</pre>
+
+            <h3>2.4. Executar o Script</h3>
+            <p>Agora, execute o script com permissões de root para configurar automaticamente o túnel:</p>
+            <pre>sudo ./cloudflared_tunnel_setup.sh</pre>
+        </div>
+
+        <div class="content">
+            <h3>2.5. Testar o Acesso ao Plex</h3>
+            <p>Após a execução do script, o Cloudflare fornecerá um link no formato:</p>
+            <pre>https://meu_tunnel.trycloudflare.com</pre>
+            <p>Acesse esse link no navegador para ver se o seu servidor Plex está acessível. A partir deste ponto, o Plex estará exposto à internet via Cloudflare Tunnel, e você poderá usá-lo remotamente.</p>
+        </div>
+
+        <div class="content">
+            <h2>3. Manutenção e Alterações</h2>
+            <p>Se precisar de alterar a configuração do túnel (ex.: alterar a porta do Plex ou apontar para outro serviço), basta editar o arquivo de configuração localizado em <code>/etc/cloudflared/config.yml</code> e reiniciar o túnel com o comando:</p>
+            <pre>sudo systemctl restart cloudflared</pre>
+        </div>
+
+        <div class="content">
+            <h2>4. Acesso Continuado</h2>
+            <p>Certifique-se de que o serviço <code>cloudflared</code> está configurado para iniciar automaticamente com o sistema para garantir que o túnel permanece ativo após reinicializações:</p>
+            <pre>sudo systemctl enable cloudflared</pre>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Todos os direitos reservados</p>
+        </div>
+    </div>
+</body>
+</html>
