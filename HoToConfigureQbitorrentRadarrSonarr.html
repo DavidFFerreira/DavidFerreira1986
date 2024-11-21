@@ -85,6 +85,7 @@
         <a href="#passo4">Configurar Radarr</a>
         <a href="#passo5">Instalar Sonarr</a>
         <a href="#passo6">Configurar Sonarr</a>
+        <a href="#passo7">Automatizar Arranque</a>
     </nav>
     <main>
         <section id="requisitos">
@@ -178,9 +179,27 @@ apt install -y sonarr</code></pre>
                 <li>Define a pasta de destino dos downloads.</li>
             </ol>
         </section>
+
+        <section id="passo7">
+            <h2>Passo 7: Automatizar Arranque</h2>
+            <p>Para garantir que todos os serviços arrancam automaticamente:</p>
+            <pre><code>#!/bin/bash
+# Ativar o arranque automático do qBittorrent
+systemctl enable qbittorrent-nox
+
+# Ativar o arranque automático do Radarr
+systemctl enable radarr
+
+# Ativar o arranque automático do Sonarr
+systemctl enable sonarr</code></pre>
+            <p>Verifica o estado dos serviços com:</p>
+            <pre><code>systemctl status qbittorrent-nox
+systemctl status radarr
+systemctl status sonarr</code></pre>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2024 David Ferreira - Todos os direitos reservados.</p>
+        <p>&copy; 2024 Configurações de Servidor</p>
     </footer>
 </body>
 </html>
