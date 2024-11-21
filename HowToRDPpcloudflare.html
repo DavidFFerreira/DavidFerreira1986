@@ -97,6 +97,7 @@
         <a href="#configuracao">Configuração do Tunnel</a>
         <a href="#aceder">Aceder ao Computador via RDP</a>
         <a href="#arranque">Tornar o Tunnel Ativo no Arranque</a>
+        <a href="#sem-dominio">Configurar Cloudflare Tunnel sem Domínio</a>
     </div>
 
     <!-- Conteúdo Principal -->
@@ -176,6 +177,36 @@ rdp-<subdominio>.trycloudflare.com:3389
         <pre>
 sudo systemctl enable cloudflared
         </pre>
+
+        <a name="sem-dominio"></a>
+        <h2>6. Configurar o Cloudflare Tunnel sem Domínio</h2>
+        <p>Para usar o Cloudflare Tunnel sem ter um domínio, vais utilizar o serviço gratuito de subdomínios oferecido pela Cloudflare.</p>
+        <h3>6.1. Criar o Tunnel sem Domínio</h3>
+        <p>Após autenticares o teu Cloudflare Tunnel com o comando <code>cloudflared login</code>, podes criar o túnel e utilizar a infraestrutura de subdomínios da Cloudflare. Basta correr o comando:</p>
+        <pre>
+cloudflared tunnel create meu_tunnel_rdp
+        </pre>
+        <p>Este comando vai criar um túnel que é automaticamente associado a um subdomínio no domínio <code>trycloudflare.com</code>.</p>
+
+        <h3>6.2. Configuração do Tunnel</h3>
+        <p>Edita o arquivo de configuração <code>/etc/cloudflared/config.yml</code> e adiciona o subdomínio para o túnel, como mostrado abaixo:</p>
+        <pre>
+tunnel: meu_tunnel_rdp
+credentials-file: /etc/cloudflared/meu_tunnel_rdp.json
+
+ingress:
+  - hostname: meu_tunnel_rdp.trycloudflare.com
+    service: tcp://localhost:3389
+  - service: http_status:404
+        </pre>
+
+        <h3>6.3. Iniciar o Tunnel</h3>
+        <p>Agora podes iniciar o túnel usando o comando:</p>
+        <pre>
+cloudflared tunnel run meu_tunnel_rdp
+        </pre>
+        <p>Após isso, podes aceder ao teu servidor RDP usando o endereço <code>meu_tunnel_rdp.trycloudflare.com:3389</code>.</p>
+
     </div>
 
     <!-- Rodapé -->
