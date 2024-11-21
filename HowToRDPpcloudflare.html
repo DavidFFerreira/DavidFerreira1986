@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual: Aceder Remotamente ao Computador via RDP Usando Cloudflare Tunnel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #ff0000;
+        }
+        pre {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            color: #00f;
+            font-family: monospace;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #111;
+            padding: 10px;
+            text-align: center;
+            color: #888;
+        }
+        a {
+            color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Manual: Aceder Remotamente ao Computador via RDP Usando Cloudflare Tunnel</h1>
+
+        <h2>1. Requisitos</h2>
+        <p>Certifica-te de que tens os seguintes requisitos antes de começar:</p>
+        <ul>
+            <li>1. Um computador Windows com o RDP ativado.</li>
+            <li>2. Acesso root ou permissões de sudo no servidor.</li>
+            <li>3. Uma conta Cloudflare (criar gratuitamente em <a href="https://www.cloudflare.com" target="_blank">cloudflare.com</a>).</li>
+        </ul>
+
+        <h2>2. Verificar o Serviço RDP no Computador de Casa</h2>
+        <p>1. No Windows, vai a Configurações > Sistema > Área de Trabalho Remota.</p>
+        <p>2. Ativa a opção "Ativar Área de Trabalho Remota".</p>
+        <p>3. Certifica-te de que o computador está configurado para aceitar conexões RDP.</p>
+
+        <h2>3. Instalar e Configurar o Cloudflare Tunnel</h2>
+
+        <h3>3.1. Instalar o Cloudflared</h3>
+        <p>Se o cloudflared não estiver instalado no teu servidor, executa os seguintes comandos:</p>
+        <pre>
+curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -o cloudflared.deb
+sudo dpkg -i cloudflared.deb
+sudo rm cloudflared.deb
+        </pre>
+
+        <h3>3.2. Autenticar no Cloudflare</h3>
+        <p>Executa o comando abaixo para autenticar o servidor com a tua conta Cloudflare:</p>
+        <pre>
+cloudflared login
+        </pre>
+        <p>Este comando abrirá uma página web onde poderás autorizar o cloudflared a acessar a tua conta Cloudflare.</p>
+
+        <h3>3.3. Criar o Tunnel para o RDP</h3>
+        <p>Cria o túnel com o nome "meu_tunnel_rdp" com o seguinte comando:</p>
+        <pre>
+cloudflared tunnel create meu_tunnel_rdp
+        </pre>
+
+        <h3>3.4. Configuração do Tunnel</h3>
+        <p>Edita o arquivo de configuração em /etc/cloudflared/config.yml com o seguinte conteúdo:</p>
+        <pre>
+sudo nano /etc/cloudflared/config.yml
+        </pre>
+        <p>Adiciona o seguinte conteúdo:</p>
+        <pre>
+tunnel: meu_tunnel_rdp
+credentials-file: /etc/cloudflared/meu_tunnel_rdp.json
+
+ingress:
+  - hostname: rdp-<subdominio>.trycloudflare.com
+    service: tcp://localhost:3389
+  - service: http_status:404
+        </pre>
+
+        <h3>3.5. Iniciar o Tunnel</h3>
+        <p>Inicia o túnel com o seguinte comando:</p>
+        <pre>
+cloudflared tunnel run meu_tunnel_rdp
+        </pre>
+        <p>A partir deste momento, a conexão RDP será encaminhada para a porta 3389 do teu computador de casa.</p>
+
+        <h2>4. Aceder ao Computador de Casa Usando RDP</h2>
+        <p>Após configurar o túnel, podes aceder ao teu computador de casa com o seguinte endereço RDP:</p>
+        <pre>
+rdp-<subdominio>.trycloudflare.com:3389
+        </pre>
+
+        <h2>5. Tornar o Tunnel Ativo no Arranque</h2>
+        <p>Para garantir que o túnel seja iniciado automaticamente após reinicializações, usa o comando abaixo:</p>
+        <pre>
+sudo systemctl enable cloudflared
+        </pre>
+
+        <div class="footer">
+            <p>&copy; 2024 Todos os direitos reservados</p>
+        </div>
+    </div>
+</body>
+</html>
