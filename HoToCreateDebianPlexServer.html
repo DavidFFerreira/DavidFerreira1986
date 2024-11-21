@@ -3,16 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Configurar um Servidor Debian com Plex</title>
+    <title>Configurar Servidor Debian com Plex</title>
     <link rel="stylesheet" href="https://www.davidferreira.eu/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #004080;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #002060;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #004080;
+        }
+        footer {
+            background-color: #002060;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Configuração de Servidor Debian com Plex</h1>
         <p>Um guia completo para configurar o Plex no Debian a partir do Windows.</p>
     </header>
+    <nav>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#passo1">Configurar Debian</a>
+        <a href="#passo2">Instalar Plex</a>
+        <a href="#passo3">Configurar Discos</a>
+        <a href="#passo4">Permissões</a>
+        <a href="#passo5">Aceder ao Plex</a>
+    </nav>
     <main>
-        <section>
+        <section id="requisitos">
             <h2>Requisitos</h2>
             <ul>
                 <li>Uma máquina virtual ou física com Debian 11 ou 12.</li>
@@ -22,11 +86,10 @@
             </ul>
         </section>
 
-        <section>
-            <h2>Passo 1: Preparar o Debian</h2>
+        <section id="passo1">
+            <h2>Passo 1: Configurar Debian</h2>
             <p>Para começar, faça o download do Debian ISO e instale-o numa máquina virtual ou hardware físico.</p>
             <h3>Script Automático para Configuração Inicial</h3>
-            <p>Crie um ficheiro de script para automatizar a configuração inicial:</p>
             <pre><code>#!/bin/bash
 # Atualizar sistema
 apt update && apt upgrade -y
@@ -41,16 +104,14 @@ usermod -aG sudo $USERNAME
 
 # Configurar UFW
 ufw allow OpenSSH
-ufw enable
-            </code></pre>
-            <p>Guarde o script como <code>setup-debian.sh</code> e execute-o com o comando:</p>
+ufw enable</code></pre>
+            <p>Guarde o script como <code>setup-debian.sh</code> e execute-o com:</p>
             <pre><code>sudo bash setup-debian.sh</code></pre>
         </section>
 
-        <section>
-            <h2>Passo 2: Instalar e Configurar o Plex</h2>
+        <section id="passo2">
+            <h2>Passo 2: Instalar Plex</h2>
             <h3>Script para Instalação do Plex</h3>
-            <p>Utilize este script para instalar o Plex Media Server:</p>
             <pre><code>#!/bin/bash
 # Adicionar repositório Plex
 echo "deb [signed-by=/usr/share/keyrings/plexmediaserver-archive-keyring.gpg] https://downloads.plex.tv/repo/deb public main" \
@@ -62,42 +123,37 @@ curl https://downloads.plex.tv/plex-keys/PlexSign.key \
 
 # Instalar Plex
 apt update
-apt install -y plexmediaserver
-            </code></pre>
+apt install -y plexmediaserver</code></pre>
             <p>Guarde o script como <code>install-plex.sh</code> e execute-o:</p>
             <pre><code>sudo bash install-plex.sh</code></pre>
         </section>
 
-        <section>
-            <h2>Passo 3: Configuração de Discos</h2>
-            <h3>1. NAS na Rede</h3>
-            <p>Monte o NAS utilizando CIFS:</p>
+        <section id="passo3">
+            <h2>Passo 3: Configurar Discos</h2>
+            <h3>NAS na Rede</h3>
             <pre><code>sudo apt install -y cifs-utils
 sudo mkdir /mnt/nas
 sudo mount -t cifs //IP_DO_NAS/partilha /mnt/nas -o username=USER,password=PASS</code></pre>
 
-            <h3>2. Disco USB</h3>
-            <p>Identifique o dispositivo com <code>lsblk</code> e monte-o:</p>
+            <h3>Disco USB</h3>
             <pre><code>sudo mkdir /mnt/usb
 sudo mount /dev/sdX1 /mnt/usb</code></pre>
 
-            <h3>3. Disco Interno</h3>
-            <p>Formate e monte o disco:</p>
+            <h3>Disco Interno</h3>
             <pre><code>sudo mkfs.ext4 /dev/sdX
 sudo mkdir /mnt/interno
 sudo mount /dev/sdX /mnt/interno</code></pre>
         </section>
 
-        <section>
+        <section id="passo4">
             <h2>Passo 4: Configurar Permissões</h2>
-            <p>Adicione o utilizador do Plex aos grupos necessários:</p>
             <pre><code>sudo usermod -aG sudo,plugdev plex
 sudo chown -R plex:plex /mnt/nas
 sudo chown -R plex:plex /mnt/usb
 sudo chown -R plex:plex /mnt/interno</code></pre>
         </section>
 
-        <section>
+        <section id="passo5">
             <h2>Passo 5: Aceder ao Plex</h2>
             <p>Abra o navegador e aceda ao Plex em <a href="http://IP_DO_SERVIDOR:32400/web">http://IP_DO_SERVIDOR:32400/web</a>.</p>
             <p>Inicie sessão e configure as bibliotecas para os discos montados.</p>
