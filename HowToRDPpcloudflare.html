@@ -5,35 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual: Aceder Remotamente ao Computador via RDP Usando Cloudflare Tunnel</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
+            background-color: #111;
+            color: white;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: left;
         }
-        h1, h2 {
-            color: #ff0000;
-        }
-        pre {
+
+        .container {
             background-color: #222;
-            padding: 10px;
-            border-radius: 5px;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.1), 0 0 40px rgba(0, 0, 255, 0.1);
+            max-width: 900px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #ff4747;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0070f3;
+            font-size: 2em;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #ff4747;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: #333;
             color: #fff;
-            font-family: monospace;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
         }
-        .content {
-            padding: 20px;
+
+        .button {
+            background-color: #0070f3;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
         }
+
+        .button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.4);
+        }
+
         .footer {
-            background-color: #111;
-            padding: 10px;
-            text-align: center;
-            color: #888;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff4747;
+            font-size: 1em;
         }
-        a {
-            color: #00f;
+
+        .content {
+            margin-bottom: 20px;
         }
+    
     </style>
 </head>
 <body>
