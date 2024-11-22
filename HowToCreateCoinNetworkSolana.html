@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual de Criação de Token na Solana</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Menu Lateral -->
+    <nav class="sidebar">
+      <h2>Índice</h2>
+      <ul>
+        <li><a href="#intro">Introdução</a></li>
+        <li><a href="#requisitos">Pré-requisitos</a></li>
+        <li><a href="#instalacao">Instalação</a></li>
+        <li><a href="#passos">Passos para Criar o Token</a></li>
+        <li><a href="#windows">Instruções para Windows</a></li>
+        <li><a href="#automatizacao">Automatização com Scripts</a></li>
+        <li><a href="#conclusao">Conclusão</a></li>
+      </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="content">
+      <h1>Manual de Criação de Token na Solana</h1>
+
+      <section id="intro">
+        <h2>Introdução</h2>
+        <p>Bem-vindo ao guia completo para criar tokens na rede Solana. Este manual é adaptado para usuários de sistemas Windows, Linux e MacOS, e inclui um passo a passo detalhado para criar tokens SPL, bem como formas de automatizar o processo.</p>
+      </section>
+
+      <section id="requisitos">
+        <h2>Pré-requisitos</h2>
+        <ul>
+          <li>Carteira Solana configurada (ex.: Phantom).</li>
+          <li>Instalação do Solana CLI e SPL Token CLI.</li>
+          <li>Tokens SOL na carteira para pagar taxas.</li>
+        </ul>
+      </section>
+
+      <section id="instalacao">
+        <h2>Instalação do Solana CLI</h2>
+        <h3>Para Windows</h3>
+        <ol>
+          <li>Baixe o instalador do Solana CLI na página oficial: <a href="https://docs.solana.com/cli/install-solana-cli-tools" target="_blank">Clique aqui</a>.</li>
+          <li>Abra o PowerShell como administrador.</li>
+          <li>Execute o comando fornecido no site oficial, por exemplo:
+            <pre><code>iwr -useb https://release.solana.com/v1.16.1/solana-install-init.ps1 | iex</code></pre>
+          </li>
+          <li>Reinicie o terminal para ativar o Solana CLI.</li>
+        </ol>
+
+        <h3>Para Linux/MacOS</h3>
+        <ol>
+          <li>Abra o terminal.</li>
+          <li>Execute o comando abaixo:
+            <pre><code>sh -c "$(curl -sSfL https://release.solana.com/v1.16.1/install)"</code></pre>
+          </li>
+          <li>Após a instalação, configure o PATH para o Solana CLI:
+            <pre><code>export PATH="/home/usuario/.local/share/solana/install/active_release/bin:$PATH"</code></pre>
+          </li>
+        </ol>
+        <p>Verifique se o Solana CLI foi instalado corretamente executando:</p>
+        <pre><code>solana --version</code></pre>
+      </section>
+
+      <section id="passos">
+        <h2>Passos para Criar o Token</h2>
+        <ol>
+          <li>Configure a rede Solana (Mainnet ou Devnet) com o comando:
+            <pre><code>solana config set --url https://api.devnet.solana.com</code></pre>
+          </li>
+          <li>Crie o token com:
+            <pre><code>spl-token create-token</code></pre>
+          </li>
+          <li>Crie uma conta para o token:
+            <pre><code>spl-token create-account &lt;TOKEN_ADDRESS&gt;</code></pre>
+          </li>
+          <li>Emita tokens para a conta:
+            <pre><code>spl-token mint &lt;TOKEN_ADDRESS&gt; &lt;AMOUNT&gt; &lt;RECIPIENT_ADDRESS&gt;</code></pre>
+          </li>
+        </ol>
+      </section>
+
+      <section id="windows">
+        <h2>Instruções para Windows</h2>
+        <p>Para usuários de Windows, o processo pode ser simplificado utilizando o terminal PowerShell. Certifique-se de adicionar as ferramentas CLI ao PATH durante a instalação.</p>
+        <ol>
+          <li>Abra o PowerShell.</li>
+          <li>Execute:
+            <pre><code>spl-token create-token</code></pre>
+          </li>
+          <li>Continue com os mesmos comandos usados para Linux/MacOS, mas adaptados ao PowerShell.</li>
+        </ol>
+      </section>
+
+      <section id="automatizacao">
+        <h2>Automatização com Scripts</h2>
+        <p>Para facilitar o processo, você pode criar um script em Bash (Linux/MacOS) ou em PowerShell (Windows). Consulte exemplos completos no manual anterior ou peça ajuda adicional para personalização.</p>
+      </section>
+
+      <section id="conclusao">
+        <h2>Conclusão</h2>
+        <p>Com este guia, você agora tem o conhecimento necessário para criar e gerenciar seus próprios tokens na rede Solana, independentemente do sistema operacional que estiver usando. Aproveite e bons projetos!</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
