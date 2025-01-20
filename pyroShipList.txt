@@ -1,9 +1,9 @@
-ALTS	75,600	Ruin, Orbituary and Checkmate
-Greycat STV	75,600	Ruin, Orbituary and Checkmate
-Cyclone	103,950	Ruin, Orbituary and Checkmate
-Dragonfly	342,720	Ruin, Orbituary and Checkmate
-Nova	907,200	Ruin, Orbituary and Checkmate
-Buccaneer	1,663,200	Ruin, Orbituary and Checkmate
-Vulture	2,646,000	Ruin, Orbituary and Checkmate
-Cutlass Red	2,857,680	Ruin, Orbituary and Checkmate
-Prospector	2,929,500	Ruin, Orbituary and Checkmate
+ALTS	75,600	Ruin, Orbituary and Checkmate	ARGO	/i/e857649dcd3767d24d3ec5085fbea8a6835fa833/resize(1820,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseYuTuCACieSjiE8s24q9GjXTx67KcfVEe)/source.jpg	https://robertsspaceindustries.com/pledge/ships/atls/ATLS
+Greycat STV	75,600	Ruin, Orbituary and Checkmate	xxx	xxx	xxx
+Cyclone	103,950	Ruin, Orbituary and Checkmate	TMBL	https://media.robertsspaceindustries.com/bioukvx5hnvmr/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone
+Dragonfly	342,720	Ruin, Orbituary and Checkmate	DRAKE	https://media.robertsspaceindustries.com/x5ussyjswavpm/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/drake-dragonfly/Dragonfly-Black
+Nova	907,200	Ruin, Orbituary and Checkmate	TMBL	https://media.robertsspaceindustries.com/698j1tw6sqq4t/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/nova-tank/Nova
+Buccaneer	1,663,200	Ruin, Orbituary and Checkmate	DRAKE	https://media.robertsspaceindustries.com/9930le6zi5mn3/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/drake-buccaneer/Buccaneer
+Vulture	2,646,000	Ruin, Orbituary and Checkmate	DRAKE	https://media.robertsspaceindustries.com/u4hhkc71wyuoh/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/drake-vulture/Vulture
+Cutlass Red	2,857,680	Ruin, Orbituary and Checkmate	DRAKE	https://media.robertsspaceindustries.com/wqa6lfco4amc0/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Red
+Prospector	2,929,500	Ruin, Orbituary and Checkmate	MISC	https://media.robertsspaceindustries.com/l0zyyzk7g90ns/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/misc-prospector/Prospector
