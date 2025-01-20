@@ -12,6 +12,7 @@
             background-color: #0d1117;
             color: #c9d1d9;
             overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -49,6 +50,21 @@
 
         .logo {
             max-height: 50px;
+        }
+
+        .theme-toggle {
+            margin-left: 20px;
+            padding: 5px 10px;
+            background: #21262d;
+            color: #c9d1d9;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: #161b22;
         }
 
         section {
@@ -105,6 +121,38 @@
         section:nth-child(odd) {
             background-color: #0d1117;
         }
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .light-mode header {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .light-mode .search-bar {
+            background-color: #f0f0f0;
+            color: #000000;
+            border: 1px solid #d1d1d1;
+        }
+
+        .light-mode th {
+            background-color: #f0f0f0;
+        }
+
+        .light-mode th:hover {
+            background-color: #e0e0e0;
+        }
+
+        .light-mode .theme-toggle {
+            background: #f0f0f0;
+            color: #000000;
+        }
+
+        .light-mode .theme-toggle:hover {
+            background: #e0e0e0;
+        }
     </style>
 </head>
 <body>
@@ -117,6 +165,7 @@
             <a href="#crusader">Crusader</a>
         </div>
         <input type="text" class="search-bar" placeholder="Pesquisar..." id="searchBar">
+        <button class="theme-toggle" id="themeToggle">Modo Escuro</button>
     </header>
 
     <section id="pyro">
@@ -231,6 +280,12 @@
                 e.preventDefault();
                 document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.textContent = document.body.classList.contains('light-mode') ? 'Modo Escuro' : 'Modo Luminoso';
         });
     </script>
 </body>
