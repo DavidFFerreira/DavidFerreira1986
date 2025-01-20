@@ -9,27 +9,137 @@
     <!-- Incluindo o DataTables para ordenação e filtros -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #121212; color: #ffffff; margin: 0; padding: 0; overflow-x: hidden; }
-        header { background-color: #1a1a1a; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1001; margin-top: 60px; }
-        header h1 { margin: 0; font-size: 36px; color: DodgerBlue; }
-        .search-container { margin: 20px; text-align: center; }
-        .search-container input { padding: 10px; width: 80%; max-width: 400px; font-size: 16px; border-radius: 5px; border: none; }
-        nav { background-color: #1a1a1a; padding: 10px; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
-        nav a { color: DodgerBlue; margin: 0 15px; text-decoration: none; font-size: 18px; }
-        nav a:hover { text-decoration: underline; }
-        .table-container { margin-top: 80px; padding: 20px; text-align: left; }
-        table { width: 90%; margin: 20px auto; border-collapse: collapse; border: 1px solid #444; background-color: #1a1a1a; border-radius: 8px; }
-        th, td { padding: 12px; text-align: center; border: 1px solid #444; color: #fff; }
-        th { background-color: #333; }
-        tr:nth-child(even) { background-color: #222; }
-        tr:hover { background-color: #555; }
-        .btn-back-to-top { position: fixed; bottom: 20px; right: 20px; padding: 12px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        .btn-back-to-top:hover { background-color: #444; }
-        section { padding: 40px 0; transition: all 0.3s ease-in-out; }
-        html { scroll-behavior: smooth; }
-        .expand-collapse { transition: max-height 0.5s ease-out; overflow: hidden; }
-        .expand-collapse.collapsed { max-height: 0; }
-        .expand-collapse.expanded { max-height: 1000px; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            margin-top: 60px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: DodgerBlue;
+        }
+
+        .search-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-container input {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: DodgerBlue;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .table-container {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #444;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        th {
+            background-color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #222;
+        }
+
+        tr:hover {
+            background-color: #555;
+        }
+
+        .btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-back-to-top:hover {
+            background-color: #444;
+        }
+
+        section {
+            padding: 40px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .expand-collapse {
+            transition: max-height 0.5s ease-out;
+            overflow: hidden;
+        }
+
+        .expand-collapse.collapsed {
+            max-height: 0;
+        }
+
+        .expand-collapse.expanded {
+            max-height: 1000px;
+        }
     </style>
 </head>
 <body>
