@@ -1,9 +1,9 @@
-ATLS	75,600	Crusaer Showroom 
-C1 Spirit	3,118,500	Crusaer Showroom 
-Ares Star Fighter Ion	4,725,000	Crusaer Showroom 
-Ares Star Fighter Inferno	4,725,000	Crusaer Showroom 
-A1 Spirit	4,961,250	Crusaer Showroom 
-Mercury Star Runner	12,285,000	Crusaer Showroom 
-C2 Hercules Starlifter	18,900,000	Crusaer Showroom 
-M2 Hercules Starlifter	29,484,000	Crusaer Showroom 
-A2 Hercules Starlifter	44,296,876	Crusaer Showroom 
+ATLS	75,600	Crusaer Showroom	ARGO	https://media.robertsspaceindustries.com/4pkysfhuqskp4/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/atls/ATLS
+C1 Spirit	3,118,500	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/ly51mm0p1vs6w/store_small.jp	https://robertsspaceindustries.com/pledge/ships/spirit/C1-Spirit
+Ares Star Fighter Ion	4,725,000	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/a2g2ta0lq0uq5/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/crusader-ares/Ares-Ion
+Ares Star Fighter Inferno	4,725,000	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/a2g2ta0lq0uq5/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/crusader-ares/Ares-Ion
+A1 Spirit	4,961,250	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/nsqe4f3nl1mqn/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/spirit/A1-Spirit 
+Mercury Star Runner	12,285,000	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/219rro1mjtov6/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/crusader-mercury-star-runner/Mercury 
+C2 Hercules Starlifter	18,900,000	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/y9nxh2pyic772/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/crusader-starlifter/C2-Hercules 
+M2 Hercules Starlifter	29,484,000	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/3s79isis6qti3/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/crusader-starlifter/M2-Hercules 
+A2 Hercules Starlifter	44,296,876	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/a14ekvttpyy6w/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/crusader-starlifter/A2-Hercules 
