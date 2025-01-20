@@ -1,0 +1,229 @@
+Fabricante	Nave	Imagem	Link
+RSI 	 Aurora ES 	 https://media.robertsspaceindustries.com/ucp60er1lm6p0/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-aurora/Aurora-ES?_gl=1*ye0az0*_up*MQ..*_ga*ODQ1ODU5OTQuMTczNzM5MTA4NA..*_ga_V6MWYXRQNP*MTczNzM5MTA4NC4xLjAuMTczNzM5MTA4NC42MC4wLjA.
+RSI 	 Aurora LX 	 https://media.robertsspaceindustries.com/28jsrvn7jb54w/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-aurora/Aurora-LX
+RSI 	 Aurora MR 	 https://media.robertsspaceindustries.com/4s60teylde8fl/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-aurora/Aurora-MR
+RSI 	 Aurora CL 	 https://media.robertsspaceindustries.com/w9pcyoav93o22/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-aurora/Aurora-CL
+RSI 	 Aurora LN 	 https://media.robertsspaceindustries.com/zziqh7xqritjm/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-aurora/Aurora-LN
+ORIG 	 300i 	 https://media.robertsspaceindustries.com/v8hdypfs0zrod/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-300/300i
+ORIG 	 315p 	 https://media.robertsspaceindustries.com/la559pu4e3lvz/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-300/315p
+ORIG 	 325a 	 https://media.robertsspaceindustries.com/7exrdatxh6z7n/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-300/325a
+ORIG 	 350r 	 https://media.robertsspaceindustries.com/5r333q5k9oyce/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-300/350r
+ANVL 	 F7C Hornet Mk I 	 https://media.robertsspaceindustries.com/tcpakf2m1h1hx/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-Hornet-Mk-I
+ANVL 	 F7C Hornet Wildfire Mk I 	 https://media.robertsspaceindustries.com/0uqzw1kqnfvxy/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-Hornet-Wildfire-Mk-I
+ANVL 	 F7A Hornet Mk I 	 https://robertsspaceindustries.com/media/xbj9vlcjp8xl3r/store_small/NewHornet_screen28.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7A-Hornet-Mk-I
+ANVL 	 F7C-S Hornet Ghost Mk I 	 https://media.robertsspaceindustries.com/nbwncbo1436rs/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-S-Hornet-Ghost-Mk-I
+ANVL 	 F7C-R Hornet Tracker Mk I 	 https://media.robertsspaceindustries.com/biy2mmvcz6eb2/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-R-Hornet-Tracker-Mk-I
+ANVL 	 F7C-M Super Hornet Mk I 	 https://media.robertsspaceindustries.com/pjudaw3yj3odo/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-M-Super-Hornet-Mk-I
+ANVL 	 F7C-M Super Hornet Heartseeker Mk I 	 https://media.robertsspaceindustries.com/6ewzke6o3llh6/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet/F7C-M-Super-Hornet-Heartseeker-Mk-I
+RSI 	 Constellation Aquila 	 https://media.robertsspaceindustries.com/c2k21tjgn3z6a/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-constellation/Constellation-Aquila
+RSI 	 Constellation Andromeda 	 https://media.robertsspaceindustries.com/b5wlk3qo9v3iq/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-constellation/Constellation-Andromeda
+RSI 	 Constellation Taurus 	 https://media.robertsspaceindustries.com/uha4almaj3gyf/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-constellation/Constellation-Taurus
+RSI 	 Constellation Phoenix 	 https://media.robertsspaceindustries.com/jkyny550a90um/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-constellation/Constellation-Phoenix
+RSI 	 Constellation Phoenix Emerald 	 https://media.robertsspaceindustries.com/c6k45uuhq41ow/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-constellation/Constellation-Phoenix-Emerald
+MISC 	 Freelancer 	 https://media.robertsspaceindustries.com/z3mllk6zi0x7r/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/misc-freelancer/Freelancer
+MISC 	 Freelancer DUR 	 https://media.robertsspaceindustries.com/d5tl8fqymjuf7/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/misc-freelancer/Freelancer-DUR
+MISC 	 Freelancer MAX 	 https://media.robertsspaceindustries.com/l46ptmxtybjws/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/misc-freelancer/Freelancer-MAX
+MISC 	 Freelancer MIS 	 https://media.robertsspaceindustries.com/ybkygputhkx0g/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/misc-freelancer/Freelancer-MIS
+DRAK 	 Cutlass Black 	 https://media.robertsspaceindustries.com/ni2w8d06b405a/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Black
+DRAK 	 Cutlass Red 	 https://media.robertsspaceindustries.com/wqa6lfco4amc0/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Red
+DRAK 	 Cutlass Blue 	 https://media.robertsspaceindustries.com/2hllaegtpmzyy/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Blue
+DRAK 	 Cutlass Black Best In Show Edition 2949 	 https://media.robertsspaceindustries.com/vt0f0g30nua1v/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Black-Best-In-Show-Edition-2949
+DRAK 	 Cutlass Steel 	 https://media.robertsspaceindustries.com/mhuiu912ca4d1/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-cutlass/Cutlass-Steel
+AEGS 	 Avenger Stalker 	 https://media.robertsspaceindustries.com/9tfhza1twrczn/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-avenger/Avenger-Stalker
+AEGS 	 Avenger Titan Renegade 	 https://media.robertsspaceindustries.com/oc8p2v3n7c0e0/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-avenger/Avenger-Titan-Renegade
+AEGS 	 Avenger Warlock 	 https://media.robertsspaceindustries.com/l8znbwwoh2o8u/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-avenger/Avenger-Warlock
+AEGS 	 Avenger Titan 	 https://media.robertsspaceindustries.com/fmhdkmvhi8ify/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-avenger/Avenger-Titan
+ANVL 	 Gladiator 	 https://media.robertsspaceindustries.com/sonytrzapzugz/store_small.jpeg 	 https://robertsspaceindustries.com/pledge/ships/anvil-gladiator/Gladiator
+ORIG 	 M50 	 https://media.robertsspaceindustries.com/l7p21pakfkth2/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/origin-m50/M50
+MISC 	 Starfarer 	 https://media.robertsspaceindustries.com/5ukbyxyx8t6ek/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/misc-starfarer/Starfarer
+MISC 	 Starfarer Gemini 	 https://media.robertsspaceindustries.com/c6423etmvm52z/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/misc-starfarer/Starfarer-Gemini
+DRAK 	 Caterpillar 	 https://media.robertsspaceindustries.com/0ffxba4wywl0j/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-caterpillar/Caterpillar
+DRAK 	 Caterpillar Pirate Edition 	 https://media.robertsspaceindustries.com/pztdfu1y7629m/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-caterpillar/Caterpillar-Pirate-Edition
+DRAK 	 Caterpillar Best In Show Edition 2949 	 https://media.robertsspaceindustries.com/1r1vf9peutpr0/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-caterpillar/Caterpillar-Best-In-Show-Edition-2949
+AEGS 	 Retaliator 	 https://media.robertsspaceindustries.com/gssm088jbjzlm/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-retaliator/Retaliator
+VNCL 	 Scythe 	 https://media.robertsspaceindustries.com/kysobeqkurqyd/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/scythe/Scythe
+AEGS 	 Idris-M 	 https://media.robertsspaceindustries.com/59wd4xwt2qms4/store_small.jpeg 	 https://robertsspaceindustries.com/pledge/ships/aegis-idris/Idris-M
+AEGS 	 Idris-P 	 https://media.robertsspaceindustries.com/hu649bwvjgrcb/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-idris/Idris-P
+KRIG 	 P-52 Merlin 	 https://media.robertsspaceindustries.com/dpsn2y1j9wy6w/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/p52-merlin/P-52-Merlin
+CNOU 	 Mustang Alpha 	 https://media.robertsspaceindustries.com/jgjjgrbiw33wf/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/mustang/Mustang-Alpha
+CNOU 	 Mustang Beta 	 https://media.robertsspaceindustries.com/wwcvddegaral9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/mustang/Mustang-Beta
+CNOU 	 Mustang Gamma 	 https://media.robertsspaceindustries.com/pxlk0om05jpxk/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/mustang/Mustang-Gamma
+CNOU 	 Mustang Delta 	 https://media.robertsspaceindustries.com/7gb75f5yivup7/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/mustang/Mustang-Delta
+CNOU 	 Mustang Omega 	 https://media.robertsspaceindustries.com/udupgv9cpj76b/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/mustang/Mustang-Omega
+CNOU 	 Mustang Alpha Vindicator 	 https://media.robertsspaceindustries.com/iohmvf24h4rsz/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/mustang/Mustang-Alpha-Vindicator
+AEGS 	 Redeemer 	 https://media.robertsspaceindustries.com/fi748d6hqv9jj/store_small.jpeg 	 https://robertsspaceindustries.com/pledge/ships/redeemer/Redeemer
+AEGS 	 Gladius 	 https://media.robertsspaceindustries.com/dm0ceypxhdauf/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/gladius/Gladius
+AEGS 	 Gladius Valiant 	 https://media.robertsspaceindustries.com/hubxawbeqj9u7/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/gladius/Gladius-Valiant
+AEGS 	 Pirate Gladius 	 https://media.robertsspaceindustries.com/9cwz2utclixvt/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/gladius/Pirate-Gladius
+XNAA 	 Khartu-Al 	 https://media.robertsspaceindustries.com/zd5doe8h0xemz/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/khartu/Khartu-Al
+BANU 	 Merchantman 	 https://media.robertsspaceindustries.com/gmtme5pca7eis/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/merchantman/Merchantman
+ORIG 	 890 Jump 	 https://media.robertsspaceindustries.com/t2bky2nbdg0ms/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/890-jump/890-Jump
+ANVL 	 Carrack 	 https://media.robertsspaceindustries.com/bau5bdotm8te8/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/carrack/Carrack
+ANVL 	 Carrack w/C8X 	 https://media.robertsspaceindustries.com/twlkwwqy2mmk2/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/carrack/Carrack-W-C8X
+ANVL 	 Carrack Expedition w/C8X 	 https://media.robertsspaceindustries.com/1k5nfi962y4pp/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/carrack/Carrack-Expedition-W-C8X
+ANVL 	 Carrack Expedition 	 https://media.robertsspaceindustries.com/gpfapokelyewn/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/carrack/Carrack-Expedition
+DRAK 	 Herald 	 https://media.robertsspaceindustries.com/eqjgd53qha550/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/herald/Herald
+MISC 	 Hull C 	 https://media.robertsspaceindustries.com/3ati06z7ifjzv/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/hull/Hull-C
+MISC 	 Hull A 	 https://media.robertsspaceindustries.com/d8cvmu5s8kpmd/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/hull/Hull-A
+MISC 	 Hull B 	 https://media.robertsspaceindustries.com/5r7g9f96lvwfz/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/hull/Hull-B
+MISC 	 Hull D 	 https://media.robertsspaceindustries.com/1j6650dnbblli/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/hull/Hull-D
+MISC 	 Hull E 	 https://media.robertsspaceindustries.com/u61kavxfi9mgo/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/hull/Hull-E
+RSI 	 Orion 	 https://media.robertsspaceindustries.com/v6r4v0l6h0lmi/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/orion/Orion
+AEGS 	 Reclaimer 	 https://media.robertsspaceindustries.com/iweivr5xyt5j1/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/reclaimer/Reclaimer
+AEGS 	 Reclaimer Best In Show Edition 2949 	 https://media.robertsspaceindustries.com/81432ksmdzn30/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/reclaimer/Reclaimer-Best-In-Show-Edition-2949
+AEGS 	 Javelin 	 https://media.robertsspaceindustries.com/oc89p5ksizcla/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-javelin/Javelin
+AEGS 	 Vanguard Warden 	 https://media.robertsspaceindustries.com/sgzm3dw5q0o3y/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/vanguard/Vanguard-Warden
+AEGS 	 Vanguard Harbinger 	 https://media.robertsspaceindustries.com/enygi6572pnkl/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/vanguard/Vanguard-Harbinger
+AEGS 	 Vanguard Sentinel 	 https://media.robertsspaceindustries.com/u7jflg98ld4d9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/vanguard/Vanguard-Sentinel
+AEGS 	 Vanguard Hoplite 	 https://media.robertsspaceindustries.com/a1e1v06v6fg9o/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/vanguard/Vanguard-Hoplite
+MISC 	 Reliant Kore 	 https://media.robertsspaceindustries.com/lkgsdt93racvf/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Kore
+MISC 	 Reliant Mako 	 https://media.robertsspaceindustries.com/4f25lfzd4vaqr/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Mako
+MISC 	 Reliant Sen 	 https://media.robertsspaceindustries.com/dhvoh5wvqe5wi/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Sen
+MISC 	 Reliant Tana 	 https://media.robertsspaceindustries.com/z0qh46jnljtuf/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/reliant/Reliant-Tana
+CRUS 	 Genesis 	 https://media.robertsspaceindustries.com/gpdjd9p1jnxj4/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/starliner/Genesis
+ESPR 	 Glaive 	 https://media.robertsspaceindustries.com/msy0lud5dd4eg/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/esperia-glaive/Glaive
+MISC 	 Endeavor 	 https://media.robertsspaceindustries.com/ymfdp7ow9lm5c/store_small.jpeg 	 https://robertsspaceindustries.com/pledge/ships/misc-endeavor/Endeavor
+AEGS 	 Sabre 	 https://media.robertsspaceindustries.com/5ahkbuex0r8wm/store_small.jpeg 	 https://robertsspaceindustries.com/pledge/ships/sabre/Sabre
+AEGS 	 Sabre Comet 	 https://media.robertsspaceindustries.com/6uravr46xw6qf/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/sabre/Sabre-Comet
+AEGS 	 Sabre Raven 	 https://robertsspaceindustries.com/media/3q1dirw16ezv5r/store_small/3_4_front_raven_blue_Enlarge_Crop.jpg 	 https://robertsspaceindustries.com/pledge/ships/sabre/Sabre-Raven
+AEGS 	 Sabre Firebird 	 https://media.robertsspaceindustries.com/qsdmpnbnydypj/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/sabre/Sabre-Firebird
+AEGS 	 Sabre Peregrine 	 https://media.robertsspaceindustries.com/k891tmei1g05k/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/sabre/Sabre-Peregrine
+ANVL 	 Crucible 	 https://media.robertsspaceindustries.com/q81gvelwf2usv/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/crucible/Crucible
+KRIG 	 P-72 Archimedes 	 https://media.robertsspaceindustries.com/8p4kt5rzv0t39/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/p72-archimedes/P-72-Archimedes
+KRIG 	 P-72 Archimedes Emerald 	 https://robertsspaceindustries.com/media/o94ip9isoyjmhr/store_small/Archimedes-Sku-Image-V3.jpg 	 https://robertsspaceindustries.com/pledge/ships/p72-archimedes/P-72-Archimedes-Emerald
+ESPR 	 Blade 	 https://media.robertsspaceindustries.com/0s9bslimticmx/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/vanduul-blade/Blade
+MISC 	 Prospector 	 https://media.robertsspaceindustries.com/l0zyyzk7g90ns/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/misc-prospector/Prospector
+DRAK 	 Buccaneer 	 https://media.robertsspaceindustries.com/9930le6zi5mn3/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-buccaneer/Buccaneer
+DRAK 	 Dragonfly Yellowjacket 	 https://robertsspaceindustries.com/media/am12jusvbx8mqr/store_small/Dragonfly-Left.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-dragonfly/Dragonfly-Yellowjacket
+DRAK 	 Dragonfly Black 	 https://media.robertsspaceindustries.com/x5ussyjswavpm/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-dragonfly/Dragonfly-Black
+ARGO 	 MPUV Personnel 	 https://media.robertsspaceindustries.com/ee5eljtb2gs4b/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/argo/MPUV-Personnel
+ARGO 	 MPUV Cargo 	 https://media.robertsspaceindustries.com/yah6nttyhb9rv/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/argo/MPUV-Cargo
+ARGO 	 MPUV Tractor 	 https://media.robertsspaceindustries.com/i9guillde6qib/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/argo/MPUV-Tractor
+ANVL 	 Terrapin 	 https://media.robertsspaceindustries.com/llq70ulvvi0ia/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/terrapin/Terrapin
+ANVL 	 Terrapin Medic 	 https://media.robertsspaceindustries.com/cr3q1voomewm7/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/terrapin/Terrapin-Medic
+RSI 	 Polaris 	 https://media.robertsspaceindustries.com/oe0wikh6g3ltm/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/polaris/Polaris
+ESPR 	 Prowler 	 https://media.robertsspaceindustries.com/iaps0ps9oo83s/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/prowler/Prowler
+ORIG 	 85X 	 https://media.robertsspaceindustries.com/sm8ti6o025fm3/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/85x/85X
+MRAI 	 Razor 	 https://media.robertsspaceindustries.com/ryf59d1orpnzh/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/razor/Razor
+MRAI 	 Razor EX 	 https://media.robertsspaceindustries.com/7ryipnsxv61xe/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/razor/Razor-EX
+MRAI 	 Razor LX 	 https://media.robertsspaceindustries.com/k8vf8c6y16gcp/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/razor/Razor-LX
+ANVL 	 Hurricane 	 https://media.robertsspaceindustries.com/s6cv8zd5n24s2/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/hurricane/Hurricane
+BANU 	 Defender 	 https://media.robertsspaceindustries.com/nnb2oofnrlni9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/defender/Defender
+AEGS 	 Eclipse 	 https://media.robertsspaceindustries.com/ej552bji5plg4/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/eclipse/Eclipse
+XNAA 	 Nox 	 https://media.robertsspaceindustries.com/945jxtrweugj1/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/nox/Nox
+XNAA 	 Nox Kue 	 https://media.robertsspaceindustries.com/wluwxxxf8vyel/store_small.jpeg 	 https://robertsspaceindustries.com/pledge/ships/nox/Nox-Kue
+TMBL 	 Cyclone 	 https://media.robertsspaceindustries.com/bioukvx5hnvmr/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone
+TMBL 	 Cyclone TR 	 https://media.robertsspaceindustries.com/suy8o38g9ve1h/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone-TR
+TMBL 	 Cyclone RC 	 https://media.robertsspaceindustries.com/o0eo9l0kj6oxl/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone-RC
+TMBL 	 Cyclone RN 	 https://media.robertsspaceindustries.com/taepoxg46odc9/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone-RN
+TMBL 	 Cyclone AA 	 https://media.robertsspaceindustries.com/us620vlv05itm/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone-AA
+TMBL 	 Cyclone MT 	 https://media.robertsspaceindustries.com/g8kqaqsn66ufb/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone-MT
+RSI 	 Ursa 	 https://media.robertsspaceindustries.com/2ronj9a48ng6q/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/ursa/Ursa
+RSI 	 Ursa Fortuna 	 https://media.robertsspaceindustries.com/g62q7c3956cu1/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/ursa/Ursa-Fortuna
+RSI 	 Lynx 	 https://media.robertsspaceindustries.com/m6ikrk16sokre/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/ursa/Lynx
+RSI 	 Ursa Medivac 	 https://media.robertsspaceindustries.com/17ti5hv94jwy9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/ursa/Ursa-Medivac
+ORIG 	 600i Touring 	 https://media.robertsspaceindustries.com/68f2og2gz2mdq/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/600i/600i-Touring
+ORIG 	 600i Explorer 	 https://media.robertsspaceindustries.com/nsl0zel8gmfxl/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/600i/600i-Explorer
+ORIG 	 X1 	 https://media.robertsspaceindustries.com/dfby6tstm2ddk/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/x1/X1
+ORIG 	 X1 Velocity 	 https://media.robertsspaceindustries.com/cz8otyln1w1tp/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/x1/X1-Velocity
+ORIG 	 X1 Force 	 https://media.robertsspaceindustries.com/8gw5uoifiylxq/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/x1/X1-Force
+CNOU 	 Pioneer 	 https://media.robertsspaceindustries.com/vtodzxlks918l/store_small.jpeg 	 https://robertsspaceindustries.com/pledge/ships/pioneer/Pioneer
+ANVL 	 Hawk 	 https://media.robertsspaceindustries.com/yshd7vv3i1ds0/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/hawk/Hawk
+AEGS 	 Hammerhead 	 https://media.robertsspaceindustries.com/93zcfnzsy6xnu/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/hammerhead/Hammerhead
+AEGS 	 Hammerhead Best In Show Edition 2949 	 https://media.robertsspaceindustries.com/tmuyqtlpfh64d/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/hammerhead/Hammerhead-Best-In-Show-Edition-2949
+TMBL 	 Nova 	 https://media.robertsspaceindustries.com/698j1tw6sqq4t/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/nova-tank/Nova
+AEGS 	 Vulcan 	 https://media.robertsspaceindustries.com/6q50bb3oy5q8b/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/vulcan/Vulcan
+ORIG 	 100i 	 https://media.robertsspaceindustries.com/ntdv7khpw1hpz/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-100/100i
+ORIG 	 125a 	 https://media.robertsspaceindustries.com/5nerri3qlhrxc/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-100/125a
+ORIG 	 135c 	 https://media.robertsspaceindustries.com/i4o2rd0gks96h/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-100/135c
+CRUS 	 C2 Hercules 	 https://media.robertsspaceindustries.com/y9nxh2pyic772/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/crusader-starlifter/C2-Hercules
+CRUS 	 M2 Hercules 	 https://media.robertsspaceindustries.com/3s79isis6qti3/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/crusader-starlifter/M2-Hercules
+CRUS 	 A2 Hercules 	 https://media.robertsspaceindustries.com/a14ekvttpyy6w/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/crusader-starlifter/A2-Hercules
+DRAK 	 Vulture 	 https://media.robertsspaceindustries.com/u4hhkc71wyuoh/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-vulture/Vulture
+RSI 	 Apollo Triage 	 https://media.robertsspaceindustries.com/to77i2ovy5snn/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-apollo/Apollo-Triage
+RSI 	 Apollo Medivac 	 https://media.robertsspaceindustries.com/lp97kahwh9v15/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-apollo/Apollo-Medivac
+CRUS 	 Mercury 	 https://media.robertsspaceindustries.com/219rro1mjtov6/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/crusader-mercury-star-runner/Mercury
+ANVL 	 Valkyrie 	 https://media.robertsspaceindustries.com/1ie4qfolpfwn8/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-valkyrie/Valkyrie
+ANVL 	 Valkyrie Liberator Edition 	 https://robertsspaceindustries.com/media/l87lynolh4pxyr/store_small/128934g7tt.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-valkyrie/Valkyrie-Liberator-Edition
+DRAK 	 Kraken 	 https://media.robertsspaceindustries.com/nnpwaac1eqp4p/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-kraken/Kraken
+DRAK 	 Kraken Privateer 	 https://media.robertsspaceindustries.com/nnu9953me3vod/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-kraken/Kraken-Privateer
+ANVL 	 Arrow 	 https://media.robertsspaceindustries.com/th8oqphlhb0bk/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-arrow/Arrow
+XNAA 	 San'tok.yāi 	 https://media.robertsspaceindustries.com/4s0zrs2svm1n9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aopoa-santokyai/Santoky-i
+ARGO 	 SRV 	 https://media.robertsspaceindustries.com/4ibvjrbgihdv5/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/argo-srv/SRV
+DRAK 	 Corsair 	 https://media.robertsspaceindustries.com/ywf6uiw2qvkw4/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/drake-corsair/Corsair
+TMBL 	 Ranger RC 	 https://media.robertsspaceindustries.com/86p4ac1l3rmra/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/tumbril-ranger/Ranger-RC
+TMBL 	 Ranger TR 	 https://media.robertsspaceindustries.com/eehhr9ql9y04w/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/tumbril-ranger/Ranger-TR
+TMBL 	 Ranger CV 	 https://media.robertsspaceindustries.com/1pe4mpq4m650v/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/tumbril-ranger/Ranger-CV
+ANVL 	 Ballista 	 https://media.robertsspaceindustries.com/7vzgs23k7skkn/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-ballista/Ballista
+ANVL 	 Anvil Ballista Snowblind 	 https://robertsspaceindustries.com/media/a5nzp9tgvq2i5r/store_small/Ballista_Snowblind-Min.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-ballista/Anvil-Ballista-Snowblind
+ANVL 	 Anvil Ballista Dunestalker 	 https://robertsspaceindustries.com/media/rjxw89rs3sk5wr/store_small/Ballista_Dunestalker-Min.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-ballista/Anvil-Ballista-Dunestalker
+AEGS 	 Nautilus 	 https://media.robertsspaceindustries.com/c6t6mr400hgx6/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-nautilus/Nautilus
+AEGS 	 Nautilus Solstice Edition 	 https://media.robertsspaceindustries.com/mp9p2pzrvdxw9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/aegis-nautilus/Nautilus-Solstice-Edition
+RSI 	 Mantis 	 https://media.robertsspaceindustries.com/q90tqrjmlr280/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/rsi-mantis/Mantis
+ANVL 	 C8 Pisces 	 https://media.robertsspaceindustries.com/9y6uxd82fw0ne/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-pisces/C8-Pisces
+ANVL 	 C8X Pisces Expedition 	 https://media.robertsspaceindustries.com/kj7oh12zn2f1l/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-pisces/C8X-Pisces-Expedition
+ANVL 	 C8R Pisces 	 https://media.robertsspaceindustries.com/j198wh0bkm9ml/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-pisces/C8R-Pisces
+CRUS 	 Ares Inferno 	 https://media.robertsspaceindustries.com/txyuxxqtu8otc/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/crusader-ares/Ares-Inferno
+CRUS 	 Ares Ion 	 https://media.robertsspaceindustries.com/a2g2ta0lq0uq5/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/crusader-ares/Ares-Ion
+ARGO 	 MOLE 	 https://media.robertsspaceindustries.com/nxjx5y43r2nbs/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/argo-mole/MOLE
+ARGO 	 Argo Mole Carbon Edition 	 https://media.robertsspaceindustries.com/ugpy6i9pbgbax/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/argo-mole/Argo-Mole-Carbon-Edition
+ARGO 	 Argo Mole Talus Edition 	 https://media.robertsspaceindustries.com/ghac95q2ncobp/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/argo-mole/Argo-Mole-Talus-Edition
+ORIG 	 G12 	 https://media.robertsspaceindustries.com/brmi1ci9rthmu/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-g12/G12
+ORIG 	 G12r 	 https://media.robertsspaceindustries.com/ou0nkzhocb2bd/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-g12/G12r
+ORIG 	 G12a 	 https://media.robertsspaceindustries.com/2btmuamt8zv4g/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/origin-g12/G12a
+ESPR 	 Talon 	 https://media.robertsspaceindustries.com/5ldm3z0l75na6/store_small.jpg 	 https://robertsspaceindustries.com/talon
+ESPR 	 Talon Shrike 	 https://media.robertsspaceindustries.com/tfej2rg70irt2/store_small.jpg 	 https://robertsspaceindustries.com/talon
+GRIN 	 ROC-DS 	 https://media.robertsspaceindustries.com/9qfnnzshu0vv0/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/roc/ROC-DS
+GRIN 	 ROC 	 https://media.robertsspaceindustries.com/kuw6hsllahest/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/roc/ROC
+GRIN 	 PTV 	 https://media.robertsspaceindustries.com/xmgj9a8b9jmiz/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/ptv/PTV
+CNOU 	 Nomad 	 https://media.robertsspaceindustries.com/inqdpb67v815c/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/nomad/Nomad
+RSI 	 Perseus 	 https://media.robertsspaceindustries.com/rofj7fmgtekyg/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/perseus/Perseus
+RSI 	 Scorpius 	 https://media.robertsspaceindustries.com/7u4jmdb7ev4h7/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/scorpius/Scorpius
+RSI 	 Scorpius Antares 	 https://media.robertsspaceindustries.com/ib2pmees0vrq3/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/scorpius/Scorpius-Antares
+GAMA 	 Railen 	 https://media.robertsspaceindustries.com/i3aybjtr4j7fq/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/railen/Railen
+ORIG 	 400i 	 https://media.robertsspaceindustries.com/x4tbq6bz7kgkg/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/400i/400i
+ANVL 	 Liberator 	 https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/liberator/Liberator
+MISC 	 Odyssey 	 https://media.robertsspaceindustries.com/xpz8d5rv7fl2n/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/odyssey/Odyssey
+ARGO 	 RAFT 	 https://media.robertsspaceindustries.com/x4b15hx3vui08/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/raft/RAFT
+ANVL 	 Spartan 	 https://media.robertsspaceindustries.com/y8efutalncw88/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/spartan/Spartan
+CNOU 	 HoverQuad 	 https://media.robertsspaceindustries.com/yz04lei9pkqob/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/hoverquad/HoverQuad
+MISC 	 Expanse 	 https://media.robertsspaceindustries.com/wphusii1dnmxt/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/expanse/Expanse
+ANVL 	 Legionnaire 	 https://media.robertsspaceindustries.com/qxgdodjdhuvsr/store_small.jpeg 	 https://robertsspaceindustries.com/pledge/ships/legionnaire/Legionnaire
+DRAK 	 Mule 	 https://media.robertsspaceindustries.com/7e3msv82581fs/store_small.png 	 https://robertsspaceindustries.com/pledge/ships/mule/Mule
+ANVL 	 Centurion 	 https://media.robertsspaceindustries.com/3ov9voxt6ogbo/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/centurion/Centurion
+CRUS 	 C1 Spirit 	 https://media.robertsspaceindustries.com/ly51mm0p1vs6w/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/spirit/C1-Spirit
+CRUS 	 A1 Spirit 	 https://media.robertsspaceindustries.com/nsqe4f3nl1mqn/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/spirit/A1-Spirit
+CRUS 	 E1 Spirit 	 https://media.robertsspaceindustries.com/mijopoh0bk9pb/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/spirit/E1-Spirit
+GRIN 	 STV 	 https://media.robertsspaceindustries.com/ryfsd44qh96d9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/stv/STV
+DRAK 	 Cutter 	 https://media.robertsspaceindustries.com/f1g97yucvp6np/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/cutter/Cutter
+DRAK 	 Cutter Scout 	 https://media.robertsspaceindustries.com/997gomyxfeg86/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/cutter/Cutter-Scout
+DRAK 	 Cutter Rambler 	 https://media.robertsspaceindustries.com/7xwtmjrvqlyee/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/cutter/Cutter-Rambler
+RSI 	 Galaxy 	 https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/galaxy/Galaxy
+MRAI 	 Fury 	 https://media.robertsspaceindustries.com/icoxi8ahyr0i9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/fury/Fury
+MRAI 	 Fury MX 	 https://media.robertsspaceindustries.com/afdx1cof4p8rb/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/fury/Fury-MX
+MRAI 	 Fury LX 	 https://media.robertsspaceindustries.com/c63hvy3xb308p/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/fury/Fury-LX
+TMBL 	 Storm 	 https://media.robertsspaceindustries.com/tnzyh8r5iup5w/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/storm/Storm
+TMBL 	 Storm AA 	 https://media.robertsspaceindustries.com/j1gpc25oaks9g/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/storm/Storm-AA
+RSI 	 Zeus Mk II ES 	 https://media.robertsspaceindustries.com/dzqbjbxnpfjha/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/zeus-mk-ii/Zeus-Mk-II-ES
+RSI 	 Zeus Mk II MR 	 https://media.robertsspaceindustries.com/pj51owg973q4h/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/zeus-mk-ii/Zeus-Mk-II-MR
+RSI 	 Zeus Mk II CL 	 https://media.robertsspaceindustries.com/66kg49cvmte6w/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/zeus-mk-ii/Zeus-Mk-II-CL
+RSI 	 Arrastra 	 https://media.robertsspaceindustries.com/s77g3dj3gwes9/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/arrastra/Arrastra
+ANVL 	 F8C Lightning 	 https://media.robertsspaceindustries.com/j6rvfrkux5nrm/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/lightning/F8C-Lightning
+ANVL 	 F8C Lightning Executive Edition 	 https://media.robertsspaceindustries.com/ekto72z81x9kn/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/lightning/F8C-Lightning-Executive-Edition
+GAMA 	 Syulen 	 https://media.robertsspaceindustries.com/8xho65s0f1emp/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/syulen/Syulen
+ANVL 	 F7A Hornet Mk II 	 https://media.robertsspaceindustries.com/fbn41urx9yszc/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet-mkii/F7A-Hornet-Mk-II
+ANVL 	 F7C Hornet Mk II 	 https://media.robertsspaceindustries.com/k4adbatd70y6t/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet-mkii/F7C-Hornet-Mk-II
+ANVL 	 F7C-R Hornet Tracker Mk II 	 https://media.robertsspaceindustries.com/g32clhfe0als7/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet-mkii/F7C-R-Hornet-Tracker-Mk-II
+ANVL 	 F7C-S Hornet Ghost Mk II 	 https://media.robertsspaceindustries.com/s9fn6t5eird8p/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/anvil-hornet-mkii/F7C-S-Hornet-Ghost-Mk-II
+MRAI 	 Pulse 	 https://media.robertsspaceindustries.com/slp0u937q6i57/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/mirai-pulse/Pulse
+MRAI 	 Pulse LX 	 https://media.robertsspaceindustries.com/27dan8ye13ujv/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/mirai-pulse/Pulse-LX
+DRAK 	 Ironclad 	 https://media.robertsspaceindustries.com/gtz4uouxebp3u/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/ironclad/Ironclad
+DRAK 	 Ironclad Assault 	 https://media.robertsspaceindustries.com/b1ahi2h8tnmsa/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/ironclad/Ironclad-Assault
+ARGO 	 ATLS 	 https://media.robertsspaceindustries.com/4pkysfhuqskp4/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/atls/ATLS
+MISC 	 Starlancer MAX 	 https://media.robertsspaceindustries.com/z6riuxmnb045b/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/starlancer/Starlancer-MAX
+MISC 	 Starlancer TAC 	 https://media.robertsspaceindustries.com/fi43txr5fkkd6/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/starlancer/Starlancer-TAC
+CRUS 	 Intrepid 	 https://media.robertsspaceindustries.com/vg0f406kxwyja/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/intrepid/Intrepid
+ARGO 	 CSV-SM 	 https://media.robertsspaceindustries.com/yrzxl9cs9zhjy/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/csv/CSV-SM
+ANVL 	 Paladin 	 https://media.robertsspaceindustries.com/7dbgpx4iv3dut/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/paladin/Paladin
+MRAI 	 Guardian 	 https://media.robertsspaceindustries.com/ihc934ai7vvyj/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/guardian/Guardian
+MRAI 	 Guardian QI 	 https://media.robertsspaceindustries.com/efsw63dokhn35/store_small.jpg 	 https://robertsspaceindustries.com/pledge/ships/guardian/Guardian-QI
