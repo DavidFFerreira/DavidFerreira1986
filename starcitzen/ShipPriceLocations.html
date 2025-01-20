@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Citizen Ships</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 17, 23, 0.9);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: #58a6ff;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        header a:hover {
+            color: #1f6feb;
+        }
+
+        .search-bar {
+            width: 300px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #30363d;
+            background-color: #161b22;
+            color: #c9d1d9;
+        }
+
+        .logo {
+            max-height: 50px;
+        }
+
+        section {
+            padding: 100px 20px 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #30363d;
+        }
+
+        th {
+            cursor: pointer;
+            background-color: #161b22;
+        }
+
+        th:hover {
+            background-color: #21262d;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #21262d;
+            color: #c9d1d9;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: #161b22;
+        }
+
+        section:nth-child(even) {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        section:nth-child(odd) {
+            background-color: #0d1117;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Star Citizen Logo" class="logo">
+        <div>
+            <a href="#pyro">Pyro</a>
+            <a href="#hurston">Hurston</a>
+            <a href="#arrcorp">Arrcorp</a>
+            <a href="#crusader">Crusader</a>
+        </div>
+        <input type="text" class="search-bar" placeholder="Pesquisar..." id="searchBar">
+    </header>
+
+    <section id="pyro">
+        <h2>Pyro - Major Stations</h2>
+        <table id="pyroTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('pyroTable', 0)">Ship</th>
+                    <th onclick="sortTable('pyroTable', 1)">Price In Game (aUEC)</th>
+                    <th onclick="sortTable('pyroTable', 2)">Location</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="hurston">
+        <h2>Hurston</h2>
+        <table id="hurstonTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('hurstonTable', 0)">Ship</th>
+                    <th onclick="sortTable('hurstonTable', 1)">Price In Game (aUEC)</th>
+                    <th onclick="sortTable('hurstonTable', 2)">Location</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="arrcorp">
+        <h2>Arrcorp</h2>
+        <table id="arrcorpTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('arrcorpTable', 0)">Ship</th>
+                    <th onclick="sortTable('arrcorpTable', 1)">Price In Game (aUEC)</th>
+                    <th onclick="sortTable('arrcorpTable', 2)">Location</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="crusader">
+        <h2>Crusader</h2>
+        <table id="crusaderTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('crusaderTable', 0)">Ship</th>
+                    <th onclick="sortTable('crusaderTable', 1)">Price In Game (aUEC)</th>
+                    <th onclick="sortTable('crusaderTable', 2)">Location</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <div class="back-to-top" id="backToTop">Topo</div>
+
+    <script>
+        const tables = [
+            { id: 'pyroTable', url: 'https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/pyroShipList.txt' },
+            { id: 'hurstonTable', url: 'https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/HurstonShipList.txt' },
+            { id: 'arrcorpTable', url: 'https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/ArrcorpShipList.txt' },
+            { id: 'crusaderTable', url: 'https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/CrusaderShipList.txt' }
+        ];
+
+        tables.forEach(({ id, url }) => {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    const rows = data.trim().split('\n');
+                    const tableBody = document.querySelector(`#${id} tbody`);
+                    rows.forEach(row => {
+                        const [ship, price, location] = row.split('\t');
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `<td>${ship}</td><td>${price}</td><td>${location}</td>`;
+                        tableBody.appendChild(tr);
+                    });
+                });
+        });
+
+        function sortTable(tableId, colIndex) {
+            const table = document.getElementById(tableId);
+            const rows = Array.from(table.querySelectorAll('tbody tr'));
+            rows.sort((a, b) => a.cells[colIndex].innerText.localeCompare(b.cells[colIndex].innerText));
+            const tbody = table.querySelector('tbody');
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        document.getElementById('searchBar').addEventListener('input', (e) => {
+            const filter = e.target.value.toLowerCase();
+            tables.forEach(({ id }) => {
+                const rows = document.querySelectorAll(`#${id} tbody tr`);
+                rows.forEach(row => {
+                    row.style.display = row.innerText.toLowerCase().includes(filter) ? '' : 'none';
+                });
+            });
+        });
+
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 200 ? 'block' : 'none';
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('header a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
