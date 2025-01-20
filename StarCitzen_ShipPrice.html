@@ -4,82 +4,226 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Citizen Ship Prices</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>
         body {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
         }
+
         h1 {
+            color: #fff;
+            font-size: 36px;
             text-align: center;
+            margin-top: 30px;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
         table {
             width: 100%;
-            margin-bottom: 20px;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #555;
+        }
+
+        th {
+            background-color: #444;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+
+        tr:hover {
+            background-color: #555;
+        }
+
+        input[type="search"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #555;
+            background-color: #444;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        input[type="search"]:focus {
+            outline: none;
+            border-color: #888;
+        }
+
+        .list-container {
+            margin-bottom: 30px;
+        }
+
+        /* Media Query for Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            input[type="search"] {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            input[type="search"] {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
 
-<h1>Star Citizen Ship Prices</h1>
+    <div class="container">
+        <h1>Star Citizen Ship Prices</h1>
 
-<div id="tables"></div>
+        <div class="list-container">
+            <h2>Pyro - Major Stations</h2>
+            <input type="search" id="searchPyro" placeholder="Pesquisar por nave...">
+            <table id="tablePyro">
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Price In Game (aUEC)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <div class="list-container">
+            <h2>Hurston</h2>
+            <input type="search" id="searchHurston" placeholder="Pesquisar por nave...">
+            <table id="tableHurston">
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Price In Game (aUEC)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
 
-<script>
-    const files = {
-        "Pyro - Major Stations": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/pyroShipList.txt",
-        "Hurston": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/HurstonShipList.txt",
-        "Arrcorp": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/ArrcorpShipList.txt",
-        "Crusader": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/CrusaderShipList.txt"
-    };
+        <div class="list-container">
+            <h2>Arrcorp</h2>
+            <input type="search" id="searchArrcorp" placeholder="Pesquisar por nave...">
+            <table id="tableArrcorp">
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Price In Game (aUEC)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
 
-    function fetchData(fileUrl, tableId) {
-        $.ajax({
-            url: fileUrl,
-            type: 'GET',
-            dataType: 'text',
-            success: function(data) {
-                const rows = data.trim().split('\n');
-                const tableData = rows.map(row => row.split('\t'));
-                generateTable(tableData, tableId);
-            },
-            error: function() {
-                alert('Erro ao buscar o arquivo: ' + fileUrl);
-            }
-        });
-    }
+        <div class="list-container">
+            <h2>Crusader</h2>
+            <input type="search" id="searchCrusader" placeholder="Pesquisar por nave...">
+            <table id="tableCrusader">
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Price In Game (aUEC)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
 
-    function generateTable(data, tableId) {
-        const table = $('<table class="display" id="' + tableId + '"></table>');
-        const thead = $('<thead><tr><th>Ship</th><th>Price In Game (aUEC)</th><th>Location</th></tr></thead>');
-        const tbody = $('<tbody></tbody>');
+    <script>
+        const files = {
+            "Pyro - Major Stations": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/pyroShipList.txt",
+            "Hurston": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/HurstonShipList.txt",
+            "Arrcorp": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/ArrcorpShipList.txt",
+            "Crusader": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/CrusaderShipList.txt"
+        };
 
-        data.forEach(row => {
-            const tr = $('<tr></tr>');
-            row.forEach(cell => tr.append('<td>' + cell + '</td>'));
-            tbody.append(tr);
-        });
+        function fetchFile(url, tableId, searchId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    const rows = data.split('\n').map(row => row.split('\t'));
+                    const tableBody = document.getElementById(tableId).getElementsByTagName('tbody')[0];
+                    tableBody.innerHTML = ''; // Clear table
 
-        table.append(thead).append(tbody);
-        $('#tables').append('<h2>' + tableId + '</h2>').append(table);
+                    rows.forEach(row => {
+                        const tr = document.createElement('tr');
+                        row.forEach(cell => {
+                            const td = document.createElement('td');
+                            td.textContent = cell.trim();
+                            tr.appendChild(td);
+                        });
+                        tableBody.appendChild(tr);
+                    });
 
-        $('#' + tableId).DataTable({
-            "paging": true,
-            "searching": true,
-            "ordering": true,
-            "order": [[1, 'asc']]
-        });
-    }
-
-    $(document).ready(function() {
-        for (const [tableName, fileUrl] of Object.entries(files)) {
-            fetchData(fileUrl, tableName);
+                    const searchInput = document.getElementById(searchId);
+                    searchInput.addEventListener('input', () => searchTable(searchInput.value, tableId));
+                });
         }
-    });
-</script>
 
+        function searchTable(query, tableId) {
+            const rows = document.querySelectorAll(`#${tableId} tbody tr`);
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                let match = false;
+                for (let i = 0; i < cells.length; i++) {
+                    if (cells[i].textContent.toLowerCase().includes(query.toLowerCase())) {
+                        match = true;
+                        break;
+                    }
+                }
+                row.style.display = match ? '' : 'none';
+            });
+        }
+
+        fetchFile(files['Pyro - Major Stations'], 'tablePyro', 'searchPyro');
+        fetchFile(files['Hurston'], 'tableHurston', 'searchHurston');
+        fetchFile(files['Arrcorp'], 'tableArrcorp', 'searchArrcorp');
+        fetchFile(files['Crusader'], 'tableCrusader', 'searchCrusader');
+    </script>
 </body>
 </html>
