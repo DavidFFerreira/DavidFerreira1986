@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Star Citizen - Ship Price Lists</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Incluindo o DataTables para ordenação e filtros -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>
         body {
@@ -276,8 +275,12 @@
                             });
                             tableBody.appendChild(tr);
                         });
-                        // Inicializa o DataTable para ordenação e filtros
-                        $(`#${key.replace(/ /g, '')}TableData`).DataTable();
+                        // Inicializa o DataTable para ordenação, filtros e paginação
+                        $(`#${key.replace(/ /g, '')}TableData`).DataTable({
+                            "pageLength": 10,
+                            "lengthMenu": [10, 20, 50, 100, 200],
+                            "paging": true
+                        });
                     });
             });
         }
