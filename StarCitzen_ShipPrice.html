@@ -260,30 +260,30 @@
         });
 
         function loadData() {
-            Object.keys(files).forEach((key) => {
-                fetch(files[key])
-                    .then(response => response.text())
-                    .then(data => {
-                        const rows = data.split('\n').map(line => line.split('\t'));
-                        const tableBody = tables[key].querySelector('tbody');
-                        rows.forEach((row) => {
-                            const tr = document.createElement('tr');
-                            row.forEach((cell) => {
-                                const td = document.createElement('td');
-                                td.textContent = cell;
-                                tr.appendChild(td);
-                            });
-                            tableBody.appendChild(tr);
+        Object.keys(files).forEach((key) => {
+            fetch(files[key])
+                .then(response => response.text())
+                .then(data => {
+                    const rows = data.split('\n').map(line => line.split('\t'));
+                    const tableBody = tables[key].querySelector('tbody');
+                    rows.forEach((row) => {
+                        const tr = document.createElement('tr');
+                        row.forEach((cell) => {
+                            const td = document.createElement('td');
+                            td.textContent = cell;
+                            tr.appendChild(td);
                         });
-                        // Inicializa o DataTable para ordenação, filtros e paginação
-                        $(`#${key.replace(/ /g, '')}TableData`).DataTable({
-                            "pageLength": 10,
-                            "lengthMenu": [10, 20, 50, 100, 200],
-                            "paging": true
-                        });
+                        tableBody.appendChild(tr);
                     });
-            });
-        }
+                    // Inicializa o DataTable para ordenação, filtros e paginação depois de adicionar os dados
+                    $(`#${key.replace(/ /g, '')}TableData`).DataTable({
+                        "pageLength": 10,
+                        "lengthMenu": [10, 20, 50, 100, 200],
+                        "paging": true
+                    });
+                });
+        });
+    }
 
         function scrollToTop() {
             window.scrollTo({
