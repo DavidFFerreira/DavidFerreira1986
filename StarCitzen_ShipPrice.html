@@ -1,153 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Citizen - Preços de Naves</title>
+    <title>Star Citizen Ship Prices</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1e1e1e;
+            background-color: #1b1b1b;
             color: #ffffff;
-            line-height: 1.6;
-        }
-        header {
-            background: #2c2f33;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
             margin: 0;
-            color: #7289da;
-        }
-        .content {
-            max-width: 1200px;
-            margin: 20px auto;
             padding: 20px;
-            background: #23272a;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
         th, td {
-            border: 1px solid #444;
             padding: 10px;
             text-align: left;
+            border: 1px solid #333;
         }
         th {
-            background: #7289da;
-            color: #fff;
+            cursor: pointer;
+            background-color: #333;
         }
         tr:nth-child(even) {
-            background: #2c2f33;
+            background-color: #2a2a2a;
         }
         tr:hover {
-            background: #36393f;
+            background-color: #444;
         }
     </style>
+    <script>
+        function sortTable(tableId, colIndex) {
+            const table = document.getElementById(tableId);
+            const rows = Array.from(table.rows).slice(1);
+            const isAscending = table.getAttribute('data-sort-asc') === 'true';
+
+            rows.sort((rowA, rowB) => {
+                const cellA = rowA.cells[colIndex].innerText.trim();
+                const cellB = rowB.cells[colIndex].innerText.trim();
+
+                return isAscending
+                    ? cellA.localeCompare(cellB, undefined, { numeric: true })
+                    : cellB.localeCompare(cellA, undefined, { numeric: true });
+            });
+
+            rows.forEach(row => table.appendChild(row));
+            table.setAttribute('data-sort-asc', !isAscending);
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Star Citizen - Preços de Naves (Alpha 4.0)</h1>
-    </header>
-    <div class="content">
-        <h2>Pyro - Estações Principais</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nave</th>
-                    <th>Preço In-Game (aUEC)</th>
-                    <th>Local de Venda</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ALTS</td>
-                    <td>75,600</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-                <tr>
-                    <td>Greycat STV</td>
-                    <td>75,600</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-                <tr>
-                    <td>Cyclone</td>
-                    <td>103,950</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-                <tr>
-                    <td>Dragonfly</td>
-                    <td>342,720</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-                <tr>
-                    <td>Nova</td>
-                    <td>907,200</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-                <tr>
-                    <td>Buccaneer</td>
-                    <td>1,663,200</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-                <tr>
-                    <td>Vulture</td>
-                    <td>2,646,000</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-                <tr>
-                    <td>Cutlass Red</td>
-                    <td>2,857,680</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-                <tr>
-                    <td>Prospector</td>
-                    <td>2,929,500</td>
-                    <td>Ruin, Orbituary e Checkmate</td>
-                </tr>
-            </tbody>
-        </table>
+    <h1>Star Citizen Ship Prices - Alpha 4.0</h1>
 
-        <h2>New Deal - Lorville (Hurston)</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nave</th>
-                    <th>Preço In-Game (aUEC)</th>
-                    <th>Local de Venda</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Hoverquad</td>
-                    <td>56,700</td>
-                    <td>New Deal (Lorville)</td>
-                </tr>
-                <tr>
-                    <td>Mule</td>
-                    <td>68,040</td>
-                    <td>New Deal (Lorville)</td>
-                </tr>
-                <tr>
-                    <td>ATLS</td>
-                    <td>75,600</td>
-                    <td>New Deal (Lorville)</td>
-                </tr>
-                <tr>
-                    <td>Greycat ROC</td>
-                    <td>103,950</td>
-                    <td>New Deal (Lorville)</td>
-                </tr>
-                <!-- Continua com mais naves, se necessário -->
-            </tbody>
-        </table>
-    </div>
+    <h2>Pyro - Major Stations</h2>
+    <table id="pyro-table" data-sort-asc="false">
+        <thead>
+            <tr>
+                <th onclick="sortTable('pyro-table', 0)">Ship</th>
+                <th onclick="sortTable('pyro-table', 1)">Price In Game (aUEC)</th>
+                <th onclick="sortTable('pyro-table', 2)">Sale Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>ALTS</td><td>75,600</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td>Greycat STV</td><td>75,600</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td>Cyclone</td><td>103,950</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td>Dragonfly</td><td>342,720</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td>Nova</td><td>907,200</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td>Buccaneer</td><td>1,663,200</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td>Vulture</td><td>2,646,000</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td>Cutlass Red</td><td>2,857,680</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td>Prospector</td><td>2,929,500</td><td>Ruin, Orbituary and Checkmate</td></tr>
+        </tbody>
+    </table>
+
+    <h2>New Deal - Lorville (Hurston)</h2>
+    <table id="lorville-table" data-sort-asc="false">
+        <thead>
+            <tr>
+                <th onclick="sortTable('lorville-table', 0)">Ship</th>
+                <th onclick="sortTable('lorville-table', 1)">Price In Game (aUEC)</th>
+                <th onclick="sortTable('lorville-table', 2)">Sale Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Hoverquad</td><td>56,700</td><td>New Deal (Lorville)</td></tr>
+            <tr><td>Mule</td><td>68,040</td><td>New Deal (Lorville)</td></tr>
+            <tr><td>ATLS</td><td>75,600</td><td>New Deal (Lorville)</td></tr>
+            <tr><td>Greycat ROC</td><td>103,950</td><td>New Deal (Lorville)</td></tr>
+            <tr><td>Cyclone</td><td>103,950</td><td>New Deal (Lorville)</td></tr>
+            <tr><td>Ursa Rover</td><td>113,400</td><td>New Deal (Lorville)</td></tr>
+            <tr><td>X1 Velocity</td><td>119,070</td><td>New Deal (Lorville)</td></tr>
+            <tr><td>Cyclone RC</td><td>122,850</td><td>New Deal (Lorville)</td></tr>
+            <tr><td>Cyclone TR</td><td>122,850</td><td>New Deal (Lorville)</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Astro Armada - Area 18 (ArcCorp)</h2>
+    <table id="astro-table" data-sort-asc="false">
+        <thead>
+            <tr>
+                <th onclick="sortTable('astro-table', 0)">Ship</th>
+                <th onclick="sortTable('astro-table', 1)">Price In Game (aUEC)</th>
+                <th onclick="sortTable('astro-table', 2)">Sale Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Greycat PTV</td><td>28,350</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td>Hoverquad</td><td>56,700</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td>Greycat STV</td><td>75,600</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td>ATLS</td><td>75,600</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td>X1</td><td>105,840</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td>X1 Velocity</td><td>119,020</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td>X1 Force</td><td>132,300</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td>P-52 Merlin</td><td>283,500</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td>P72 Archimedes</td><td>449,820</td><td>Astro Armada (Area 18)</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Crusader Showroom - Orison (Crusader)</h2>
+    <table id="crusader-table" data-sort-asc="false">
+        <thead>
+            <tr>
+                <th onclick="sortTable('crusader-table', 0)">Ship</th>
+                <th onclick="sortTable('crusader-table', 1)">Price In Game (aUEC)</th>
+                <th onclick="sortTable('crusader-table', 2)">Sale Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>ATLS</td><td>75,600</td><td>Crusader Showroom</td></tr>
+            <tr><td>C1 Spirit</td><td>3,118,500</td><td>Crusader Showroom</td></tr>
+            <tr><td>Ares Star Fighter Ion</td><td>4,725,000</td><td>Crusader Showroom</td></tr>
+            <tr><td>Ares Star Fighter Inferno</td><td>4,725,000</td><td>Crusader Showroom</td></tr>
+            <tr><td>A1 Spirit</td><td>4,961,250</td><td>Crusader Showroom</td></tr>
+            <tr><td>Mercury Star Runner</td><td>12,285,000</td><td>Crusader Showroom</td></tr>
+            <tr><td>C2 Hercules Starlifter</td><td>18,900,000</td><td>Crusader Showroom</td></tr>
+            <tr><td>M2 Hercules Starlifter</td><td>29,484,000</td><td>Crusader Showroom</td></tr>
+            <tr><td>A2 Hercules Starlifter</td><td>44,296,876</td><td>Crusader Showroom</td></tr>
+        </tbody>
+    </table>
 </body>
 </html>
