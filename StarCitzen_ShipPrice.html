@@ -3,75 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Citizen Ship Price</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <title>Star Citizen Ship Prices</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        h1 { text-align: center; }
-        table { width: 100%; margin: 20px 0; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Star Citizen Ship Price List</h1>
+<h1>Star Citizen Ship Prices</h1>
 
-    <div id="tables-container">
-        <h2>Pyro - Major Stations</h2>
-        <table id="pyroTable"></table>
-        
-        <h2>Hurston</h2>
-        <table id="hurstonTable"></table>
-        
-        <h2>Arrcorp</h2>
-        <table id="arrcorpTable"></table>
+<div id="tables"></div>
 
-        <h2>Crusader</h2>
-        <table id="crusaderTable"></table>
-    </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    
-    <script>
-        const fetchGitHubFile = (url) => {
-            return fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    const content = atob(data.content); // Decodifica o conteúdo base64
-                    return content.split("\n").map(line => line.split("\t"));
-                })
-                .catch(error => console.error('Erro ao buscar o arquivo:', error));
-        };
+<script>
+    const files = {
+        "Pyro - Major Stations": "https://davidferreira.eu/pyroShipList.txt",
+        "Hurston": "https://davidferreira.eu/HurstonShipList.txt",
+        "Arrcorp": "https://davidferreira.eu/ArrcorpShipList.txt",
+        "Crusader": "https://davidferreira.eu/CrusaderShipList.txt"
+    };
 
-        const renderTable = (data, tableId) => {
-            $(`#${tableId}`).DataTable({
-                data: data,
-                columns: [
-                    { title: "Ship" },
-                    { title: "Price In Game (aUEC)" },
-                    { title: "Location" }
-                ],
-                searching: true,
-                ordering: true,
-                pageLength: 10
-            });
-        };
+    function fetchData(fileUrl, tableId) {
+        $.ajax({
+            url: fileUrl,
+            type: 'GET',
+            dataType: 'text',
+            success: function(data) {
+                const rows = data.trim().split('\n');
+                const tableData = rows.map(row => row.split('\t'));
+                generateTable(tableData, tableId);
+            },
+            error: function() {
+                alert('Erro ao buscar o arquivo: ' + fileUrl);
+            }
+        });
+    }
 
-        // Carregar os dados para Pyro
-        fetchGitHubFile('https://davidferreira.eu/pyroShipList.txt')
-            .then(data => renderTable(data, "pyroTable"));
+    function generateTable(data, tableId) {
+        const table = $('<table class="display" id="' + tableId + '"></table>');
+        const thead = $('<thead><tr><th>Ship</th><th>Price In Game (aUEC)</th><th>Location</th></tr></thead>');
+        const tbody = $('<tbody></tbody>');
 
-        // Carregar os dados para Hurston
-        fetchGitHubFile('https://api.github.com/repos/davidferreira/seu-repositorio/contents/HurstonShipList.txt')
-            .then(data => renderTable(data, "hurstonTable"));
+        data.forEach(row => {
+            const tr = $('<tr></tr>');
+            row.forEach(cell => tr.append('<td>' + cell + '</td>'));
+            tbody.append(tr);
+        });
 
-        // Carregar os dados para Arrcorp
-        fetchGitHubFile('https://api.github.com/repos/davidferreira/seu-repositorio/contents/ArrcorpShipList.txt')
-            .then(data => renderTable(data, "arrcorpTable"));
+        table.append(thead).append(tbody);
+        $('#tables').append('<h2>' + tableId + '</h2>').append(table);
 
-        // Carregar os dados para Crusader
-        fetchGitHubFile('https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/CrusaderShipList.txt')
-            .then(data => renderTable(data, "crusaderTable"));
-    </script>
+        $('#' + tableId).DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "order": [[1, 'asc']]
+        });
+    }
+
+    $(document).ready(function() {
+        for (const [tableName, fileUrl] of Object.entries(files)) {
+            fetchData(fileUrl, tableName);
+        }
+    });
+</script>
+
 </body>
 </html>
