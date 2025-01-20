@@ -1,102 +1,101 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leitura e Tabelas de Ficheiros</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+    <title>Star Citizen Ship Price List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            background-color: #121212;
+            color: #fff;
             margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
+            padding: 0;
         }
         .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-        .table-container {
-            margin-bottom: 40px;
-            background-color: white;
+            width: 90%;
+            margin: 30px auto;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #2b2b2b;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #1e90ff;
         }
         table {
             width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
-        .btn-group {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-        }
-        .btn-group button {
+        th, td {
             padding: 10px;
-            margin: 0 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
+            text-align: left;
+            border-bottom: 1px solid #555;
         }
-        .btn-group button:hover {
-            background-color: #0056b3;
+        th {
+            background-color: #333;
         }
         input[type="search"] {
-            margin-top: 10px;
+            margin-bottom: 10px;
             padding: 5px;
-            font-size: 14px;
             width: 100%;
+            border-radius: 5px;
+            border: 1px solid #888;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #444;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab.active {
+            background-color: #1e90ff;
         }
     </style>
 </head>
 <body>
 
-    <h1>Leitura e Tabelas de Ficheiros de Estações</h1>
-
     <div class="container">
-        <div class="btn-group">
-            <button onclick="loadTable('pyro')">Pyro - Major Stations</button>
-            <button onclick="loadTable('hurston')">Hurston</button>
-            <button onclick="loadTable('arrcorp')">Arrcorp</button>
-            <button onclick="loadTable('crusader')">Crusader</button>
+        <h2>Star Citizen Ship Price List</h2>
+        <div class="tabs">
+            <div class="tab active" onclick="loadData('pyro')">Pyro - Major Stations</div>
+            <div class="tab" onclick="loadData('hurston')">Hurston</div>
+            <div class="tab" onclick="loadData('arrcorp')">Arrcorp</div>
+            <div class="tab" onclick="loadData('crusader')">Crusader</div>
         </div>
-
-        <div id="pyro" class="table-container" style="display: none;">
-            <table id="pyroTable" class="display" cellspacing="0"></table>
-        </div>
-        <div id="hurston" class="table-container" style="display: none;">
-            <table id="hurstonTable" class="display" cellspacing="0"></table>
-        </div>
-        <div id="arrcorp" class="table-container" style="display: none;">
-            <table id="arrcorpTable" class="display" cellspacing="0"></table>
-        </div>
-        <div id="crusader" class="table-container" style="display: none;">
-            <table id="crusaderTable" class="display" cellspacing="0"></table>
-        </div>
+        <input type="search" id="search" placeholder="Search for a ship..." oninput="filterTable()">
+        <table id="shipTable">
+            <thead>
+                <tr>
+                    <th>Ship</th>
+                    <th>Price In Game (aUEC)</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Data rows will be inserted here -->
+            </tbody>
+        </table>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
     <script>
-        function loadTable(region) {
-            const tables = ['pyro', 'hurston', 'arrcorp', 'crusader'];
-            tables.forEach(table => {
-                document.getElementById(table).style.display = 'none'; // Hide all tables
-            });
-            document.getElementById(region).style.display = 'block'; // Show the selected table
+        let currentData = [];
 
-            let url;
-            switch(region) {
+        function loadData(location) {
+            let url = '';
+            switch (location) {
                 case 'pyro':
                     url = 'https://davidferreira.eu/pyroShipList.txt';
                     break;
@@ -114,34 +113,47 @@
             fetch(url)
                 .then(response => response.text())
                 .then(data => {
-                    const rows = data.split('\n').map(row => row.split('\t').map(cell => cell.trim()));
-                    const tableData = rows.slice(1).map(row => ({
-                        ship: row[0],
-                        price: row[1],
-                        location: row[2]
-                    }));
-
-                    const table = $(`#${region}Table`).DataTable({
-                        data: tableData,
-                        destroy: true, // Destroy any existing table instance
-                        columns: [
-                            { title: 'Ship', data: 'ship' },
-                            { title: 'Price In Game (aUEC)', data: 'price' },
-                            { title: 'Location', data: 'location' }
-                        ],
-                        order: [[0, 'asc']], // Ordenação inicial pela coluna 'Ship'
-                        paging: true,
-                        searching: true,
-                        lengthChange: false,
+                    const rows = data.split('\n');
+                    currentData = rows.map(row => {
+                        const cols = row.split('\t');
+                        return {
+                            ship: cols[0],
+                            price: cols[1],
+                            location: cols[2]
+                        };
                     });
-                })
-                .catch(error => console.error('Erro ao carregar o ficheiro:', error));
+                    renderTable(currentData);
+                    setActiveTab(location);
+                });
         }
 
-        // Load Pyro as default when page loads
-        window.onload = function() {
-            loadTable('pyro');
+        function renderTable(data) {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${item.ship}</td><td>${item.price}</td><td>${item.location}</td>`;
+                tableBody.appendChild(row);
+            });
+            $('#shipTable').trigger('update');
         }
+
+        function setActiveTab(location) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            const activeTab = Array.from(tabs).find(tab => tab.innerText.toLowerCase() === location);
+            if (activeTab) activeTab.classList.add('active');
+        }
+
+        function filterTable() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const filteredData = currentData.filter(item => item.ship.toLowerCase().includes(query));
+            renderTable(filteredData);
+        }
+
+        $(document).ready(function() {
+            loadData('pyro');  // Default load for Pyro - Major Stations
+        });
     </script>
 
 </body>
