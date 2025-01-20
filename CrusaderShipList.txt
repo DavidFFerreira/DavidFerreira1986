@@ -1,9 +1,9 @@
-ATLS	75,600  Crusaer Showroom 
-C1 Spirit	3,118,500  Crusaer Showroom 
-Ares Star Fighter Ion	4,725,000  Crusaer Showroom 
-Ares Star Fighter Inferno	4,725,000  Crusaer Showroom 
-A1 Spirit	4,961,250  Crusaer Showroom 
-Mercury Star Runner	12,285,000  Crusaer Showroom 
-C2 Hercules Starlifter	18,900,000  Crusaer Showroom 
-M2 Hercules Starlifter	29,484,000  Crusaer Showroom 
-A2 Hercules Starlifter	44,296,876  Crusaer Showroom 
+ATLS	75,600	Crusaer Showroom 
+C1 Spirit	3,118,500	Crusaer Showroom 
+Ares Star Fighter Ion	4,725,000	Crusaer Showroom 
+Ares Star Fighter Inferno	4,725,000	Crusaer Showroom 
+A1 Spirit	4,961,250	Crusaer Showroom 
+Mercury Star Runner	12,285,000	Crusaer Showroom 
+C2 Hercules Starlifter	18,900,000	Crusaer Showroom 
+M2 Hercules Starlifter	29,484,000	Crusaer Showroom 
+A2 Hercules Starlifter	44,296,876	Crusaer Showroom 
