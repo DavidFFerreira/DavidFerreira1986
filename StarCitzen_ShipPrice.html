@@ -28,13 +28,7 @@
         header h1 {
             margin: 0;
             font-size: 36px;
-            color: #ffcc00;
-        }
-
-        .logo {
-            width: 50px;
-            vertical-align: middle;
-            margin-right: 10px;
+            color: DodgerBlue;
         }
 
         .search-container {
@@ -62,7 +56,7 @@
         }
 
         nav a {
-            color: #ffffff;
+            color: DodgerBlue;
             margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
@@ -75,6 +69,7 @@
         .table-container {
             margin-top: 80px;
             padding: 20px;
+            text-align: center;
         }
 
         table {
@@ -130,20 +125,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Logo Animations */
-        .fade-in {
-            animation: fadeIn 1s ease-out;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
         .expand-collapse {
             transition: max-height 0.5s ease-out;
             overflow: hidden;
@@ -156,12 +137,10 @@
         .expand-collapse.expanded {
             max-height: 1000px;
         }
-
     </style>
 </head>
 <body>
     <header>
-        <img src="https://www.star-citizen.com/assets/img/star-citizen-logo.png" alt="Star Citizen Logo" class="logo">
         <h1>Star Citizen Ship Price Lists</h1>
     </header>
 
@@ -176,8 +155,8 @@
         <a href="#crusader">Crusader</a>
     </nav>
 
-    <div id="pyro" class="table-container fade-in">
-        <h2>Pyro - Major Stations</h2>
+    <section id="pyro" class="table-container">
+        <h2 style="color: DodgerBlue; text-align: left;">Pyro - Major Stations</h2>
         <div id="pyroTable" class="expand-collapse collapsed">
             <table>
                 <thead>
@@ -190,10 +169,10 @@
                 <tbody></tbody>
             </table>
         </div>
-    </div>
+    </section>
 
-    <div id="hurston" class="table-container fade-in">
-        <h2>Hurston</h2>
+    <section id="hurston" class="table-container">
+        <h2 style="color: DodgerBlue; text-align: left;">Hurston</h2>
         <div id="hurstonTable" class="expand-collapse collapsed">
             <table>
                 <thead>
@@ -206,10 +185,10 @@
                 <tbody></tbody>
             </table>
         </div>
-    </div>
+    </section>
 
-    <div id="arrcorp" class="table-container fade-in">
-        <h2>Arrcorp</h2>
+    <section id="arrcorp" class="table-container">
+        <h2 style="color: DodgerBlue; text-align: left;">Arrcorp</h2>
         <div id="arrcorpTable" class="expand-collapse collapsed">
             <table>
                 <thead>
@@ -222,10 +201,10 @@
                 <tbody></tbody>
             </table>
         </div>
-    </div>
+    </section>
 
-    <div id="crusader" class="table-container fade-in">
-        <h2>Crusader</h2>
+    <section id="crusader" class="table-container">
+        <h2 style="color: DodgerBlue; text-align: left;">Crusader</h2>
         <div id="crusaderTable" class="expand-collapse collapsed">
             <table>
                 <thead>
@@ -238,7 +217,7 @@
                 <tbody></tbody>
             </table>
         </div>
-    </div>
+    </section>
 
     <button class="btn-back-to-top" onclick="scrollToTop()">Voltar ao topo</button>
 
@@ -292,23 +271,18 @@
                             });
                             tableBody.appendChild(tr);
                         });
-
-                        // Expand the table after loading
-                        const tableElement = tables[key];
-                        tableElement.classList.remove('collapsed');
-                        tableElement.classList.add('expanded');
-                    })
-                    .catch((error) => {
-                        console.error(`Erro ao carregar o arquivo ${key}:`, error);
                     });
             });
         }
 
         function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
-        window.onload = loadData;
+        loadData();
     </script>
 </body>
 </html>
