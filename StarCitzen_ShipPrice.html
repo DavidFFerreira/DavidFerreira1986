@@ -35,6 +35,12 @@
         tr:hover {
             background-color: #444;
         }
+        input[type="text"] {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
     </style>
     <script>
         function sortTable(tableId, colIndex) {
@@ -54,12 +60,55 @@
             rows.forEach(row => table.appendChild(row));
             table.setAttribute('data-sort-asc', !isAscending);
         }
+
+        function filterTable(tableId, inputId) {
+            const input = document.getElementById(inputId);
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById(tableId);
+            const rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName("td");
+                let showRow = false;
+
+                for (let cell of cells) {
+                    if (cell.innerText.toLowerCase().includes(filter)) {
+                        showRow = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = showRow ? "" : "none";
+            }
+        }
+
+        function addUniqueRow(tableId, shipName, price, location) {
+            const table = document.getElementById(tableId).getElementsByTagName('tbody')[0];
+            const rows = Array.from(table.rows);
+
+            const exists = rows.some(row => {
+                const cells = row.getElementsByTagName('td');
+                return cells[0].innerText.trim() === shipName.trim();
+            });
+
+            if (!exists) {
+                const newRow = table.insertRow();
+
+                const cell1 = newRow.insertCell(0);
+                const cell2 = newRow.insertCell(1);
+                const cell3 = newRow.insertCell(2);
+
+                cell1.innerText = shipName;
+                cell2.innerText = price;
+                cell3.innerText = location;
+            }
+        }
     </script>
 </head>
 <body>
     <h1>Star Citizen Ship Prices - Alpha 4.0</h1>
 
     <h2>Pyro - Major Stations</h2>
+    <input type="text" id="pyro-filter" onkeyup="filterTable('pyro-table', 'pyro-filter')" placeholder="Filter ships...">
     <table id="pyro-table" data-sort-asc="false">
         <thead>
             <tr>
@@ -69,7 +118,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>ALTS</td><td>75,600</td><td>Ruin, Orbituary and Checkmate</td></tr>
+            <tr><td><a href="https://robertsspaceindustries.com/pledge/ships/atls/ATLS" target="_blank">ALTS</a></td><td>75,600</td><td>Ruin, Orbituary and Checkmate</td></tr>
             <tr><td>Greycat STV</td><td>75,600</td><td>Ruin, Orbituary and Checkmate</td></tr>
             <tr><td>Cyclone</td><td>103,950</td><td>Ruin, Orbituary and Checkmate</td></tr>
             <tr><td>Dragonfly</td><td>342,720</td><td>Ruin, Orbituary and Checkmate</td></tr>
@@ -82,6 +131,7 @@
     </table>
 
     <h2>New Deal - Lorville (Hurston)</h2>
+    <input type="text" id="lorville-filter" onkeyup="filterTable('lorville-table', 'lorville-filter')" placeholder="Filter ships...">
     <table id="lorville-table" data-sort-asc="false">
         <thead>
             <tr>
@@ -93,7 +143,7 @@
         <tbody>
             <tr><td>Hoverquad</td><td>56,700</td><td>New Deal (Lorville)</td></tr>
             <tr><td>Mule</td><td>68,040</td><td>New Deal (Lorville)</td></tr>
-            <tr><td>ATLS</td><td>75,600</td><td>New Deal (Lorville)</td></tr>
+            <tr><td><a href="https://robertsspaceindustries.com/pledge/ships/atls/ATLS" target="_blank">ATLS</a></td><td>75,600</td><td>New Deal (Lorville)</td></tr>
             <tr><td>Greycat ROC</td><td>103,950</td><td>New Deal (Lorville)</td></tr>
             <tr><td>Cyclone</td><td>103,950</td><td>New Deal (Lorville)</td></tr>
             <tr><td>Ursa Rover</td><td>113,400</td><td>New Deal (Lorville)</td></tr>
@@ -104,6 +154,7 @@
     </table>
 
     <h2>Astro Armada - Area 18 (ArcCorp)</h2>
+    <input type="text" id="astro-filter" onkeyup="filterTable('astro-table', 'astro-filter')" placeholder="Filter ships...">
     <table id="astro-table" data-sort-asc="false">
         <thead>
             <tr>
@@ -116,7 +167,7 @@
             <tr><td>Greycat PTV</td><td>28,350</td><td>Astro Armada (Area 18)</td></tr>
             <tr><td>Hoverquad</td><td>56,700</td><td>Astro Armada (Area 18)</td></tr>
             <tr><td>Greycat STV</td><td>75,600</td><td>Astro Armada (Area 18)</td></tr>
-            <tr><td>ATLS</td><td>75,600</td><td>Astro Armada (Area 18)</td></tr>
+            <tr><td><a href="https://robertsspaceindustries.com/pledge/ships/atls/ATLS" target="_blank">ATLS</a></td><td>75,600</td><td>Astro Armada (Area 18)</td></tr>
             <tr><td>X1</td><td>105,840</td><td>Astro Armada (Area 18)</td></tr>
             <tr><td>X1 Velocity</td><td>119,020</td><td>Astro Armada (Area 18)</td></tr>
             <tr><td>X1 Force</td><td>132,300</td><td>Astro Armada (Area 18)</td></tr>
@@ -126,6 +177,7 @@
     </table>
 
     <h2>Crusader Showroom - Orison (Crusader)</h2>
+    <input type="text" id="crusader-filter" onkeyup="filterTable('crusader-table', 'crusader-filter')" placeholder="Filter ships...">
     <table id="crusader-table" data-sort-asc="false">
         <thead>
             <tr>
@@ -135,7 +187,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>ATLS</td><td>75,600</td><td>Crusader Showroom</td></tr>
+            <tr><td><a href="https://robertsspaceindustries.com/pledge/ships/atls/ATLS" target="_blank">ATLS</a></td><td>75,600</td><td>Crusader Showroom</td></tr>
             <tr><td>C1 Spirit</td><td>3,118,500</td><td>Crusader Showroom</td></tr>
             <tr><td>Ares Star Fighter Ion</td><td>4,725,000</td><td>Crusader Showroom</td></tr>
             <tr><td>Ares Star Fighter Inferno</td><td>4,725,000</td><td>Crusader Showroom</td></tr>
