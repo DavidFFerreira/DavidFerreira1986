@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Star Citizen - Ship Price Lists</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Incluindo o DataTables para ordenação e filtros -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -69,7 +71,7 @@
         .table-container {
             margin-top: 80px;
             padding: 20px;
-            text-align: center;
+            text-align: left;
         }
 
         table {
@@ -156,9 +158,9 @@
     </nav>
 
     <section id="pyro" class="table-container">
-        <h2 style="color: DodgerBlue; text-align: left;">Pyro - Major Stations</h2>
-        <div id="pyroTable" class="expand-collapse collapsed">
-            <table>
+        <h2 style="color: DodgerBlue;">Pyro - Major Stations</h2>
+        <div id="pyroTable" class="expand-collapse expanded">
+            <table id="pyroTableData">
                 <thead>
                     <tr>
                         <th>Ship</th>
@@ -172,9 +174,9 @@
     </section>
 
     <section id="hurston" class="table-container">
-        <h2 style="color: DodgerBlue; text-align: left;">Hurston</h2>
-        <div id="hurstonTable" class="expand-collapse collapsed">
-            <table>
+        <h2 style="color: DodgerBlue;">Hurston</h2>
+        <div id="hurstonTable" class="expand-collapse expanded">
+            <table id="hurstonTableData">
                 <thead>
                     <tr>
                         <th>Ship</th>
@@ -188,9 +190,9 @@
     </section>
 
     <section id="arrcorp" class="table-container">
-        <h2 style="color: DodgerBlue; text-align: left;">Arrcorp</h2>
-        <div id="arrcorpTable" class="expand-collapse collapsed">
-            <table>
+        <h2 style="color: DodgerBlue;">Arrcorp</h2>
+        <div id="arrcorpTable" class="expand-collapse expanded">
+            <table id="arrcorpTableData">
                 <thead>
                     <tr>
                         <th>Ship</th>
@@ -204,9 +206,9 @@
     </section>
 
     <section id="crusader" class="table-container">
-        <h2 style="color: DodgerBlue; text-align: left;">Crusader</h2>
-        <div id="crusaderTable" class="expand-collapse collapsed">
-            <table>
+        <h2 style="color: DodgerBlue;">Crusader</h2>
+        <div id="crusaderTable" class="expand-collapse expanded">
+            <table id="crusaderTableData">
                 <thead>
                     <tr>
                         <th>Ship</th>
@@ -221,6 +223,8 @@
 
     <button class="btn-back-to-top" onclick="scrollToTop()">Voltar ao topo</button>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script>
         const files = {
             "Pyro - Major Stations": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/pyroShipList.txt",
@@ -271,6 +275,8 @@
                             });
                             tableBody.appendChild(tr);
                         });
+                        // Inicializa o DataTable para ordenação e filtros
+                        $(`#${key.replace(/ /g, '')}TableData`).DataTable();
                     });
             });
         }
