@@ -250,6 +250,8 @@
                     <th onclick="sortTable('pyroTable', 0)">Nave</th>
                     <th onclick="sortTable('pyroTable', 1)">Preço no jogo (aUEC)</th>
                     <th onclick="sortTable('pyroTable', 2)">Localização</th>
+                    <th onclick="sortTable('pyroTable', 3)">Fabricante</th>
+                    <th>Thumbnail</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -264,6 +266,8 @@
                     <th onclick="sortTable('hurstonTable', 0)">Nave</th>
                     <th onclick="sortTable('hurstonTable', 1)">Preço no jogo (aUEC)</th>
                     <th onclick="sortTable('hurstonTable', 2)">Localização</th>
+                    <th onclick="sortTable('hurstonTable', 3)">Fabricante</th>
+                    <th>Thumbnail</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -278,6 +282,8 @@
                     <th onclick="sortTable('arrcorpTable', 0)">Nave</th>
                     <th onclick="sortTable('arrcorpTable', 1)">Preço no jogo (aUEC)</th>
                     <th onclick="sortTable('arrcorpTable', 2)">Localização</th>
+                    <th onclick="sortTable('arrcorpTable', 3)">Fabricante</th>
+                    <th>Thumbnail</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -292,6 +298,8 @@
                     <th onclick="sortTable('crusaderTable', 0)">Nave</th>
                     <th onclick="sortTable('crusaderTable', 1)">Preço no jogo (aUEC)</th>
                     <th onclick="sortTable('crusaderTable', 2)">Localização</th>
+                    <th onclick="sortTable('crusaderTable', 3)">Fabricante</th>
+                    <th>Thumbnail</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -315,9 +323,15 @@
                     const rows = data.trim().split('\n');
                     const tableBody = document.querySelector(`#${id} tbody`);
                     rows.forEach(row => {
-                        const [ship, price, location] = row.split('\t');
+                        const [ship, price, location, manufacturer, thumbnailUrl, linkUrl] = row.split('\t');
                         const tr = document.createElement('tr');
-                        tr.innerHTML = `<td>${ship}</td><td>${price}</td><td>${location}</td>`;
+                        tr.innerHTML = `
+                            <td><a href="${linkUrl}" target="_blank">${ship}</a></td>
+                            <td>${price}</td>
+                            <td>${location}</td>
+                            <td>${manufacturer}</td>
+                            <td><img src="${thumbnailUrl}" alt="${ship}" width="50" height="50"></td>
+                        `;
                         tableBody.appendChild(tr);
                     });
                 });
