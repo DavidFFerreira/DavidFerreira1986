@@ -13,16 +13,28 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         header {
             background-color: #1a1a1a;
             padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        h1 {
+        header h1 {
             margin: 0;
+            font-size: 36px;
+            color: #ffcc00;
+        }
+
+        .logo {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
         }
 
         .search-container {
@@ -44,15 +56,16 @@
             padding: 10px;
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
             z-index: 1000;
         }
 
         nav a {
             color: #ffffff;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         nav a:hover {
@@ -60,7 +73,8 @@
         }
 
         .table-container {
-            margin-top: 70px;
+            margin-top: 80px;
+            padding: 20px;
         }
 
         table {
@@ -68,12 +82,15 @@
             margin: 20px auto;
             border-collapse: collapse;
             border: 1px solid #444;
+            background-color: #1a1a1a;
+            border-radius: 8px;
         }
 
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: center;
             border: 1px solid #444;
+            color: #fff;
         }
 
         th {
@@ -92,7 +109,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 10px;
+            padding: 12px;
             background-color: #333;
             color: white;
             border: none;
@@ -109,12 +126,11 @@
             transition: all 0.3s ease-in-out;
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Animations */
+        /* Logo Animations */
         .fade-in {
             animation: fadeIn 1s ease-out;
         }
@@ -128,14 +144,24 @@
             }
         }
 
-        .table-container {
-            animation: fadeIn 1.2s ease-out;
+        .expand-collapse {
+            transition: max-height 0.5s ease-out;
+            overflow: hidden;
+        }
+
+        .expand-collapse.collapsed {
+            max-height: 0;
+        }
+
+        .expand-collapse.expanded {
+            max-height: 1000px;
         }
 
     </style>
 </head>
 <body>
     <header>
+        <img src="https://www.star-citizen.com/assets/img/star-citizen-logo.png" alt="Star Citizen Logo" class="logo">
         <h1>Star Citizen Ship Price Lists</h1>
     </header>
 
@@ -152,58 +178,66 @@
 
     <div id="pyro" class="table-container fade-in">
         <h2>Pyro - Major Stations</h2>
-        <table id="tablePyro">
-            <thead>
-                <tr>
-                    <th>Ship</th>
-                    <th>Price In Game (aUEC)</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div id="pyroTable" class="expand-collapse collapsed">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Price In Game (aUEC)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
     <div id="hurston" class="table-container fade-in">
         <h2>Hurston</h2>
-        <table id="tableHurston">
-            <thead>
-                <tr>
-                    <th>Ship</th>
-                    <th>Price In Game (aUEC)</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div id="hurstonTable" class="expand-collapse collapsed">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Price In Game (aUEC)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
     <div id="arrcorp" class="table-container fade-in">
         <h2>Arrcorp</h2>
-        <table id="tableArrcorp">
-            <thead>
-                <tr>
-                    <th>Ship</th>
-                    <th>Price In Game (aUEC)</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div id="arrcorpTable" class="expand-collapse collapsed">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Price In Game (aUEC)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
     <div id="crusader" class="table-container fade-in">
         <h2>Crusader</h2>
-        <table id="tableCrusader">
-            <thead>
-                <tr>
-                    <th>Ship</th>
-                    <th>Price In Game (aUEC)</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div id="crusaderTable" class="expand-collapse collapsed">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Price In Game (aUEC)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
     <button class="btn-back-to-top" onclick="scrollToTop()">Voltar ao topo</button>
@@ -217,10 +251,10 @@
         };
 
         const tables = {
-            "Pyro - Major Stations": document.getElementById("tablePyro"),
-            "Hurston": document.getElementById("tableHurston"),
-            "Arrcorp": document.getElementById("tableArrcorp"),
-            "Crusader": document.getElementById("tableCrusader")
+            "Pyro - Major Stations": document.getElementById("pyroTable"),
+            "Hurston": document.getElementById("hurstonTable"),
+            "Arrcorp": document.getElementById("arrcorpTable"),
+            "Crusader": document.getElementById("crusaderTable")
         };
 
         const globalSearchInput = document.getElementById('globalSearch');
@@ -258,6 +292,11 @@
                             });
                             tableBody.appendChild(tr);
                         });
+
+                        // Expand the table after loading
+                        const tableElement = tables[key];
+                        tableElement.classList.remove('collapsed');
+                        tableElement.classList.add('expanded');
                     })
                     .catch((error) => {
                         console.error(`Erro ao carregar o arquivo ${key}:`, error);
