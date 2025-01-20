@@ -247,11 +247,12 @@
         <table id="pyroTable">
             <thead>
                 <tr>
+                    <th></th>
                     <th onclick="sortTable('pyroTable', 0)">Nave</th>
                     <th onclick="sortTable('pyroTable', 1)">Preço no jogo (aUEC)</th>
                     <th onclick="sortTable('pyroTable', 2)">Localização</th>
                     <th onclick="sortTable('pyroTable', 3)">Fabricante</th>
-                    <th>Thumbnail</th>
+                    
                 </tr>
             </thead>
             <tbody></tbody>
@@ -263,11 +264,12 @@
         <table id="hurstonTable">
             <thead>
                 <tr>
+                    <th></th>
                     <th onclick="sortTable('hurstonTable', 0)">Nave</th>
                     <th onclick="sortTable('hurstonTable', 1)">Preço no jogo (aUEC)</th>
                     <th onclick="sortTable('hurstonTable', 2)">Localização</th>
                     <th onclick="sortTable('hurstonTable', 3)">Fabricante</th>
-                    <th>Thumbnail</th>
+                    
                 </tr>
             </thead>
             <tbody></tbody>
@@ -279,11 +281,12 @@
         <table id="arrcorpTable">
             <thead>
                 <tr>
+                    <th></th>
                     <th onclick="sortTable('arrcorpTable', 0)">Nave</th>
                     <th onclick="sortTable('arrcorpTable', 1)">Preço no jogo (aUEC)</th>
                     <th onclick="sortTable('arrcorpTable', 2)">Localização</th>
                     <th onclick="sortTable('arrcorpTable', 3)">Fabricante</th>
-                    <th>Thumbnail</th>
+                    
                 </tr>
             </thead>
             <tbody></tbody>
@@ -295,11 +298,12 @@
         <table id="crusaderTable">
             <thead>
                 <tr>
+                    <th></th>
                     <th onclick="sortTable('crusaderTable', 0)">Nave</th>
                     <th onclick="sortTable('crusaderTable', 1)">Preço no jogo (aUEC)</th>
                     <th onclick="sortTable('crusaderTable', 2)">Localização</th>
                     <th onclick="sortTable('crusaderTable', 3)">Fabricante</th>
-                    <th>Thumbnail</th>
+                    
                 </tr>
             </thead>
             <tbody></tbody>
@@ -326,11 +330,11 @@
                         const [ship, price, location, manufacturer, thumbnailUrl, linkUrl] = row.split('\t');
                         const tr = document.createElement('tr');
                         tr.innerHTML = `
+                            <td><img src="${thumbnailUrl}" alt="${ship}" width="50" height="50"></td>
                             <td><a href="${linkUrl}" target="_blank">${ship}</a></td>
                             <td>${price}</td>
                             <td>${location}</td>
                             <td>${manufacturer}</td>
-                            <td><img src="${thumbnailUrl}" alt="${ship}" width="50" height="50"></td>
                         `;
                         tableBody.appendChild(tr);
                     });
