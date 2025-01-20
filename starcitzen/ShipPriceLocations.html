@@ -6,7 +6,6 @@
     <title>Star Citizen Ships</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos gerais */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -155,6 +154,7 @@
             background-color: #11161f;
         }
 
+        /* Estilos para o modo claro */
         .light-mode {
             background-color: #f9f9f9;
             color: #1a1a1a;
@@ -202,26 +202,32 @@
             background: #e0e0e0;
         }
 
-        /* Estilos para a tabela no modo claro */
+        /* Modo Claro - Estilo das Secções */
+        .light-mode section {
+            background-color: #f1f1f1;
+        }
+
+        /* Modo Claro - Estilo das Tabelas */
         .light-mode table {
-            background: #ffffff;
-            color: #1a1a1a;
+            background-color: #ffffff;
+            border-radius: 10px;
         }
 
         .light-mode th {
-            background-color: #f0f0f0;
-            color: #1a1a1a;
+            background-color: #f7f7f7;
+            color: #333;
         }
 
         .light-mode td {
-            border-bottom: 1px solid #d1d1d1;
+            background-color: #ffffff;
+            color: #333;
+            border-bottom: 1px solid #ddd;
         }
-
     </style>
 </head>
 <body>
     <header>
-        <img src="https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/starcitzen/starcitzenBlack.png" alt="Star Citizen Logo" class="logo" id="logo">
+        <img src="https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/starcitzen/starcitzenBlack.png" alt="Star Citizen Logo" class="logo">
         <div>
             <a href="#pyro">Pyro</a>
             <a href="#hurston">Hurston</a>
@@ -249,26 +255,51 @@
         </table>
     </section>
 
-    <!-- Repita para outras seções de tabela (hurston, arrcorp, crusader) -->
+    <section id="hurston">
+        <h2>Hurston</h2>
+        <table id="hurstonTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('hurstonTable', 0)">Ship</th>
+                    <th onclick="sortTable('hurstonTable', 1)">Price In Game (aUEC)</th>
+                    <th onclick="sortTable('hurstonTable', 2)">Location</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="arrcorp">
+        <h2>Arrcorp</h2>
+        <table id="arrcorpTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('arrcorpTable', 0)">Ship</th>
+                    <th onclick="sortTable('arrcorpTable', 1)">Price In Game (aUEC)</th>
+                    <th onclick="sortTable('arrcorpTable', 2)">Location</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="crusader">
+        <h2>Crusader</h2>
+        <table id="crusaderTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable('crusaderTable', 0)">Ship</th>
+                    <th onclick="sortTable('crusaderTable', 1)">Price In Game (aUEC)</th>
+                    <th onclick="sortTable('crusaderTable', 2)">Location</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
 
     <div class="back-to-top" id="backToTop">Topo</div>
 
     <script>
-        // Altera o logotipo ao mudar o modo
-        const themeToggle = document.getElementById('themeToggle');
-        const logo = document.getElementById('logo');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            if (document.body.classList.contains('light-mode')) {
-                logo.src = "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/starcitzen/starcitzenBlack.png";
-                themeToggle.textContent = 'Modo Escuro';
-            } else {
-                logo.src = "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/starcitzen/starcitzenWhite.png";
-                themeToggle.textContent = 'Modo Luminoso';
-            }
-        });
-
-        // Carregar dados para as tabelas
         const tables = [
             { id: 'pyroTable', url: 'https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/pyroShipList.txt' },
             { id: 'hurstonTable', url: 'https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/HurstonShipList.txt' },
@@ -291,7 +322,6 @@
                 });
         });
 
-        // Função de ordenação
         function sortTable(tableId, colIndex) {
             const table = document.getElementById(tableId);
             const rows = Array.from(table.querySelectorAll('tbody tr'));
@@ -300,7 +330,6 @@
             rows.forEach(row => tbody.appendChild(row));
         }
 
-        // Função de pesquisa
         document.getElementById('searchBar').addEventListener('input', (e) => {
             const filter = e.target.value.toLowerCase();
             tables.forEach(({ id }) => {
@@ -311,7 +340,6 @@
             });
         });
 
-        // Função "Voltar ao topo"
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             backToTop.style.display = window.scrollY > 200 ? 'block' : 'none';
@@ -320,12 +348,24 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Função de scroll suave nos links de navegação
         document.querySelectorAll('header a').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        const logo = document.querySelector('.logo');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                themeToggle.textContent = 'Modo Escuro';
+                logo.src = 'https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/starcitzen/starcitzenBlack.png'; // Logo para modo claro
+            } else {
+                themeToggle.textContent = 'Modo Luminoso';
+                logo.src = 'https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/refs/heads/main/starcitzen/starcitzenWhite.png'; // Logo para modo escuro
+            }
         });
     </script>
 </body>
