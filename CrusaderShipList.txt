@@ -1,5 +1,5 @@
 ATLS	75,600	Crusaer Showroom	ARGO	https://media.robertsspaceindustries.com/4pkysfhuqskp4/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/atls/ATLS
-C1 Spirit	3,118,500	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/ly51mm0p1vs6w/store_small.jp	https://robertsspaceindustries.com/pledge/ships/spirit/C1-Spirit
+C1 Spirit	3,118,500	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/ly51mm0p1vs6w/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/spirit/C1-Spirit
 Ares Star Fighter Ion	4,725,000	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/a2g2ta0lq0uq5/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/crusader-ares/Ares-Ion
 Ares Star Fighter Inferno	4,725,000	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/a2g2ta0lq0uq5/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/crusader-ares/Ares-Ion
 A1 Spirit	4,961,250	Crusaer Showroom	CRUS	https://media.robertsspaceindustries.com/nsqe4f3nl1mqn/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/spirit/A1-Spirit 
