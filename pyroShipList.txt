@@ -1,5 +1,5 @@
-ALTS	75,600	Ruin, Orbituary and Checkmate	ARGO	/i/e857649dcd3767d24d3ec5085fbea8a6835fa833/resize(1820,1024,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReseYuTuCACieSjiE8s24q9GjXTx67KcfVEe)/source.jpg	https://robertsspaceindustries.com/pledge/ships/atls/ATLS
-Greycat STV	75,600	Ruin, Orbituary and Checkmate	xxx	xxx	xxx
+ALTS	75,600	Ruin, Orbituary and Checkmate	ARGO	https://robertsspaceindustries.com/i/ea09dc105fa51…jReseYuTuCACieSjiE8s24q9GjXTx67KcfVEe)/source.jpg	https://robertsspaceindustries.com/pledge/ships/atls/ATLS
+Greycat STV	75,600	Ruin, Orbituary and Checkmate	GREY	https://media.robertsspaceindustries.com/0fdqxuu3r025y/slideshow.jpg	https://robertsspaceindustries.com/comm-link/transmission/18819-Greycat-STV
 Cyclone	103,950	Ruin, Orbituary and Checkmate	TMBL	https://media.robertsspaceindustries.com/bioukvx5hnvmr/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/cyclone/Cyclone
 Dragonfly	342,720	Ruin, Orbituary and Checkmate	DRAKE	https://media.robertsspaceindustries.com/x5ussyjswavpm/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/drake-dragonfly/Dragonfly-Black
 Nova	907,200	Ruin, Orbituary and Checkmate	TMBL	https://media.robertsspaceindustries.com/698j1tw6sqq4t/store_small.jpg	https://robertsspaceindustries.com/pledge/ships/nova-tank/Nova
