@@ -1,4 +1,3 @@
-Ship	Price In Game (aUEC)	Sale Location
 ALTS	75,600	Ruin, Orbituary and Checkmate
 Greycat STV	75,600	Ruin, Orbituary and Checkmate
 Cyclone	103,950	Ruin, Orbituary and Checkmate
