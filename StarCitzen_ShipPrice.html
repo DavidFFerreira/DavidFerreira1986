@@ -16,7 +16,7 @@
             padding: 0;
             overflow-x: hidden;
         }
-
+        
         header {
             background-color: #1a1a1a;
             padding: 15px;
@@ -24,20 +24,19 @@
             position: sticky;
             top: 0;
             z-index: 1001;
-            margin-top: 60px;
         }
-
+        
         header h1 {
             margin: 0;
             font-size: 36px;
             color: DodgerBlue;
         }
-
+        
         .search-container {
             margin: 20px;
             text-align: center;
         }
-
+        
         .search-container input {
             padding: 10px;
             width: 80%;
@@ -46,7 +45,7 @@
             border-radius: 5px;
             border: none;
         }
-
+        
         nav {
             background-color: #1a1a1a;
             padding: 10px;
@@ -56,24 +55,24 @@
             width: 100%;
             z-index: 1000;
         }
-
+        
         nav a {
             color: DodgerBlue;
             margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
         }
-
+        
         nav a:hover {
             text-decoration: underline;
         }
-
+        
         .table-container {
             margin-top: 80px;
             padding: 20px;
             text-align: left;
         }
-
+        
         table {
             width: 90%;
             margin: 20px auto;
@@ -82,26 +81,26 @@
             background-color: #1a1a1a;
             border-radius: 8px;
         }
-
+        
         th, td {
             padding: 12px;
             text-align: center;
             border: 1px solid #444;
             color: #fff;
         }
-
+        
         th {
             background-color: #333;
         }
-
+        
         tr:nth-child(even) {
             background-color: #222;
         }
-
+        
         tr:hover {
             background-color: #555;
         }
-
+        
         .btn-back-to-top {
             position: fixed;
             bottom: 20px;
@@ -113,29 +112,29 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
+        
         .btn-back-to-top:hover {
             background-color: #444;
         }
-
+        
         section {
             padding: 40px 0;
             transition: all 0.3s ease-in-out;
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
-
+        
         .expand-collapse {
             transition: max-height 0.5s ease-out;
             overflow: hidden;
         }
-
+        
         .expand-collapse.collapsed {
             max-height: 0;
         }
-
+        
         .expand-collapse.expanded {
             max-height: 1000px;
         }
@@ -232,66 +231,67 @@
             "Arrcorp": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/ArrcorpShipList.txt",
             "Crusader": "https://raw.githubusercontent.com/DavidFFerreira/DavidFerreira1986/main/CrusaderShipList.txt"
         };
-
+        
         const tables = {
             "Pyro - Major Stations": document.getElementById("pyroTable"),
             "Hurston": document.getElementById("hurstonTable"),
             "Arrcorp": document.getElementById("arrcorpTable"),
             "Crusader": document.getElementById("crusaderTable")
         };
-
+        
         const globalSearchInput = document.getElementById('globalSearch');
-
+        
+        // Pesquisa global
         globalSearchInput.addEventListener('input', function(event) {
             const searchTerm = event.target.value.toLowerCase();
-            Object.values(tables).forEach((table) => {
+            Object.keys(tables).forEach((key) => {
+                const table = tables[key];
                 const rows = table.querySelectorAll('tbody tr');
                 rows.forEach((row) => {
                     const cells = row.querySelectorAll('td');
-                    let matchFound = false;
-                    cells.forEach((cell) => {
-                        if (cell.textContent.toLowerCase().includes(searchTerm)) {
-                            matchFound = true;
-                        }
-                    });
+                    const matchFound = Array.from(cells).some(cell => cell.textContent.toLowerCase().includes(searchTerm));
                     row.style.display = matchFound ? '' : 'none';
                 });
             });
         });
-
+        
         function loadData() {
-        Object.keys(files).forEach((key) => {
-            fetch(files[key])
-                .then(response => response.text())
-                .then(data => {
-                    const rows = data.split('\n').map(line => line.split('\t'));
-                    const tableBody = tables[key].querySelector('tbody');
-                    rows.forEach((row) => {
-                        const tr = document.createElement('tr');
-                        row.forEach((cell) => {
-                            const td = document.createElement('td');
-                            td.textContent = cell;
-                            tr.appendChild(td);
+            Object.keys(files).forEach((key) => {
+                fetch(files[key])
+                    .then(response => response.text())
+                    .then(data => {
+                        const rows = data.split('\n').map(line => line.split('\t'));
+                        const tableBody = tables[key].querySelector('tbody');
+                        rows.forEach((row) => {
+                            const tr = document.createElement('tr');
+                            row.forEach((cell) => {
+                                const td = document.createElement('td');
+                                td.textContent = cell;
+                                tr.appendChild(td);
+                            });
+                            tableBody.appendChild(tr);
                         });
-                        tableBody.appendChild(tr);
+        
+                        // Inicializa DataTable após carregar os dados
+                        $(`#${key.replace(/ /g, '')}TableData`).DataTable({
+                            "pageLength": 10,
+                            "lengthMenu": [10, 20, 50, 100, 200],
+                            "paging": true
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Erro ao carregar os dados: ', error);
                     });
-                    // Inicializa o DataTable para ordenação, filtros e paginação depois de adicionar os dados
-                    $(`#${key.replace(/ /g, '')}TableData`).DataTable({
-                        "pageLength": 10,
-                        "lengthMenu": [10, 20, 50, 100, 200],
-                        "paging": true
-                    });
-                });
-        });
-    }
-
+            });
+        }
+        
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         }
-
+        
         loadData();
     </script>
 </body>
