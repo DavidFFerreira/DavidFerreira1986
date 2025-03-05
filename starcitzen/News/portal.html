@@ -30,19 +30,8 @@
         
         <section id="news">
             <h2>Últimas Notícias</h2>
-            <div class="news-container">
-                <article class="news-card">
-                    <img src="news1.jpg" alt="Nova atualização 3.22">
-                    <h3>Nova atualização 3.22 lançada!</h3>
-                    <p>A atualização 3.22 traz novas mecânicas e gráficos melhorados!</p>
-                    <a href="#">Leia mais</a>
-                </article>
-                <article class="news-card">
-                    <img src="news2.jpg" alt="Evento especial em Stanton">
-                    <h3>Evento especial em Stanton!</h3>
-                    <p>Prepare-se para novas missões e recompensas únicas neste mês!</p>
-                    <a href="#">Leia mais</a>
-                </article>
+            <div class="news-container" id="news-container">
+                <!-- Notícias serão carregadas dinamicamente aqui -->
             </div>
         </section>
         
@@ -63,5 +52,31 @@
         <button onclick="acceptCookies()">Aceitar</button>
         <button onclick="rejectCookies()">Recusar</button>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("news.json")
+                .then(response => response.json())
+                .then(data => {
+                    const newsContainer = document.getElementById("news-container");
+                    newsContainer.innerHTML = "";
+
+                    data.news.forEach(article => {
+                        const newsCard = document.createElement("article");
+                        newsCard.classList.add("news-card");
+
+                        newsCard.innerHTML = `
+                            <img src="${article.image}" alt="${article.title}">
+                            <h3>${article.title}</h3>
+                            <p>${article.content}</p>
+                            <a href="${article.link}" target="_blank">Leia mais</a>
+                        `;
+
+                        newsContainer.appendChild(newsCard);
+                    });
+                })
+                .catch(error => console.error("Erro ao carregar notícias:", error));
+        });
+    </script>
 </body>
 </html>
