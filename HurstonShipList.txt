@@ -1,4 +1,4 @@
-Hoverquad	56,700	New Deal (Lorville)
+Hoverquad	56,700	New Deal (Lorville)	Consolidadted Outland	https://robertsspaceindustries.com/i/bada308a3a7950e414988a98e9fc84e7f1c69cb5/resize(910,512,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskqwnrzVEUwLuvjuAagqGwGWYcwadhu4jQ)/source.jpg	https://robertsspaceindustries.com/en/pledge/ships/hoverquad/hoverquad
 Mule	68,040	New Deal (Lorville)
 ATLS	75,600	New Deal (Lorville)
 Greycat ROC	103,950	New Deal (Lorville)
@@ -100,3 +100,7 @@ M2 Starlifter	29,484,000	New Deal (Lorville)
 Reclaimer	31,752,000	New Deal (Lorville)
 Hammerhead	47,958,752	New Deal (Lorville)
 890 Jump	65,365,200	New Deal (Lorville)
+CSV-SM	378,000	Lorville
+Lynx	136,080	Lorville
+Pulse LX	211,680	Lorville
+Intrepid	705,600	Lorville/Orison
