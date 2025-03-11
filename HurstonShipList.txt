@@ -1,8 +1,8 @@
 Hoverquad	56,700	New Deal (Lorville)	Consolidadted Outland	https://robertsspaceindustries.com/i/bada308a3a7950e414988a98e9fc84e7f1c69cb5/resize(910,512,cover,ADdPNihJzmPbNuTnFsH1DqUeqBRpXdSXVVtgJTyDDgscGKrzJuoFjReskqwnrzVEUwLuvjuAagqGwGWYcwadhu4jQ)/source.jpg	https://robertsspaceindustries.com/en/pledge/ships/hoverquad/hoverquad
-Mule	68,040	New Deal (Lorville)
+Mule	68,040	New Deal (Lorville)	DRAKE	https://media.robertsspaceindustries.com/7e3msv82581fs/store_slideshow_large.png	https://robertsspaceindustries.com/en/pledge/ships/mule/Mule
 ATLS	75,600	New Deal (Lorville)
-Greycat ROC	103,950	New Deal (Lorville)
-Cyclone	103,950	New Deal (Lorville)
+Greycat ROC	103,950	New Deal (Lorville)	GRAYCAT	https://media.starcitizen.tools/thumb/6/62/GRIN_ROC_DS_TopBanner_-_Crop.png/480px-GRIN_ROC_DS_TopBanner_-_Crop.png.webp	https://robertsspaceindustries.com/en/pledge/ships/roc/roc
+Cyclone	103,950	New Deal (Lorville)	Tumbril	https://robertsspaceindustries.com/media/ao2p3pw2e7k94r/store_thumb_listing_small/Tumbril-Buggy-Piece-01-Showroom-V009.jpg	https://robertsspaceindustries.com/en/pledge/ships/cyclone/Cyclone
 Ursa Rover	113,400	New Deal (Lorville)
 X1 Velocity	119,070	New Deal (Lorville)
 Cyclone RC	122,850	New Deal (Lorville)
