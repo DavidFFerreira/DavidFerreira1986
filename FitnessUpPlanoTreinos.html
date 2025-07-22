@@ -66,12 +66,12 @@ details{margin:1rem 0;} summary{cursor:pointer;font-weight:600;}
 /* Simple stick-figure SVG style */
 figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}figure figcaption{font-size:var(--fs-xs);color:var(--c4);} 
 /* --- Vídeo toggle CSS adicionado --- */
-.vid-toggle{cursor:pointer;background:none;border:none;color:var(--c1);text-decoration:underline;font-size:inherit;padding:0;margin:0;}
+.vid-toggle{cursor:pointer;background:none;border:none;color:var(--c1);text-decoration:underline;font-size:inherit;padding:0;margin:0;} 
 .vid-toggle:hover,.vid-toggle:focus{text-decoration:none;outline:2px solid var(--c1);outline-offset:2px;}
-.vid-collapsed{max-height:0;overflow:hidden;transition:max-height .4s ease;will-change:max-height;}
-.vid-collapsed.open{max-height:60vh;}
+.vid-collapsed{max-height:0;overflow:hidden;transition:max-height .4s ease;will-change:max-height;} .vid-collapsed.open{max-height:60vh;}
 .video-wrapper{position:relative;width:100%;padding-top:56.25%;}/*16:9*/
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+/* --- Semana Highlight Badges --- */
 .week-badge{display:inline-block;margin-left:.5em;padding:.1em .4em;font-size:var(--fs-xs);border-radius:var(--radius);background:var(--c2);color:#fff;}
 .week-badge-b{background:var(--c3);}
 </style>
@@ -932,7 +932,6 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
 <footer style="padding:2rem var(--gap);text-align:center;font-size:var(--fs-xs);color:var(--c4);border-top:1px solid #ccc;">
   <p>Documento gerado em HTML — imprime ou exporta para PDF conforme necessário.</p>
 </footer>
-
-<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.vid-toggle').forEach(function(btn){btn.addEventListener('click',function(){var id=this.getAttribute('data-target');var panel=document.getElementById(id);if(!panel)return;var isOpen=panel.classList.toggle('open');panel.setAttribute('aria-hidden',(!isOpen).toString());});});});<\/script>
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.vid-toggle').forEach(function(btn){btn.addEventListener('click',function(){var id=this.getAttribute('data-target');var panel=document.getElementById(id);if(!panel)return;var isOpen=panel.classList.toggle('open');panel.setAttribute('aria-hidden',(!isOpen).toString());});});});</script>
 </body>
 </html>
