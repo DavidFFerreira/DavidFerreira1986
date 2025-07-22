@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8" />
+<title>Plano de Treino 1 Mês (5 dias/semana + Tabata diário + Mobilidade)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+:root {
+  --c1:#0d6efd; /* azul primário */
+  --c2:#198754; /* verde */
+  --c3:#dc3545; /* vermelho */
+  --c4:#6c757d; /* cinzento */
+  --bg:#ffffff;
+  --bg-alt:#f8f9fa;
+  --txt:#212529;
+  --radius:8px;
+  --gap:1rem;
+  --fs-s:0.9rem;
+  --fs-xs:0.75rem;
+  --fs-m:1rem;
+  --fs-l:1.25rem;
+  --fs-xl:1.5rem;
+}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.4;color:var(--txt);background:var(--bg);} 
+header{padding:2rem var(--gap);background:var(--bg-alt);border-bottom:2px solid var(--c1);} 
+header h1{margin:0 0 .25em;font-size:var(--fs-xl);}header p{margin:.25em 0;}
+section{padding:2rem var(--gap);max-width:900px;margin:auto;} section:nth-of-type(odd){background:var(--bg-alt);} 
+h2{margin-top:0;font-size:var(--fs-l);} h3{margin-top:2rem;font-size:var(--fs-m);}hr{margin:2rem 0;border:none;border-top:1px solid #ccc;}
+.table-wrap{overflow-x:auto;} table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:var(--fs-s);} th,td{border:1px solid #ccc;padding:.5rem;text-align:center;} th{text-align:center;background:var(--bg-alt);} 
+.note{font-size:var(--fs-xs);color:var(--c4);} .badge{display:inline-block;padding:.15em .4em;border-radius:var(--radius);font-size:var(--fs-xs);background:var(--c1);color:#fff;margin-left:.25em;}
+.flex{display:flex;gap:var(--gap);flex-wrap:wrap;align-items:flex-start;} .card{flex:1 1 260px;background:#fff;border:1px solid #ccc;border-radius:var(--radius);padding:1rem;position:relative;} .card h4{margin-top:0;font-size:var(--fs-m);} .card .day-label{position:absolute;top:0;right:0;background:var(--c1);color:#fff;padding:.25em .5em;font-size:var(--fs-xs);border-bottom-left-radius:var(--radius);border-top-right-radius:var(--radius);} 
+.exercise{margin:1.5rem 0;padding:1rem;border:1px solid #ddd;border-radius:var(--radius);background:#fff;} .exercise h4{margin-top:0;} .exercise-steps{margin:.5rem 0 1rem;padding-left:1.25rem;} .exercise-steps li{margin-bottom:.25rem;text-align:left;} 
+.img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem;margin:1rem 0;} 
+.img-placeholder{width:100%;aspect-ratio:1/1;background:#e9ecef;border:1px dashed #ccc;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:var(--fs-xs);color:var(--c4);padding:.5rem;text-align:center;} 
+.log-table{width:100%;border-collapse:collapse;font-size:var(--fs-xs);margin-top:1rem;} .log-table th,.log-table td{border:1px solid #ccc;padding:.25rem;} .log-table th{background:var(--bg-alt);} .check-cell{width:1.25em;} 
+.rpe-scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem;margin-top:1rem;} .rpe-box{border:1px solid #ccc;padding:.5rem;border-radius:var(--radius);font-size:var(--fs-xs);} 
+details{margin:1rem 0;} summary{cursor:pointer;font-weight:600;}
+.sticky-nav{position:sticky;top:0;background:var(--bg-alt);padding:.5rem;border-bottom:1px solid #ccc;z-index:999;} .sticky-nav a{margin-right:.75rem;font-size:var(--fs-s);text-decoration:none;color:var(--c1);} .sticky-nav a:hover{text-decoration:underline;}
+.print-break{break-after:page;}
+@media print{header,.sticky-nav{position:static;}a{text-decoration:none;color:#000;}section{page-break-inside:avoid;}.print-break{page-break-after:always;}}
+figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}figure figcaption{font-size:var(--fs-xs);color:var(--c4);} 
+/* --- Vídeo toggle CSS --- */
+.vid-toggle{cursor:pointer;background:none;border:none;color:var(--c1);text-decoration:underline;font-size:inherit;padding:0;margin:0;} .vid-toggle:hover,.vid-toggle:focus{text-decoration:none;outline:2px solid var(--c1);outline-offset:2px;}
+.vid-collapsed{max-height:0;overflow:hidden;transition:max-height .4s ease;will-change:max-height;} .vid-collapsed.open{max-height:60vh;}
+.video-wrapper{position:relative;width:100%;padding-top:56.25%;}/*16:9*/
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+/* --- Semana Highlight Badges --- */
+.week-badge{display:inline-block;margin-left:.5em;padding:.1em .4em;font-size:var(--fs-xs);border-radius:var(--radius);background:var(--c2);color:#fff;}
+.week-badge-b{background:var(--c3);}
+</style>
+</head>
+<body>
+<header>
+  <h1>Plano de Treino (1 Mês) — 5 Dias/Semana + Tabata Diário + Mobilidade</h1>
+  <p><strong>Atleta:</strong> ____________________</p>
+  <p><strong>Data de Início:</strong> ____________________</p>
+  <p><strong>Personal Trainer Virtual:</strong> ChatGPT</p>
+</header>
+<nav class="sticky-nav">
+  <a href="#resumo">Resumo & Progresso</a>
+  <a href="#estrutura">Estrutura Mensal</a>
+  <a href="#template-dia">Template Diário</a>
+  <a href="#dias-detalhe">Dias Detalhados</a>
+  <a href="#tabata">Tabata</a>
+  <a href="#mobilidade">Mobilidade & Alongamentos</a>
+  <a href="#registos">Fichas de Registo</a>
+  <a href="#nutricao">Nutrição</a>
+</nav>
+
+<section id="resumo">
+  <h2>1. Resumo da tua Situação & Progresso</h2>
+  <p>Excelente trabalho nestes ~3 meses! Vê abaixo a evolução dos teus indicadores corporais. Isto ajuda-nos a ajustar o plano para continuares a perder gordura, preservar/ganhar massa magra e melhorar mobilidade.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Indicador</th>
+          <th>22 Abr 2025</th>
+          <th>22 Mai 2025</th>
+          <th>22 Jun 2025</th>
+          <th>22 Jul 2025</th>
+          <th>22 Ago 2025</th>
+          <th>Diferença Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Peso</td><td>89,4 kg</td><td></td><td>85,1 kg*</td><td></td><td></td><td>-4,3 kg (Abr→Jun); -8 kg desde 93 kg inicial</td></tr>
+        <tr><td>IMC</td><td>≈32,8†</td><td></td><td>31,3</td><td></td><td></td><td>-1,5 pts</td></tr>
+        <tr><td>% Massa Gorda</td><td>35,6%</td><td>≈31-32%?</td><td>30,9%</td><td></td><td></td><td>-4,7 pts</td></tr>
+        <tr><td>% Massa Muscular</td><td>28%</td><td></td><td>33,3%</td><td></td><td></td><td>+5,3 pts</td></tr>
+        <tr><td>Gordura Visc.</td><td>17</td><td></td><td>15</td><td></td><td></td><td>-2</td></tr>
+        <tr><td>BMR</td><td>1879 kcal</td><td></td><td>1828 kcal</td><td></td><td></td><td>-51 kcal</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">† IMC estimado: cálculo baseado em peso/altura² (altura estimada ~1,65 m a partir dos teus dados). Se o teu valor medido for diferente, escreve aqui: ________.</p>
+  <p>* Peso atual registado igual ao de 21 Jun 2025 segundo os dados fornecidos; atualiza no quadro acima quando tiveres nova medição.</p>
+
+  <h3>Principais Observações</h3>
+  <ul>
+    <li>Perda de peso rápida entre Abril e Junho; agora parece estabilizada — normal após fase inicial.</li>
+    <li>%Gorda a descer bem; %Massa Muscular a subir (excelente sinal de treino + nutrição razoável).</li>
+    <li>BMR a baixar ligeiramente (corpo mais leve); precisamos proteger massa magra com treino de resistência progressivo e proteína adequada.</li>
+    <li>Mobilidade/elasticidade baixa reportada → incluímos blocos diários curtos + sessões opcionais mais longas.</li>
+  </ul>
+</section>
+
+<section id="nutricao">
+  <h2>2. Guia de Nutrição</h2>
+  <p>Para otimizar resultados, segue estas orientações nutricionais:</p>
+  <ul>
+    <li><strong>Calorias alvo:</strong> 1800–2000 kcal/dia.</li>
+    <li><strong>Proteína:</strong> 1,6–2,0 g/kg (≈135–170 g/dia).</li>
+    <li><strong>Carboidratos:</strong> 40–50% das calorias, preferir integrais e frutas.</li>
+    <li><strong>Gorduras boas:</strong> 25–30% (abacate, frutos secos, azeite).</li>
+    <li><strong>Água:</strong> 2–3 L/dia.</li>
+    <li><strong>Creatina:</strong> 5 g/dia (pode ser tomada no pequeno-almoço ou pós-treino).</li>
+  </ul>
+  <p class="note">Consulta um nutricionista para ajustes personalizados.</p>
+
+  <h3>Plano Alimentar Diário (Exemplo)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Hora</th><th>Refeição</th><th>Opções</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>06:00–07:00</td>
+          <td>Pequeno-almoço rápido (em casa)</td>
+          <td>1 iogurte grego + 1 banana + 20 g frutos secos <br> ou batido com 200 ml leite + 1 sc whey + fruta <br> + 5 g creatina</td>
+        </tr>
+        <tr>
+          <td>08:00–08:30</td>
+          <td>Café / Café da manhã</td>
+          <td>Sandes de fiambre (ou de frango/queijo fresco) + café sem açúcar</td>
+        </tr>
+        <tr>
+          <td>13:00–14:00</td>
+          <td>Almoço (restaurante)</td>
+          <td>Prato de proteína magra (frango, peixe ou ovos) + legumes/salada + arroz ou batata</td>
+        </tr>
+        <tr>
+          <td>16:30–17:30</td>
+          <td>Lanche no trabalho</td>
+          <td>1 iogurte natural ou queijo fresco + 1 peça de fruta + 10-15 g de frutos secos <br> <em>Snack de emergência:</em> barra proteica ou pacote de frutos secos</td>
+        </tr>
+        <tr>
+          <td>19:30</td>
+          <td>Pré-treino (em casa)</td>
+          <td>1 sandes de pão integral com ovo mexido ou atum <br> ou 1 batido de aveia + proteína</td>
+        </tr>
+        <tr>
+          <td>22:30</td>
+          <td>Jantar/Pós-treino</td>
+          <td>Carne magra ou peixe grelhado + arroz/batata-doce + legumes/leguminosas <br> + 5 g creatina (se não tomada de manhã)</td>
+        </tr>
+        <tr>
+          <td>23:30–00:00</td>
+          <td>Ceia leve (se fome)</td>
+          <td>1 iogurte + canela ou chá</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Snacks Rápidos de Emergência</h3>
+  <ul>
+    <li>Barras de proteína com baixo teor de açúcar (&lt;3g).</li>
+    <li>Sacos pequenos de amêndoas ou nozes (20 g).</li>
+    <li>Queijinhos frescos individuais.</li>
+    <li>Iogurtes proteicos (versões "skyr" ou sem adição de açúcar).</li>
+  </ul>
+</section>
+
+<section id="estrutura">
+  <h2>3. Estrutura Mensal (4 Semanas)</h2>
+  <p>Treinas 5 dias/semana (Seg→Sex). Tabata curto no fim de <em>cada</em> sessão. Supino & Remada aparecem todos os dias em baixa/alta intensidade alternada para reforço motor. Agachamento aparece nos dias de Pernas + em variantes no Tabata.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Semana</th>
+          <th>Foco de Carga</th>
+          <th>Volume</th>
+          <th>Intensidade</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 (Base Técnica)</td>
+          <td>Aprender/ajustar técnica; cadências controladas.</td>
+          <td>Médio</td>
+          <td>RPE 6-7</td>
+          <td>Vídeo-teca/filmar execuções-chave.</td>
+        </tr>
+        <tr>
+          <td>2 (Progressão Volume)</td>
+          <td>+1 série em principais; +reps onde qualidade mantida.</td>
+          <td>Médio-Alto</td>
+          <td>RPE 7-8</td>
+          <td>Tabata escala Nível 1→2.</td>
+        </tr>
+        <tr>
+          <td>3 (Progressão Intensidade)</td>
+          <td>Aumentar carga 2,5–5% ou subir RPE.</td>
+          <td>Médio</td>
+          <td>RPE 8</td>
+          <td>Tabata completo se possível.</td>
+        </tr>
+        <tr>
+          <td>4 (Consolidação + Testes)</td>
+          <td>Descarga leve 1ª metade, depois pequenos testes técnicos.</td>
+          <td>Baixo-Médio</td>
+          <td>RPE 6→9 (em teste)</td>
+          <td>Reavaliar métricas corporais.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOVO: Blocos Intercalados -->
+  <h3>Intercalação de Exercícios (Semanas 1&3 vs 2&4)</h3>
+  <p>Alterna os exercícios principais por grupo muscular para variar estímulo, reduzir sobrecargas repetitivas e manter motivação. Usa <span class="week-badge">A</span> para Semanas <strong>1 e 3</strong> e <span class="week-badge week-badge-b">B</span> para Semanas <strong>2 e 4</strong>.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dia</th><th>Bloco A (Sem.1/3)</th><th>Bloco B (Sem.2/4)</th></tr></thead>
+      <tbody>
+        <tr><td>Seg — Ombros</td><td>Press Militar / Elevação Lateral / Face Pull / Rear Delt Fly / Arnold Press</td><td>Arnold Press / Elevação Frontal / Shrug Barra / Face Pull / Cuban Press</td></tr>
+        <tr><td>Ter — Peito</td><td>Supino Barra / Supino Inclinado DB / Crucifixo / Flexões / Peck Deck</td><td>Supino Inclinado Barra / Supino Declinado DB / Crossover Cabo / Flexões Pés Altos / Chest Press</td></tr>
+        <tr><td>Qua — Braços</td><td>Curl Barra / Hammer Curl / Tríceps Testa / Tríceps Corda / Kickback + extras</td><td>Curl Alternado / Curl Scott / Tríceps Banco / Pushdown Barra / Extensão Overhead DB + extras</td></tr>
+        <tr><td>Qui — Dorsal</td><td>Puxada Frente / Remada Curvada / Pull-over / Remada Baixa / Face Pull</td><td>Remada Unilateral / Barra Fixa Assistida / Remada Máquina / Pulldown Neutro / Pull-over</td></tr>
+        <tr><td>Sex — Pernas</td><td>Back Squat / Leg Press / Lunge / RDL / Ext+Flex</td><td>Front Squat / Passada Step / Romanian DB / Hip Thrust / Hack Press ou Sissy</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Nos dias em que um exercício base (Supino, Remada, Agachamento) não está pesado no bloco, executa 2 séries técnicas leves para reforço motor.</p>
+</section>
+
+<section id="template-dia">
+  <h2>4. Template Diário de Sessão</h2>
+  <ol>
+    <li><strong>Aquecimento Cardio Leve:</strong> Elítica 10–15 min @ Resistência 15 (ou RPE 6). Objetivo: subir temperatura corporal, não cansar.</li>
+    <li><strong>Mobilidade Articular Geral (5 min):</strong> rotações cervicais, círculos ombro, swing braços cruzados, rotações anca, círculos joelhos, dorsiflexão parede, swing pernas frente-trás & lateral.</li>
+    <li><strong>Ativação Específica (3–5 min):</strong> banda elástica (pull-aparts, face pulls), glute bridges, dead bugs / bird-dogs de acordo com o dia.</li>
+    <li><strong>Bloco Principal do Dia:</strong> 5 exercícios focados no grupo (ou 10 no dia de braços), 3–4 séries cada (ver tabelas por semana).</li>
+    <li><strong>Supino & Remada Técnicos Diários:</strong> 2 séries leves (50–60% carga) nos dias em que não são foco pesado; prioriza controlo.</li>
+    <li><strong>Tabata Final 4 min:</strong> Seleção de movimentos metabólicos + técnica (ver lista). Escala volume conforme capacidade.</li>
+    <li><strong>Arrefecimento:</strong> caminhada leve 2 min + respiração diafragmática.</li>
+    <li><strong>Alongamentos Estáticos (30s cada) dos grupos trabalhados.</strong></li>
+  </ol>
+  <p><strong>Quando fazer Alongamentos/Mobilidade?</strong> Mobilidade dinâmica <em>antes</em> do treino de força (passos 2–3). Alongamentos estáticos principais <em>depois</em> do Tabata, no arrefecimento (passo 8). Se precisares de amplitude extra para um lift (ex.: agachamento profundo), faz 1–2 séries curtas de mobilidade específica imediatamente antes desse lift.</p>
+</section>
+
+<section id="dias-detalhe">
+  <h2>5. Dias Detalhados (Semanas 1–4)</h2>
+  <p>Em cada dia abaixo tens <span class="week-badge">A</span> (Semanas 1 & 3) e <span class="week-badge week-badge-b">B</span> (Semanas 2 & 4). Segue as séries/reps sugeridas e ajusta a carga com base em RPE. Mantive todos os teus exercícios originais e adicionei as alternativas pedidas sem apagar o restante conteúdo.</p>
+
+  <!-- ==================== SEGUNDA ==================== -->
+  <article id="seg-ombros" class="print-break">
+    <h3>Segunda — Ombros + Supino/Remada Técnica</h3>
+    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
+    <ul>
+      <li>Press Militar Barra — 3x8 (S1) → 4x8 (S3) @RPE6-8.</li>
+      <li>Elevação Lateral DB — 3-4x12 controlado.</li>
+      <li>Face Pull Cabo/Banda — 3x15 foco escápulas.</li>
+      <li>Rear Delt Fly — 3x15.</li>
+      <li>Arnold Press — 3x10.</li>
+      <li class="note">+ Supino & Remada Técnica 2x10 leves.</li>
+    </ul>
+    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
+    <ul>
+      <li>Arnold Press — 4x8 (S2) / 4x6 (S4 pesado).</li>
+      <li>Elevação Frontal (disco ou DB) — 3x12.</li>
+      <li>Shrug Barra — 4x15 foco trapézio.</li>
+      <li>Face Pull — 3x20 leve → 3x15 pesado.</li>
+      <li>Cuban Press leve — 3x12 rotadores.</li>
+      <li class="note">+ Supino & Remada Técnica 2x12.</li>
+    </ul>
+    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
+      <p><strong>Press Militar:</strong> punhos neutros, caminho da barra junto à cara; não arquear lombar.</p>
+      <p><strong>Elevação Lateral:</strong> eleva até linha ombro; polegares ligeiro para cima; evita balanço.</p>
+      <p><strong>Face Pull:</strong> puxa à testa separando corda; cotovelos altos.</p>
+      <p><strong>Cuban Press:</strong> rotação externa + press leve para saúde do ombro.</p>
+    </details>
+  </article>
+
+  <!-- ==================== TERÇA ==================== -->
+  <article id="ter-peito" class="print-break">
+    <h3>Terça — Peito (Supino Pesado) + Remada Leve</h3>
+    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
+    <ul>
+      <li><strong>Supino Barra</strong> — 4x6 (S1) → 5x5 (S3) @RPE7-8.</li>
+      <li>Supino Inclinado DB — 3x10.</li>
+      <li>Crucifixo Cabo/DB — 3x12-15 alongamento.</li>
+      <li>Flexões — 3xAMRAP boa forma.</li>
+      <li>Peck Deck / Chest Press — 3x12.</li>
+      <li class="note">+ Remada Técnica 2x12 leve.</li>
+    </ul>
+    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
+    <ul>
+      <li>Supino Inclinado Barra — 5x5 (S2) / Teste 3RM técnico (S4).</li>
+      <li>Supino Declinado DB — 4x8.</li>
+      <li>Crossover Cabo — 3x15 alongar/fechar.</li>
+      <li>Flexões Pés Altos — 4xAMRAP.</li>
+      <li>Chest Press Máquina — 4x10.</li>
+      <li class="note">+ Remada Técnica 2x12.</li>
+    </ul>
+    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
+      <p><strong>Supino:</strong> retração escápulas; antebraço vertical; pausa controlada.</p>
+      <p><strong>Crossover:</strong> ligeira curva cotovelo; cruza à frente para encurtar peitoral.</p>
+    </details>
+  </article>
+
+  <!-- ==================== QUARTA ==================== -->
+  <article id="qua-bracos" class="print-break">
+    <h3>Quarta — Bíceps & Tríceps (Volume) + Supino/Remada Técnica</h3>
+    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
+    <ul>
+      <li>Curl Barra — 3-4x10-12.</li>
+      <li>Hammer Curl — 3-4x10-12.</li>
+      <li>Tríceps Testa (EZ) — 3-4x10.</li>
+      <li>Tríceps Corda — 3-4x12-15.</li>
+      <li>Kickback — 3x15.</li>
+      <li class="note">+ Supino & Remada Técnica 2x10.</li>
+    </ul>
+    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
+    <ul>
+      <li>Curl Alternado Rotação — 3-4x12 total.</li>
+      <li>Curl Scott — 3-4x10.</li>
+      <li>Tríceps Banco — 3xAMRAP.</li>
+      <li>Pushdown Barra — 4x12.</li>
+      <li>Extensão Overhead DB — 3x12.</li>
+      <li class="note">+ Supino & Remada Técnica 2x10.</li>
+    </ul>
+    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
+      <p>Evita balançar o tronco nos curls; mantém cotovelo fixo junto ao corpo nos movimentos de tríceps.</p>
+    </details>
+  </article>
+
+  <!-- ==================== QUINTA ==================== -->
+  <article id="qui-dorsal" class="print-break">
+    <h3>Quinta — Dorsal (Remada Pesada) + Supino Leve</h3>
+    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
+    <ul>
+      <li>Puxada Frente (Lat Pulldown) — 4x10-12.</li>
+      <li>Remada Curvada Barra — 4x8.</li>
+      <li>Pull-over Cabo/Halter — 3x12.</li>
+      <li>Remada Baixa Cabo — 3x15.</li>
+      <li>Face Pull — 3x20.</li>
+      <li class="note">+ Supino Técnico 2x12.</li>
+    </ul>
+    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
+    <ul>
+      <li>Remada Unilateral DB — 4x10/cada.</li>
+      <li>Barra Fixa Assistida — 4xAMRAP.</li>
+      <li>Remada Máquina — 4x10.</li>
+      <li>Pulldown Neutro — 3x12.</li>
+      <li>Pull-over — 3x15.</li>
+      <li class="note">+ Supino Técnico 2x12.</li>
+    </ul>
+    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
+      <p>Costas neutras em remadas; não puxar só com braços — pensa em "cotovelos ao bolso".</p>
+    </details>
+  </article>
+
+  <!-- ==================== SEXTA ==================== -->
+  <article id="sex-pernas" class="print-break">
+    <h3>Sexta — Pernas + Core</h3>
+    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
+    <ul>
+      <li>Agachamento Barra — 4-5x5-8.</li>
+      <li>Leg Press — 4x10-12.</li>
+      <li>Lunge Caminhada — 3x12/cada.</li>
+      <li>RDL Barra — 3x8-10.</li>
+      <li>Ext + Flex Máquina — 3x15 cada.</li>
+      <li>Core: Prancha + Dead Bug — 3x30s + 3x12.</li>
+    </ul>
+    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
+    <ul>
+      <li>Agachamento Frontal — 4x5-8.</li>
+      <li>Passada Step — 3x12/cada.</li>
+      <li>Romanian DB — 4x10.</li>
+      <li>Hip Thrust — 4x12.</li>
+      <li>Hack Press ou Sissy — 3x15.</li>
+      <li>Core: Hollow Hold + Side Plank — 3x30s cada.</li>
+    </ul>
+    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
+      <p><strong>Agachamento:</strong> respira/bracing antes de descer; joelhos seguem a linha dos pés.</p>
+      <p><strong>Hip Thrust:</strong> queixo baixo, extensão completa anca, pausa topo.</p>
+    </details>
+  </article>
+</section>
+
+<section id="tabata">
+  <h2>6. Tabata Diário (4 minutos / 8 rondas 20" trabalho + 10" pausa)</h2>
+  <p>Atualmente completas ~3.5 exercícios. Vamos escalar por Níveis:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Nível</th><th>Objetivo</th><th>Estrutura</th><th>Duração Efetiva</th></tr></thead>
+      <tbody>
+        <tr><td>Nível 0</td><td>Habituar</td><td>4 rondas 20"/10" (2 exercícios)</td><td>2' total</td></tr>
+        <tr><td>Nível 1</td><td>Base</td><td>6 rondas (3 exercícios)</td><td>3' total</td></tr>
+        <tr><td>Nível 2</td><td>Completo</td><td>8 rondas (4 exercícios)</td><td>4' total</td></tr>
+        <tr><td>Nível 3</td><td>Completo Rotativo</td><td>8 rondas (8 exercícios diferentes)</td><td>4' total</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Progressão sugerida: Semana1=Nível1, Semana2=Nível2 (4 exercícios), Semana3=Nível3 (rotativo), Semana4=Escolha / Teste melhor score reps.</p>
+
+  <h3>Blocos por Dia (Sugestão)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dia</th><th>Exercícios Tabata (ordem)</th><th>Escala Fácil</th><th>Escala Difícil</th></tr></thead>
+      <tbody>
+        <tr><td>Seg</td><td>Battle Rope / Push Press c/DB leve / Plank Shoulder Tap / Jumping Jack</td><td>Sem carga</td><td>+DB</td></tr>
+        <tr><td>Ter</td><td>Push-up / Renegade Row / Mountain Climber / Air Squat</td><td>Joelhos no chão</td><td>+peso</td></tr>
+        <tr><td>Qua</td><td>Band Curl-Sprint / Bench Dip Kick-out / Med Ball Slam / High Knees</td><td>Menos reps</td><td>+carga</td></tr>
+        <tr><td>Qui</td><td>Kettlebell Swing / TRX Row / Skater Hop / Hollow Hold</td><td>Kettlebell leve</td><td>Pesado</td></tr>
+        <tr><td>Sex</td><td>Goblet Squat / Alternating Lunge / Russian Twist / Burpee (ou Step-back)</td><td>Step-back lento</td><td>Burpee completo</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Mantém registo de reps por ronda para acompanhar progresso.</p>
+</section>
+
+<section id="mobilidade">
+  <h2>7. Mobilidade & Alongamentos</h2>
+  <p>Como pediste, aqui tens explicações detalhadas + tempos recomendados + indicação se é feito <strong>antes do Tabata</strong> (dinâmico) ou <strong>depois</strong> (estático).</p>
+
+  <h3>Sequência de Mobilidade Pré-Treino (5 min)</h3>
+  <ol>
+    <li>Círculos de Ombro (10 para cada lado) — Dinâmico.</li>
+    <li>Abraço + Abertura Peitoral (braços cruzam/abrem) x15 — Dinâmico.</li>
+    <li>Rotação Torácica em Quadrupedia (mão na nuca, roda cotovelo) x10/lado — Dinâmico.</li>
+    <li>Círculos Anca (hula-hoop) 10 sentido/10 contrário — Dinâmico.</li>
+    <li>Joelho ao Peito Caminhando x10 passos/lado — Dinâmico.</li>
+    <li>Swing de Pernas Frente-Trás x15/lado & Lateral x15/lado — Dinâmico.</li>
+  </ol>
+
+  <h3>Alongamentos Pós-Treino (30s cada, 1–2 rondas)</h3>
+  <ul>
+    <li><strong>Ombros & Trapézio:</strong> Mão sobre a cabeça, inclina; segurar 30s/lado. Ou puxar braço cruzado ao peito.</li>
+    <li><strong>Rotadores do Ombro:</strong> Mão numa parede em 90°, roda o tronco para abrir o peito (peitoral & anterior ombro).</li>
+    <li><strong>Lat Alongamento de Parede:</strong> Mãos numa superfície alta, inclina tronco para baixo.</li>
+    <li><strong>Quadríceps:</strong> Puxa pé ao glúteo de pé; joelhos juntos.</li>
+    <li><strong>Isquiotibiais:</strong> Pés afastados, dobra anca mantendo costas neutras ou usa step para alongar um de cada vez.</li>
+    <li><strong>Glúteos/Piriforme:</strong> Posição 4 (deitado, tornozelo sobre joelho) puxa perna 30s.</li>
+    <li><strong>Gémeos/Panturrilha:</strong> Empurra parede com perna estendida atrás.</li>
+  </ul>
+
+  <h3>Treino de Elasticidade (Sessão Extra 2x/semana opcional)</h3>
+  <p>Realiza em dias de descanso ativo (sábado/domingo) ou à noite 3+ horas após treino:</p>
+  <ol>
+    <li><button type="button" class="vid-toggle" data-target="vid-dislocates">PVC Shoulder Dislocates 2x15.</button>
+      <div id="vid-dislocates" class="vid-collapsed" aria-hidden="true"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/gXE-gVzYD9w" title="PVC Shoulder Dislocates" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+    </li>
+    <li>Wall Slides 2x12.</li>
+    <li>Deep Squat Hold c/apoio 3x30s.</li>
+    <li>Hip Flexor Stretch 3x30s/lado.</li>
+    <li>Hamstring Band Stretch 3x30s/lado.</li>
+    <li>Ankle Dorsiflexion Mobilization 2x15 pulsos/lado.</li>
+  </ol>
+  <p class="note">Mantém respiração calma; nunca alongar com dor aguda.</p>
+</section>
+
+<section id="registos">
+  <h2>8. Fichas de Registo de Carga & Repetições</h2>
+  <p>Imprime e preenche à mão ou usa digitalmente. Marca também RPE ou sensação (Fácil/Moderado/Pesado).</p>
+
+  <h3>Modelo Curto (por Exercício)</h3>
+  <div class="table-wrap">
+    <table class="log-table">
+      <thead><tr><th>Data</th><th>Carga</th><th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>RPE</th><th>Notas</th></tr></thead>
+      <tbody>
+        <tr><td>__/__/__</td><td>___kg</td><td>__</td><td>__</td><td>__</td><td>__</td><td>__</td><td>________________</td></tr>
+        <tr><td>__/__/__</td><td>___kg</td><td>__</td><td>__</td><td>__</td><td>__</td><td>__</td><td>________________</td></tr>
+        <tr><td>__/__/__</td><td>___kg</td><td>__</td><td>__</td><td>__</td><td>__</td><td>__</td><td>________________</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Modelo Semanal (Dia Completo)</h3>
+  <div class="table-wrap">
+    <table class="log-table">
+      <thead>
+        <tr><th rowspan="2">Exercício</th><th colspan="3">Carga (kg)</th><th colspan="4">Reps</th><th rowspan="2">RPE</th><th rowspan="2">Notas</th></tr>
+        <tr><th>S1</th><th>S2</th><th>S3/S4</th><th>S1</th><th>S2</th><th>S3</th><th>S4</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Supino</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Remada</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Agachamento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>...</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="rpe">
+  <h2>9. Escala RPE (Esforço Percebido no Levantamento)</h2>
+  <div class="rpe-scale">
+    <div class="rpe-box"><strong>RPE 6</strong><br>Ainda 4+ reps na reserva. Muito leve / técnica.</div>
+    <div class="rpe-box"><strong>RPE 7</strong><br>~3 reps na reserva.</div>
+    <div class="rpe-box"><strong>RPE 8</strong><br>~2 reps na reserva. Boa carga trabalho.</div>
+    <div class="rpe-box"><strong>RPE 9</strong><br>~1 rep na reserva. Pesado, só em testes.</div>
+    <div class="rpe-box"><strong>RPE 10</strong><br>Máximo. Falha ou quase.</div>
+  </div>
+</section>
+
+<section id="notas-finais">
+  <h2>10. Notas Finais & Recomendações Nutricionais Rápidas</h2>
+  <ul>
+    <li>Proteína alvo: ~1,6–2,0 g/kg peso atual (≈135–170 g/dia com 85 kg) para manter massa magra.</li>
+    <li>Défice calórico moderado: -300 a -400 kcal/dia vs manutenção se quiseres continuar a perder peso lentamente.</li>
+    <li>Hidratação: 35 ml/kg → ~3 L/dia base (mais se suor intenso).</li>
+    <li>Sono: 7–8h; recuperação impacta perda de gordura e ganho muscular.</li>
+  </ul>
+  <p>Reavaliação sugerida: peso & perímetros semanalmente; composição corporal + fotos de progresso no final da Semana 4.</p>
+</section>
+
+<footer style="padding:2rem var(--gap);text-align:center;font-size:var(--fs-xs);color:var(--c4);border-top:1px solid #ccc;">
+  <p>Documento gerado em HTML — imprime ou exporta para PDF conforme necessário.</p>
+</footer>
+
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.vid-toggle').forEach(function(btn){btn.addEventListener('click',function(){var id=this.getAttribute('data-target');var panel=document.getElementById(id);if(!panel)return;var isOpen=panel.classList.toggle('open');panel.setAttribute('aria-hidden',(!isOpen).toString());});});});</script>
+</body>
+</html>
