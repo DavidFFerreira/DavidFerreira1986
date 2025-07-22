@@ -65,6 +65,13 @@ details{margin:1rem 0;} summary{cursor:pointer;font-weight:600;}
 }
 /* Simple stick-figure SVG style */
 figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}figure figcaption{font-size:var(--fs-xs);color:var(--c4);} 
+/* --- Vídeo toggle CSS adicionado --- */
+.vid-toggle{cursor:pointer;background:none;border:none;color:var(--c1);text-decoration:underline;font-size:inherit;padding:0;margin:0;}
+.vid-toggle:hover,.vid-toggle:focus{text-decoration:none;outline:2px solid var(--c1);outline-offset:2px;}
+.vid-collapsed{max-height:0;overflow:hidden;transition:max-height .4s ease;will-change:max-height;}
+.vid-collapsed.open{max-height:60vh;}
+.video-wrapper{position:relative;width:100%;padding-top:56.25%;}/*16:9*/
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
 </style>
 </head>
 <body>
@@ -434,7 +441,7 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
   <h3>Treino de Elasticidade (Sessão Extra 2x/semana opcional)</h3>
   <p>Realiza em dias de descanso ativo (sábado/domingo) ou à noite 3+ horas após treino:</p>
   <ol>
-    <li>PVC Shoulder Dislocates 2x15.</li>
+    <li><button type=\"button\" class=\"vid-toggle\" data-target=\"vid-dislocates\">PVC Shoulder Dislocates 2x15.<\/button><div id=\"vid-dislocates\" class=\"vid-collapsed\" aria-hidden=\"true\"><div class=\"video-wrapper\"><iframe src=\"https://www.youtube.com/embed/gXE-gVzYD9w\" title=\"PVC Shoulder Dislocates\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe><\/div><\/div><\/li>
     <li>Wall Slides 2x12.</li>
     <li>Deep Squat Hold c/apoio 3x30s.</li>
     <li>Hip Flexor Stretch 3x30s/lado.</li>
@@ -503,5 +510,6 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
   <p>Documento gerado em HTML — imprime ou exporta para PDF conforme necessário.</p>
 </footer>
 
+<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.vid-toggle').forEach(function(btn){btn.addEventListener('click',function(){var id=this.getAttribute('data-target');var panel=document.getElementById(id);if(!panel)return;var isOpen=panel.classList.toggle('open');panel.setAttribute('aria-hidden',(!isOpen).toString());});});});<\/script>
 </body>
 </html>
