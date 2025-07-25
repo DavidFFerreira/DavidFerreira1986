@@ -216,6 +216,79 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
   </ul>
   <p class="note">Esta secção foi criada com base na análise do teu relatório InBody de Julho 2025. Atualiza os valores mensalmente.</p>
 </section>
+<section id="evolucao">
+  <h2>📈 Simula a Tua Evolução Corporal</h2>
+  <p>Insere os teus valores ao longo do tempo para visualizar a evolução da gordura corporal e IMC.</p>
+
+  <form id="formEvolucao" style="margin-bottom:2rem;">
+    <label>Data (AAA-MM-DD): <input type="date" id="data" required></label><br>
+    <label>% Gordura: <input type="number" step="0.1" id="gordura" required></label><br>
+    <label>IMC: <input type="number" step="0.1" id="imc" required></label><br>
+    <button type="submit">Adicionar Registo</button>
+  </form>
+
+  <canvas id="graficoEvolucao" style="max-width:700px;margin:auto;display:block;"></canvas>
+</section>
+
+<script>
+let dados = JSON.parse(localStorage.getItem("evolucaoInBody")) || [];
+
+document.getElementById("formEvolucao").addEventListener("submit", function(e){
+  e.preventDefault();
+  const data = document.getElementById("data").value;
+  const gordura = parseFloat(document.getElementById("gordura").value);
+  const imc = parseFloat(document.getElementById("imc").value);
+  dados.push({ data, gordura, imc });
+  localStorage.setItem("evolucaoInBody", JSON.stringify(dados));
+  desenharGrafico();
+  this.reset();
+});
+
+function desenharGrafico() {
+  const ctx = document.getElementById("graficoEvolucao").getContext("2d");
+  if(window.myChartEvolucao) window.myChartEvolucao.destroy();
+
+  const labels = dados.map(d => d.data);
+  const gordura = dados.map(d => d.gordura);
+  const imc = dados.map(d => d.imc);
+
+  window.myChartEvolucao = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: '% Gordura',
+          data: gordura,
+          borderColor: '#dc3545',
+          backgroundColor: 'rgba(220, 53, 69, 0.2)',
+          tension: 0.3
+        },
+        {
+          label: 'IMC',
+          data: imc,
+          borderColor: '#0d6efd',
+          backgroundColor: 'rgba(13, 110, 253, 0.2)',
+          tension: 0.3
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+        title: { display: true, text: 'Evolução dos Indicadores Corporais' }
+      },
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+}
+
+window.addEventListener("load", desenharGrafico);
+</script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
