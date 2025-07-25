@@ -202,29 +202,11 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
 
 
 <!-- BLOCO NOVO COM BASE NO INBODY -->
+
 <section id="inbody">
   <h2>📊 Resultados da Avaliação Corporal (InBody)</h2>
   <p>Com base na última avaliação InBody (Julho 2025), aqui está o resumo dos teus dados corporais:</p>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Indicador</th>
-          <th>Valor Atual</th>
-          <th>Classificação</th>
-          <th>Meta Recomendada</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Peso</td><td>85,9 kg</td><td>Sobrepeso</td><td>≈75–78 kg</td></tr>
-        <tr><td>IMC</td><td>31,6</td><td>Alto</td><td>24,9 ou menos</td></tr>
-        <tr><td>% Massa Gorda</td><td>33,1%</td><td>Alto</td><td>20–25%</td></tr>
-        <tr><td>Gordura Visceral</td><td>Nível 12</td><td>Acima do ideal</td><td>< 9</td></tr>
-        <tr><td>Massa Muscular Esquelética</td><td>32,7 kg</td><td>Boa</td><td>Manter ou aumentar ligeiramente</td></tr>
-        <tr><td>Índice Cintura-Anca</td><td>0,99</td><td>Elevado</td><td>< 0,90</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <canvas id="graficoInBody" style="max-width:700px;margin:auto;display:block;"></canvas>
 
   <h3>📌 Recomendações</h3>
   <ul>
@@ -234,6 +216,45 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
   </ul>
   <p class="note">Esta secção foi criada com base na análise do teu relatório InBody de Julho 2025. Atualiza os valores mensalmente.</p>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('graficoInBody').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['IMC', '% Gordura', 'Gordura Visceral'],
+    datasets: [
+      {
+        label: 'Valor Atual',
+        data: [31.6, 33.1, 12],
+        backgroundColor: ['#0d6efd', '#dc3545', '#ffc107']
+      },
+      {
+        label: 'Meta',
+        data: [24.9, 25, 8],
+        backgroundColor: ['#198754', '#198754', '#198754']
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'top' },
+      title: {
+        display: true,
+        text: 'Comparação Atual vs Meta'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</script>
+
 <section id="estrutura">
   <h2>3. Estrutura Mensal (4 Semanas)</h2>
   <p>Treinas 5 dias/semana (Seg→Sex). Tabata curto no fim de <em>cada</em> sessão. Supino & Remada aparecem todos os dias em baixa/alta intensidade alternada para reforço motor. Agachamento aparece nos dias de Pernas + em variantes no Tabata.</p>
