@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ </head>
+ <body>
+  <a href="index.html">
+   <nav style="padding:1rem; background:#f8f9fa; border-bottom:1px solid #ccc;">
+    ← Voltar ao índice
+   </nav>
+  </a>
+  <section id="evolucao">
+   <h2>
+    📈 Simula a Tua Evolução Corporal
+   </h2>
+   <p>
+    Insere os teus valores ao longo do tempo para visualizar a evolução da gordura corporal e IMC.
+   </p>
+   <form id="formEvolucao" style="margin-bottom:2rem;">
+    <label>
+     Data (AAA-MM-DD):
+     <input id="data" required="" type="date"/>
+    </label>
+    <br/>
+    <label>
+     % Gordura:
+     <input id="gordura" required="" step="0.1" type="number"/>
+    </label>
+    <br/>
+    <label>
+     IMC:
+     <input id="imc" required="" step="0.1" type="number"/>
+    </label>
+    <br/>
+    <button type="submit">
+     Adicionar Registo
+    </button>
+   </form>
+   <canvas id="graficoEvolucao" style="max-width:700px;margin:auto;display:block;">
+   </canvas>
+  </section>
+ </body>
+</html>
