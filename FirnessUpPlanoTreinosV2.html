@@ -23,24 +23,51 @@
 }
 html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.4;color:var(--txt);background:var(--bg);} 
 header{padding:2rem var(--gap);background:var(--bg-alt);border-bottom:2px solid var(--c1);} 
-header h1{margin:0 0 .25em;font-size:var(--fs-xl);}header p{margin:.25em 0;}
-section{padding:2rem var(--gap);max-width:900px;margin:auto;} section:nth-of-type(odd){background:var(--bg-alt);} 
-h2{margin-top:0;font-size:var(--fs-l);} h3{margin-top:2rem;font-size:var(--fs-m);}hr{margin:2rem 0;border:none;border-top:1px solid #ccc;}
-.table-wrap{overflow-x:auto;} table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:var(--fs-s);} th,td{border:1px solid #ccc;padding:.5rem;text-align:center;} th{text-align:center;background:var(--bg-alt);} 
-.note{font-size:var(--fs-xs);color:var(--c4);} .badge{display:inline-block;padding:.15em .4em;border-radius:var(--radius);font-size:var(--fs-xs);background:var(--c1);color:#fff;margin-left:.25em;}
-.flex{display:flex;gap:var(--gap);flex-wrap:wrap;align-items:flex-start;} .card{flex:1 1 260px;background:#fff;border:1px solid #ccc;border-radius:var(--radius);padding:1rem;position:relative;} .card h4{margin-top:0;font-size:var(--fs-m);} .card .day-label{position:absolute;top:0;right:0;background:var(--c1);color:#fff;padding:.25em .5em;font-size:var(--fs-xs);border-bottom-left-radius:var(--radius);border-top-right-radius:var(--radius);} 
-.exercise{margin:1.5rem 0;padding:1rem;border:1px solid #ddd;border-radius:var(--radius);background:#fff;} .exercise h4{margin-top:0;} .exercise-steps{margin:.5rem 0 1rem;padding-left:1.25rem;} .exercise-steps li{margin-bottom:.25rem;text-align:left;} 
+header h1{margin:0 0 .25em;font-size:var(--fs-xl);}
+header p{margin:.25em 0;}
+section{padding:2rem var(--gap);max-width:900px;margin:auto;} 
+section:nth-of-type(odd){background:var(--bg-alt);} 
+h2{margin-top:0;font-size:var(--fs-l);} 
+h3{margin-top:2rem;font-size:var(--fs-m);}
+hr{margin:2rem 0;border:none;border-top:1px solid #ccc;}
+.table-wrap{overflow-x:auto;} 
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:var(--fs-s);} 
+th,td{border:1px solid #ccc;padding:.5rem;text-align:center;} 
+th{text-align:center;background:var(--bg-alt);} 
+.note{font-size:var(--fs-xs);color:var(--c4);} 
+.badge{display:inline-block;padding:.15em .4em;border-radius:var(--radius);font-size:var(--fs-xs);background:var(--c1);color:#fff;margin-left:.25em;}
+.flex{display:flex;gap:var(--gap);flex-wrap:wrap;align-items:flex-start;}
+.card{flex:1 1 260px;background:#fff;border:1px solid #ccc;border-radius:var(--radius);padding:1rem;position:relative;}
+.card h4{margin-top:0;font-size:var(--fs-m);} 
+.card .day-label{position:absolute;top:0;right:0;background:var(--c1);color:#fff;padding:.25em .5em;font-size:var(--fs-xs);border-bottom-left-radius:var(--radius);border-top-right-radius:var(--radius);} 
+.exercise{margin:1.5rem 0;padding:1rem;border:1px solid #ddd;border-radius:var(--radius);background:#fff;} 
+.exercise h4{margin-top:0;} 
+.exercise-steps{margin:.5rem 0 1rem;padding-left:1.25rem;} 
+.exercise-steps li{margin-bottom:.25rem;text-align:left;} 
 .img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem;margin:1rem 0;} 
 .img-placeholder{width:100%;aspect-ratio:1/1;background:#e9ecef;border:1px dashed #ccc;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:var(--fs-xs);color:var(--c4);padding:.5rem;text-align:center;} 
-.log-table{width:100%;border-collapse:collapse;font-size:var(--fs-xs);margin-top:1rem;} .log-table th,.log-table td{border:1px solid #ccc;padding:.25rem;} .log-table th{background:var(--bg-alt);} .check-cell{width:1.25em;} 
-.rpe-scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem;margin-top:1rem;} .rpe-box{border:1px solid #ccc;padding:.5rem;border-radius:var(--radius);font-size:var(--fs-xs);} 
+.log-table{width:100%;border-collapse:collapse;font-size:var(--fs-xs);margin-top:1rem;} 
+.log-table th,.log-table td{border:1px solid #ccc;padding:.25rem;} 
+.log-table th{background:var(--bg-alt);} 
+.check-cell{width:1.25em;} 
+.rpe-scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.5rem;margin-top:1rem;} 
+.rpe-box{border:1px solid #ccc;padding:.5rem;border-radius:var(--radius);font-size:var(--fs-xs);} 
 details{margin:1rem 0;} summary{cursor:pointer;font-weight:600;}
-.sticky-nav{position:sticky;top:0;background:var(--bg-alt);padding:.5rem;border-bottom:1px solid #ccc;z-index:999;} .sticky-nav a{margin-right:.75rem;font-size:var(--fs-s);text-decoration:none;color:var(--c1);} .sticky-nav a:hover{text-decoration:underline;}
+.sticky-nav{position:sticky;top:0;background:var(--bg-alt);padding:.5rem;border-bottom:1px solid #ccc;z-index:999;}
+.sticky-nav a{margin-right:.75rem;font-size:var(--fs-s);text-decoration:none;color:var(--c1);} 
+.sticky-nav a:hover{text-decoration:underline;}
 .print-break{break-after:page;}
-@media print{header,.sticky-nav{position:static;}a{text-decoration:none;color:#000;}section{page-break-inside:avoid;}.print-break{page-break-after:always;}}
+@media print{
+  header, .sticky-nav{position:static;}
+  a{text-decoration:none;color:#000;}
+  section{page-break-inside:avoid;}
+  .print-break{page-break-after:always;}
+}
+/* Simple stick-figure SVG style */
 figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}figure figcaption{font-size:var(--fs-xs);color:var(--c4);} 
-/* --- Vídeo toggle CSS --- */
-.vid-toggle{cursor:pointer;background:none;border:none;color:var(--c1);text-decoration:underline;font-size:inherit;padding:0;margin:0;} .vid-toggle:hover,.vid-toggle:focus{text-decoration:none;outline:2px solid var(--c1);outline-offset:2px;}
+/* --- Vídeo toggle CSS adicionado --- */
+.vid-toggle{cursor:pointer;background:none;border:none;color:var(--c1);text-decoration:underline;font-size:inherit;padding:0;margin:0;} 
+.vid-toggle:hover,.vid-toggle:focus{text-decoration:none;outline:2px solid var(--c1);outline-offset:2px;}
 .vid-collapsed{max-height:0;overflow:hidden;transition:max-height .4s ease;will-change:max-height;} .vid-collapsed.open{max-height:60vh;}
 .video-wrapper{position:relative;width:100%;padding-top:56.25%;}/*16:9*/
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
@@ -52,9 +79,10 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
 <body>
 <header>
   <h1>Plano de Treino (1 Mês) — 5 Dias/Semana + Tabata Diário + Mobilidade</h1>
-  <p><strong>Atleta:</strong> ____________________</p>
+  <p><strong>Atleta:</strong> David Ferreira </p>
   <p><strong>Data de Início:</strong> ____________________</p>
-  <p><strong>Personal Trainer Virtual:</strong> ChatGPT</p>
+  <p><strong>Personal Trainer Virtual:</strong> ChatGPT </p>
+  <p><strong>Prompts para obtenção de resultado final:</strong> David Ferreira </p>
 </header>
 <nav class="sticky-nav">
   <a href="#resumo">Resumo & Progresso</a>
@@ -104,7 +132,6 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
     <li>Mobilidade/elasticidade baixa reportada → incluímos blocos diários curtos + sessões opcionais mais longas.</li>
   </ul>
 </section>
-
 <section id="nutricao">
   <h2>2. Guia de Nutrição</h2>
   <p>Para otimizar resultados, segue estas orientações nutricionais:</p>
@@ -173,6 +200,40 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
   </ul>
 </section>
 
+
+<!-- BLOCO NOVO COM BASE NO INBODY -->
+<section id="inbody">
+  <h2>📊 Resultados da Avaliação Corporal (InBody)</h2>
+  <p>Com base na última avaliação InBody (Julho 2025), aqui está o resumo dos teus dados corporais:</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Indicador</th>
+          <th>Valor Atual</th>
+          <th>Classificação</th>
+          <th>Meta Recomendada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Peso</td><td>85,9 kg</td><td>Sobrepeso</td><td>≈75–78 kg</td></tr>
+        <tr><td>IMC</td><td>31,6</td><td>Alto</td><td>24,9 ou menos</td></tr>
+        <tr><td>% Massa Gorda</td><td>33,1%</td><td>Alto</td><td>20–25%</td></tr>
+        <tr><td>Gordura Visceral</td><td>Nível 12</td><td>Acima do ideal</td><td>< 9</td></tr>
+        <tr><td>Massa Muscular Esquelética</td><td>32,7 kg</td><td>Boa</td><td>Manter ou aumentar ligeiramente</td></tr>
+        <tr><td>Índice Cintura-Anca</td><td>0,99</td><td>Elevado</td><td>< 0,90</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>📌 Recomendações</h3>
+  <ul>
+    <li><strong>Treinos:</strong> continua com resistência (musculação), priorizando intensidade moderada e técnica, + sessões curtas de cardio (Tabata já está incluído!).</li>
+    <li><strong>Dieta:</strong> foco em défice calórico leve (~1800 kcal), proteína 2g/kg (≈170g), hidratação e evitar refeições hipercalóricas noturnas.</li>
+    <li><strong>Meta:</strong> reduzir gordura visceral (12 → 8) e %gordura total (~33% → 25%) nos próximos 3–4 meses.</li>
+  </ul>
+  <p class="note">Esta secção foi criada com base na análise do teu relatório InBody de Julho 2025. Atualiza os valores mensalmente.</p>
+</section>
 <section id="estrutura">
   <h2>3. Estrutura Mensal (4 Semanas)</h2>
   <p>Treinas 5 dias/semana (Seg→Sex). Tabata curto no fim de <em>cada</em> sessão. Supino & Remada aparecem todos os dias em baixa/alta intensidade alternada para reforço motor. Agachamento aparece nos dias de Pernas + em variantes no Tabata.</p>
@@ -220,7 +281,7 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
     </table>
   </div>
 
-  <!-- NOVO: Blocos Intercalados -->
+    <!-- NOVO: Blocos Intercalados -->
   <h3>Intercalação de Exercícios (Semanas 1&3 vs 2&4)</h3>
   <p>Alterna os exercícios principais por grupo muscular para variar estímulo, reduzir sobrecargas repetitivas e manter motivação. Usa <span class="week-badge">A</span> para Semanas <strong>1 e 3</strong> e <span class="week-badge week-badge-b">B</span> para Semanas <strong>2 e 4</strong>.</p>
   <div class="table-wrap">
@@ -257,141 +318,767 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
   <h2>5. Dias Detalhados (Semanas 1–4)</h2>
   <p>Em cada dia abaixo tens <span class="week-badge">A</span> (Semanas 1 & 3) e <span class="week-badge week-badge-b">B</span> (Semanas 2 & 4). Segue as séries/reps sugeridas e ajusta a carga com base em RPE. Mantive todos os teus exercícios originais e adicionei as alternativas pedidas sem apagar o restante conteúdo.</p>
 
-  <!-- ==================== SEGUNDA ==================== -->
-  <article id="seg-ombros" class="print-break">
-    <h3>Segunda — Ombros + Supino/Remada Técnica</h3>
-    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
-    <ul>
-      <li>Press Militar Barra — 3x8 (S1) → 4x8 (S3) @RPE6-8.</li>
-      <li>Elevação Lateral DB — 3-4x12 controlado.</li>
-      <li>Face Pull Cabo/Banda — 3x15 foco escápulas.</li>
-      <li>Rear Delt Fly — 3x15.</li>
-      <li>Arnold Press — 3x10.</li>
-      <li class="note">+ Supino & Remada Técnica 2x10 leves.</li>
-    </ul>
-    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
-    <ul>
-      <li>Arnold Press — 4x8 (S2) / 4x6 (S4 pesado).</li>
-      <li>Elevação Frontal (disco ou DB) — 3x12.</li>
-      <li>Shrug Barra — 4x15 foco trapézio.</li>
-      <li>Face Pull — 3x20 leve → 3x15 pesado.</li>
-      <li>Cuban Press leve — 3x12 rotadores.</li>
-      <li class="note">+ Supino & Remada Técnica 2x12.</li>
-    </ul>
-    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
-      <p><strong>Press Militar:</strong> punhos neutros, caminho da barra junto à cara; não arquear lombar.</p>
-      <p><strong>Elevação Lateral:</strong> eleva até linha ombro; polegares ligeiro para cima; evita balanço.</p>
-      <p><strong>Face Pull:</strong> puxa à testa separando corda; cotovelos altos.</p>
-      <p><strong>Cuban Press:</strong> rotação externa + press leve para saúde do ombro.</p>
-    </details>
-  </article>
+  <!-- ============================ DIAS DETALHADOS (SUBSTITUIR CONTEÚDO EXISTENTE) ============================ -->
+<!-- Cola estes <article> dentro de <section id="dias-detalhe"> ... -->
 
-  <!-- ==================== TERÇA ==================== -->
-  <article id="ter-peito" class="print-break">
-    <h3>Terça — Peito (Supino Pesado) + Remada Leve</h3>
-    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
-    <ul>
-      <li><strong>Supino Barra</strong> — 4x6 (S1) → 5x5 (S3) @RPE7-8.</li>
-      <li>Supino Inclinado DB — 3x10.</li>
-      <li>Crucifixo Cabo/DB — 3x12-15 alongamento.</li>
-      <li>Flexões — 3xAMRAP boa forma.</li>
-      <li>Peck Deck / Chest Press — 3x12.</li>
-      <li class="note">+ Remada Técnica 2x12 leve.</li>
-    </ul>
-    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
-    <ul>
-      <li>Supino Inclinado Barra — 5x5 (S2) / Teste 3RM técnico (S4).</li>
-      <li>Supino Declinado DB — 4x8.</li>
-      <li>Crossover Cabo — 3x15 alongar/fechar.</li>
-      <li>Flexões Pés Altos — 4xAMRAP.</li>
-      <li>Chest Press Máquina — 4x10.</li>
-      <li class="note">+ Remada Técnica 2x12.</li>
-    </ul>
-    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
-      <p><strong>Supino:</strong> retração escápulas; antebraço vertical; pausa controlada.</p>
-      <p><strong>Crossover:</strong> ligeira curva cotovelo; cruza à frente para encurtar peitoral.</p>
-    </details>
-  </article>
+<!-- ==================== SEGUNDA ==================== -->
+<article id="seg-ombros" class="print-break">
+  <h3>Segunda — Ombros + Supino/Remada Técnica</h3>
+  <p>Objetivo: estabilidade escapular, força overhead moderada, reforço motor press/remo leve.</p>
 
-  <!-- ==================== QUARTA ==================== -->
-  <article id="qua-bracos" class="print-break">
-    <h3>Quarta — Bíceps & Tríceps (Volume) + Supino/Remada Técnica</h3>
-    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
-    <ul>
-      <li>Curl Barra — 3-4x10-12.</li>
-      <li>Hammer Curl — 3-4x10-12.</li>
-      <li>Tríceps Testa (EZ) — 3-4x10.</li>
-      <li>Tríceps Corda — 3-4x12-15.</li>
-      <li>Kickback — 3x15.</li>
-      <li class="note">+ Supino & Remada Técnica 2x10.</li>
-    </ul>
-    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
-    <ul>
-      <li>Curl Alternado Rotação — 3-4x12 total.</li>
-      <li>Curl Scott — 3-4x10.</li>
-      <li>Tríceps Banco — 3xAMRAP.</li>
-      <li>Pushdown Barra — 4x12.</li>
-      <li>Extensão Overhead DB — 3x12.</li>
-      <li class="note">+ Supino & Remada Técnica 2x10.</li>
-    </ul>
-    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
-      <p>Evita balançar o tronco nos curls; mantém cotovelo fixo junto ao corpo nos movimentos de tríceps.</p>
-    </details>
-  </article>
+  <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exercício</th><th>S1</th><th>S3</th><th>Notas Técnicas</th></tr></thead>
+      <tbody>
+        <tr><td>Press Militar com Barra / Halteres</td><td>3x8 @RPE6</td><td>4x6 @RPE8</td><td>Core firme, trajeto vertical.</td></tr>
+        <tr><td>Elevação Lateral Halteres</td><td>3x12</td><td>4x10 mais pesado</td><td>Cotovelo ligeiro flex; sobe até linha ombro.</td></tr>
+        <tr><td>Face Pull (Cabo/Banda)</td><td>3x15</td><td>4x12 mais tenso</td><td>Puxa à testa, roda externamente.</td></tr>
+        <tr><td>Arnold Press</td><td>3x10 leve</td><td>4x8</td><td>Rotação sup→prona.</td></tr>
+        <tr><td>Rear Delt Fly (Peck-Deck inversa ou Halteres)</td><td>3x15</td><td>4x12 pesado</td><td>Controlado; sem balanço.</td></tr>
+        <tr><td class="note" colspan="4">+ Supino & Remada Técnica: 2x10 cada @50-60% carga do dia pesado. Cadência 3-1-2.</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <!-- ==================== QUINTA ==================== -->
-  <article id="qui-dorsal" class="print-break">
-    <h3>Quinta — Dorsal (Remada Pesada) + Supino Leve</h3>
-    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
-    <ul>
-      <li>Puxada Frente (Lat Pulldown) — 4x10-12.</li>
-      <li>Remada Curvada Barra — 4x8.</li>
-      <li>Pull-over Cabo/Halter — 3x12.</li>
-      <li>Remada Baixa Cabo — 3x15.</li>
-      <li>Face Pull — 3x20.</li>
-      <li class="note">+ Supino Técnico 2x12.</li>
-    </ul>
-    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
-    <ul>
-      <li>Remada Unilateral DB — 4x10/cada.</li>
-      <li>Barra Fixa Assistida — 4xAMRAP.</li>
-      <li>Remada Máquina — 4x10.</li>
-      <li>Pulldown Neutro — 3x12.</li>
-      <li>Pull-over — 3x15.</li>
-      <li class="note">+ Supino Técnico 2x12.</li>
-    </ul>
-    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
-      <p>Costas neutras em remadas; não puxar só com braços — pensa em "cotovelos ao bolso".</p>
-    </details>
-  </article>
+  <details><summary>Ver instruções passo a passo dos exercícios de Segunda (Bloco A)</summary>
+    <div class="exercise">
+      <h4>Press Militar</h4>
+      <ol class="exercise-steps">
+        <li>Pés à largura dos ombros; pega ligeiramente mais larga.</li>
+        <li>Cotovelo sob a barra, core apertado, glúteos contraídos.</li>
+        <li>Empurra em linha reta; move cabeça para trás e volta neutro.</li>
+        <li>Baixa controlado até clavícula/topo ombros.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder">
+         <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/PressMilitarUpper.png" alt="Press Militar Upper" width="308" height="308">  
+        </div>
+        <div class="img-placeholder">
+          <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/PressMilitarUpperDown.png" alt="Press Militar Down" width="308" height="308">
+        </div>
+      </div>
+      <div class="img-grid">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Z7uLTciWIss?si=dEaK-NZDYK-GtLwx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="exercise">
+      <h4>Elevação Lateral</h4>
+      <ol class="exercise-steps"><li>Pega neutra, halteres ao lado.</li><li>Levanta braços até ombro (cotovelos ligeiro acima punhos).</li><li>Pausa; desce controlado.</li></ol>
+      <div class="img-grid">
+          <div class="img-placeholder">
+             <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/dumbbell-lateral-raise.png" alt="Elevação Lateral Upper" width="308" height="308">
+          </div>
+          <div class="img-placeholder">
+            <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/dumbbell-lateral-down.png" alt="Elevação Lateral Down" width="308" height="308">
+          </div>
+      </div>
+      <div class="img-grid">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/W5hRdgwEoEA?si=qnvDdQMdm41OtwuZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="exercise">
+      <h4>Face Pull</h4>
+      <ol class="exercise-steps"><li>Corda no cabo alto.</li><li>Puxa à testa separando pontas; cotovelos altos.</li><li>Roda externamente; pausa.</li><li>Volta controlado.</li></ol>
+      <div class="img-grid">
+        <div class="img-placeholder">
+          <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/FacePullExt.png" alt="Face Pull Extensão" width="308" height="308">
+        </div>
+        <div class="img-placeholder">
+          <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/FacePullContract.png" alt="Face Pull Contração" width="308" height="308">
+        </div>
+      </div>
+      <div class="img-grid">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/0Po47vvj9g4?si=UKcBis89L-7P4kHO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="exercise">
+      <h4>Arnold Press</h4>
+      <ol class="exercise-steps"><li>Sentado, halteres em supinação frente ao peito.</li><li>Empurra e roda para pronação ao subir.</li><li>Topo braços esticados; reverte.</li></ol>
+      <div class="img-grid">
+        <div class="img-placeholder">
+          <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ArnolPressBegin.png" alt="Arnold Press Início" width="308" height="308">
+        </div>
+        <div class="img-placeholder">
+          <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ArnolPressMidle.png" alt="Arnold Press Meio" width="308" height="308">
+        </div>
+        <div class="img-placeholder">
+          <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ArnolPressTop.png" alt="Arnold Press Topo" width="308" height="308">
+        </div>
+      </div>
+      <div class="img-grid">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/pQDrcNoDNVM?si=3fRgEP7UWqd3Zlxr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="exercise">
+      <h4>Rear Delt Fly</h4>
+      <ol class="exercise-steps"><li>Peito apoiado/inclinado.</li><li>Abre em arco até alinhar ombros.</li><li>Pausa; desce lento.</li></ol>
+      <div class="img-grid"><div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/RearDeltFlyDown.png" alt="Peito apoiado/inclinado Baixo" width="308" height="308">
+      </div><div class="img-placeholder">
+       <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/RearDeltFlyUpper.png.png" alt="Peito apoiado/inclinado Alto" width="308" height="308">
+      </div>
+      </div>
+      <div class="img-grid">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/3gJXpfwg_go?si=OlIcCrLGje94FHEm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="exercise">
+      <h4>Supino Técnico (leve)</h4>
+      <ol class="exercise-steps"><li>Olhos sob barra; pés plantados.</li><li>Retrai omoplatas; ligeira curvatura lombar.</li><li>Baixa à linha mamilo.</li><li>Empurra sem perder retração.</li></ol>
+      <div class="img-grid"><div class="img-placeholder">
+         <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/SupinoRetoAcima.png" alt="Supino Técnico (leve) Topo" width="308" height="308">
+      </div><div class="img-placeholder">
+         <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/SupinoRetoBaixo.jpg" alt="Supino Técnico (leve) Peito" width="308" height="308">
+      </div>
+      </div>
+       <div class="img-grid">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/72UUJVBuT7o?si=wXyejLazaQ_FzKVV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="exercise">
+      <h4>Remada Curvada Técnica (leve)</h4>
+      <ol class="exercise-steps"><li>Dobra anca ~45º; costas neutras.</li><li>Puxa ao umbigo.</li><li>Pausa; desce controlado sem arredondar lombar.</li></ol>
+      <div class="img-grid"><div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/RemadaCurvadaBaixo.png" alt=">Remada Curvada Técnica (leve) Baixo" width="308" height="308">
+      </div><div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/RemadaCurvadaPuxada.png" alt=">Remada Curvada Técnica (leve) Puxar" width="308" height="308">
+      </div>
+      </div>
+      <div class="img-grid">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/FcRXb6C7myI?si=6wJVq6QYJiKkZ2PD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </details>
 
-  <!-- ==================== SEXTA ==================== -->
-  <article id="sex-pernas" class="print-break">
-    <h3>Sexta — Pernas + Core</h3>
-    <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
-    <ul>
-      <li>Agachamento Barra — 4-5x5-8.</li>
-      <li>Leg Press — 4x10-12.</li>
-      <li>Lunge Caminhada — 3x12/cada.</li>
-      <li>RDL Barra — 3x8-10.</li>
-      <li>Ext + Flex Máquina — 3x15 cada.</li>
-      <li>Core: Prancha + Dead Bug — 3x30s + 3x12.</li>
-    </ul>
-    <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
-    <ul>
-      <li>Agachamento Frontal — 4x5-8.</li>
-      <li>Passada Step — 3x12/cada.</li>
-      <li>Romanian DB — 4x10.</li>
-      <li>Hip Thrust — 4x12.</li>
-      <li>Hack Press ou Sissy — 3x15.</li>
-      <li>Core: Hollow Hold + Side Plank — 3x30s cada.</li>
-    </ul>
-    <details><summary>Pormenores Técnicos & Erros Comuns</summary>
-      <p><strong>Agachamento:</strong> respira/bracing antes de descer; joelhos seguem a linha dos pés.</p>
-      <p><strong>Hip Thrust:</strong> queixo baixo, extensão completa anca, pausa topo.</p>
-    </details>
-  </article>
-</section>
+  <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exercício</th><th>S2</th><th>S4</th><th>Notas Técnicas</th></tr></thead>
+      <tbody>
+        <tr><td>Arnold Press</td><td>4x8 @RPE7</td><td>4x6 @RPE6 (deload) + 1xAMRAP técnica</td><td>Gira ao subir; core firme.</td></tr>
+        <tr><td>Elevação Frontal (Disco/DB)</td><td>3x12</td><td>3x12</td><td>Sobe até ombro; sem balanço.</td></tr>
+        <tr><td>Shrug Barra</td><td>4x15</td><td>4x15</td><td>Encolhe; não rodar.</td></tr>
+        <tr><td>Face Pull</td><td>3x20</td><td>3x15</td><td>Cotovelo alto.</td></tr>
+        <tr><td>Cuban Press leve</td><td>3x12 rotadores</td><td>3x12 rotadores</td><td>Roda controlado.</td></tr>
+        <tr><td class="note" colspan="4">+ Supino & Remada Técnica 2x12 leves.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details><summary>Ver instruções passo a passo dos exercícios de Segunda (Bloco B)</summary>
+  <div class="exercise">
+    <h4>Arnold Press</h4>
+    <ol class="exercise-steps">
+      <li>Senta-te com costas apoiadas.</li>
+      <li>Halteres frente ao peito (supinação).</li>
+      <li>Empurra rodando para frente.</li>
+      <li>Estica; volta controlado.</li>
+    </ol>
+    <div class="img-grid">
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ArnolPressBegin.png" alt="Arnold Press Início" width="308" height="308">
+      </div>
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ArnolPressMidle.png" alt="Arnold Press Meio" width="308" height="308">
+      </div>
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ArnolPressTop.png" alt="Arnold Press Topo" width="308" height="308">
+      </div>
+    </div>
+    <div class="img-grid">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/pQDrcNoDNVM" title="Arnold Press Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Elevação Frontal</h4>
+    <ol class="exercise-steps">
+      <li>De pé; halteres ao lado ou disco à frente.</li>
+      <li>Levanta à frente até ombro.</li>
+      <li>Pausa; desce devagar.</li>
+    </ol>
+    <div class="img-grid">
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/FrontRaiseDown.png" alt="Elevação Frontal Baixo" width="308" height="308">
+      </div>
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/FrontRaiseUp.png" alt="Elevação Frontal Topo" width="308" height="308">
+      </div>
+    </div>
+    <div class="img-grid">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/THBq9Zf5Qtc" title="Elevação Frontal Video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Shrug com Barra</h4>
+    <ol class="exercise-steps">
+      <li>Braços estendidos; barra à frente.</li>
+      <li>Encolhe ombros para cima.</li>
+      <li>Pausa; baixa lento.</li>
+    </ol>
+    <div class="img-grid">
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ShrugDown.png" alt="Shrug Baixo" width="308" height="308">
+      </div>
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ShrugUp.png" alt="Shrug Topo" width="308" height="308">
+      </div>
+    </div>
+    <div class="img-grid">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/g6qceZWq4YQ" title="Shrug com Barra Video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Face Pull</h4>
+    <ol class="exercise-steps">
+      <li>Corda alta.</li>
+      <li>Puxa à testa separando.</li>
+      <li>Roda externamente.</li>
+      <li>Volta controlado.</li>
+    </ol>
+    <div class="img-grid">
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/FacePullExt.png" alt="Face Pull Extensão" width="308" height="308">
+      </div>
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/FacePullContract.png" alt="Face Pull Contração" width="308" height="308">
+      </div>
+    </div>
+    <div class="img-grid">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/0Po47vvj9g4" title="Face Pull Video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Cuban Press</h4>
+    <ol class="exercise-steps">
+      <li>Cotovelo 90º; halteres frente.</li>
+      <li>Roda externa elevando.</li>
+      <li>Press overhead.</li>
+      <li>Desce reverso.</li>
+    </ol>
+    <div class="img-grid">
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/CubanPressStart.png" alt="Cuban Press Início" width="308" height="308">
+      </div>
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/CubanPressRotate.png" alt="Cuban Press Rotação" width="308" height="308">
+      </div>
+      <div class="img-placeholder">
+        <img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/CubanPressTop.png" alt="Cuban Press Topo" width="308" height="308">
+      </div>
+    </div>
+    <div class="img-grid">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/tyml3CE4lkY" title="Cuban Press Video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</details>
+
+</article>
+
+<!-- ==================== TERÇA ==================== -->
+<article id="ter-peito" class="print-break">
+  <h3>Terça — Peito + Remada Técnica</h3>
+  <p>Objetivo: força horizontal push; manter padrão de remada leve para equilíbrio escapular.</p>
+
+  <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exercício</th><th>S1</th><th>S3</th><th>Notas Técnicas</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Supino Barra (Pesado)</strong></td><td>4x6 @RPE7 (pausa 1s peito)</td><td>5x3-4 @RPE8-9</td><td>Pés firmes; omoplatas retraídas.</td></tr>
+        <tr><td>Supino Inclinado Halteres (~30°)</td><td>3x10</td><td>4x8 pesado</td><td>Peito alto; junta halteres topo.</td></tr>
+        <tr><td>Crucifixo Cabo / DB</td><td>3x12</td><td>4x12 controlado</td><td>Arco amplo; alongar sem dor.</td></tr>
+        <tr><td>Flexões (peso corporal)</td><td>3xAMRAP técnica</td><td>4xAMRAP c/peso</td><td>Peito toca quase.</td></tr>
+        <tr><td>Peck Deck / Chest Press Máquina</td><td>3x12</td><td>4x8 pesado</td><td>Tempo 2-1-2.</td></tr>
+        <tr><td class="note" colspan="4">+ Remada Técnica: 2x12 @50% (barra, halteres ou cabo).</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details><summary>Ver instruções passo a passo dos exercícios de Terça (Bloco A)</summary>
+    <div class="exercise">
+      <h4>Supino Barra</h4>
+      <ol class="exercise-steps">
+        <li>Configura apoios; pega média.</li>
+        <li>Retrai/deprime omoplatas; pés ancorados.</li>
+        <li>Desce ao peito ~2s; pausa 1s sem afundar.</li>
+        <li>Empurra explosivo.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/SupinoRetoAcima.png" alt="Supino Barra Topo" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/SupinoRetoBaixo.jpg" alt="Supino Barra Peito" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SCVCLChPQFY" title="Supino Barra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Supino Inclinado Halteres</h4>
+      <ol class="exercise-steps">
+        <li>Banco ~30°.</li>
+        <li>Desce halteres ao peito alto.</li>
+        <li>Empurra e junta topo.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/SupinoInclinadoHalteresAbaixo.png" alt="Supino Inclinado DB Baixo" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/SupinoInclinadoHalteresAcima.png" alt="Supino Inclinado DB Topo" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8iPEnn-ltC8" title="Supino Inclinado Halteres" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Crucifixo</h4>
+      <ol class="exercise-steps">
+        <li>Cotovelo suave flex.</li>
+        <li>Abre em arco amplo.</li>
+        <li>Fecha em meia-lua; espreme peito.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/CrucifixoAlteresAbaixo.png" alt="Crucifixo Abrir" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/CrucifixoAlteresAcima.png" alt="Crucifixo Fechar" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/gYh3r3x4tis?si=ARq6l_WP-zkrkmq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Flexões</h4>
+      <ol class="exercise-steps">
+        <li>Mãos sob ombros ligeiro aberto.</li>
+        <li>Corpo em linha; desce até peito quase tocar.</li>
+        <li>Sobe até extensão total.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/PushUpTop.png" alt="Flexão Topo" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/PushUpBottom.png" alt="Flexão Baixo" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IODxDxX7oi4" title="Flexões" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Peck Deck</h4>
+      <ol class="exercise-steps">
+        <li>Ajusta encosto/alcance.</li>
+        <li>Fecha braços à frente.</li>
+        <li>Pausa; abre controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/PeckDeckOpen.png" alt="Peck Deck Aberto" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/PeckDeckClose.png" alt="Peck Deck Fechado" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jiitI2ma3J4?si=vK0PnZKF_lofEA_9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Remada Técnica (leve)</h4>
+      <ol class="exercise-steps">
+        <li>Escolhe variação confortável.</li>
+        <li>Puxa cotovelos atrás; aperta escápulas.</li>
+        <li>Controla regresso.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/RowExtend.png" alt="Remada Estendido" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/RowContract.png" alt="Remada Contraído" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/f8AVh4VBbos?si=s0TGI6n7GtxTw2sB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </details>
+
+  <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exercício</th><th>S2</th><th>S4</th><th>Notas Técnicas</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Supino Inclinado Barra</strong></td><td>5x5 @RPE8</td><td>Teste 3RM técnico / 2x8 leve</td><td>Pega média; peito alto.</td></tr>
+        <tr><td>Supino Declinado Halteres</td><td>4x8</td><td>2x12 leve</td><td>Ângulo ligeiro; controla descida.</td></tr>
+        <tr><td>Crossover no Cabo</td><td>3x15</td><td>2x20 leve</td><td>Cotovelo suave; cruza mãos.</td></tr>
+        <tr><td>Flexões Pés Elevados</td><td>4xAMRAP</td><td>Teste max reps</td><td>Mais foco peitoral superior.</td></tr>
+        <tr><td>Chest Press Máquina</td><td>4x10</td><td>2x15 leve</td><td>Tempo 2-1-2.</td></tr>
+        <tr><td class="note" colspan="4">+ Séries Técnicas: Supino Barra & Remada 2x10 leves.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details><summary>Ver instruções passo a passo dos exercícios de Terça (Bloco B)</summary>
+    <div class="exercise">
+      <h4>Supino Inclinado Barra</h4>
+      <ol class="exercise-steps">
+        <li>Banco ~30°; pega média.</li>
+        <li>Desce controlado ao peito alto.</li>
+        <li>Empurra vertical/perpendicular ao peito.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/InclineBarPressTop.png" alt="Supino Inclinado Barra Topo" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/InclineBarPressBottom.png" alt="Supino Inclinado Barra Peito Alto" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2z8JmcrW-As" title="Supino Inclinado Barra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Supino Declinado DB</h4>
+      <ol class="exercise-steps">
+        <li>Banco declinado leve.</li>
+        <li>Desce halteres ao meio peito.</li>
+        <li>Empurra alinhado com direção declinada.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/DeclineDBPressBottom.png" alt="Supino Declinado Baixo" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/DeclineDBPressTop.png" alt="Supino Declinado Topo" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qnMIwmUt6xA?si=d0wmdJgbxWqxFhLj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Crossover Cabo</h4>
+      <ol class="exercise-steps">
+        <li>Polias altas; passo à frente.</li>
+        <li>Abraços semicirculares à frente.</li>
+        <li>Cruza levemente mãos; espreme peito.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/CrossoverOpen.png" alt="Crossover Aberto" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/CrossoverClose.png" alt="Crossover Fechado" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ifwx2iuv4kA?si=honZmOfdrpSZcAiG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Flexões Pés Elevados</h4>
+      <ol class="exercise-steps">
+        <li>Pés em banco.</li>
+        <li>Desce tronco mantendo linha.</li>
+        <li>Empurra forte; mantém cotovelos ~45°.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/DeclinePushUpTop.png" alt="Flexão Pés Elevados Topo" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/DeclinePushUpBottom.png" alt="Flexão Pés Elevados Baixo" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WYxlec7vunY?si=qQ9uAGESR6VL9pRW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h4>Chest Press Máquina</h4>
+      <ol class="exercise-steps">
+        <li>Ajusta assento; pega confortável.</li>
+        <li>Empurra até extensão sem trancar.</li>
+        <li>Volta controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ChestPressStart.png" alt="Chest Press Início" width="308" height="308"></div>
+        <div class="img-placeholder"><img src="https://davidfferreira.github.io/DavidFerreira1986/FitnessUp/Imagens/ChestPressEnd.png" alt="Chest Press Fim" width="308" height="308"></div>
+      </div>
+      <div class="img-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/G2cK2xP51Do" title="Chest Press Máquina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </details>
+</article>
+
+
+<!-- ==================== QUARTA ==================== -->
+<article id="qua-bracos" class="print-break">
+  <h3>Quarta — Bíceps & Tríceps (Volume) + Supino/Remada Técnica</h3>
+  <p>Objetivo: alto volume local para braços; bomba metabólica; reforço motor leve supino/remo.</p>
+
+  <h4><span class="week-badge">Bloco A Sem.1/3</span></h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exercício</th><th>S1</th><th>S3</th><th>Notas</th></tr></thead>
+      <tbody>
+        <tr><td>Curl Barra</td><td>3x12</td><td>4x8 pesado</td><td>Cotovelo fixo.</td></tr>
+        <tr><td>Hammer Curl</td><td>3x12</td><td>4x10 pesado</td><td>Pega neutra.</td></tr>
+        <tr><td>Tríceps Testa (Skull Crusher)</td><td>3x10</td><td>4x8 pesado</td><td>Para testa/atrás; dobra cotovelo.</td></tr>
+        <tr><td>Tríceps Corda (Extensão)</td><td>3x15</td><td>4x12</td><td>Abre no fim.</td></tr>
+        <tr><td>Kickback Halteres</td><td>3x15</td><td>4x15</td><td>Contrai topo.</td></tr>
+        <tr><td class="note" colspan="4">Extras rotativos (usar se tempo): Preacher Curl, Cable Curl W, Fundos Bancada.</td></tr>
+        <tr><td class="note" colspan="4">+ Supino & Remada Técnica: 2x10 leves.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details><summary>Ver instruções passo a passo dos exercícios de Quarta (Bloco A)</summary>
+    <div class="exercise">
+      <h4>Curl Barra</h4>
+      <ol class="exercise-steps">
+        <li>Pega supinada ombro-largo.</li>
+        <li>Flexiona cotovelos sem mexer braços.</li>
+        <li>Pausa topo; desce lento.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/dumbbell-2178580_960_720.jpg" alt="Curl barra baixo" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/dumbbell-2178581_960_720.jpg" alt="Curl barra topo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/kwG2ipFRgfo" title="Curl de Bíceps com Barra - Tutorial" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Hammer Curl</h4>
+      <ol class="exercise-steps">
+        <li>Pega neutra (polegares para cima).</li>
+        <li>Flexiona mantendo punhos neutros.</li>
+        <li>Desce controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2016/06/03/22/53/arm-1435499_960_720.jpg" alt="Hammer curl início" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2016/06/03/22/54/arm-1435501_960_720.jpg" alt="Hammer curl topo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/zC3nLlEvin4" title="Hammer Curl Bíceps" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Tríceps Testa (Skull Crusher)</h4>
+      <ol class="exercise-steps">
+        <li>Deitado; barra EZ sobre peito.</li>
+        <li>Dobra cotovelos levando à testa/atrás cabeça.</li>
+        <li>Estende cotovelos sem mover ombros.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2018/01/13/07/17/triceps-3087701_960_720.jpg" alt="Skull crusher topo" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2018/01/13/07/17/triceps-3087700_960_720.jpg" alt="Skull crusher baixo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/d_KZxkY_0cM" title="Tríceps Testa (Skull Crusher)" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Tríceps Corda</h4>
+      <ol class="exercise-steps">
+        <li>Corda no cabo alto.</li>
+        <li>Estende cotovelos até total.</li>
+        <li>Abre pontas no fim.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/triceps-pushdown-1994737_960_720.jpg" alt="Tríceps corda cima" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/triceps-pushdown-1994739_960_720.jpg" alt="Tríceps corda baixo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/vbWFWmsPHkA" title="Tríceps Corda (Pushdown)" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Kickback Halteres</h4>
+      <ol class="exercise-steps">
+        <li>Inclina tronco; cotovelo 90º.</li>
+        <li>Estende braço atrás até reto.</li>
+        <li>Pausa; volta controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2018/03/11/17/16/kickback-3215364_960_720.jpg" alt="Kickback flex" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2018/03/11/17/16/kickback-3215365_960_720.jpg" alt="Kickback extensão" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/I8WE_fOEVHs" title="Tríceps Kickback" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Supino Técnico / Remada Técnica</h4>
+      <ol class="exercise-steps">
+        <li>Executa leve para padrão.</li>
+        <li>Cadência 3-1-2.</li>
+        <li>Foco controlo.</li>
+      </ol>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/gjI4yqkY-gA" title="Supino Técnico" frameborder="0" allowfullscreen></iframe>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/9Qg-0hja8a8" title="Remada Técnica" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </details>
+
+  <h4><span class="week-badge week-badge-b">Bloco B Sem.2/4</span></h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exercício</th><th>S2</th><th>S4</th><th>Notas</th></tr></thead>
+      <tbody>
+        <tr><td>Barra Fixa Supinada</td><td>3x8-12</td><td>4x6-8</td><td>Se não consegue, usar elástico.</td></tr>
+        <tr><td>Curl Martelo Cruzado</td><td>3x10</td><td>4x8</td><td>Alterna braços.</td></tr>
+        <tr><td>Tríceps Testa Unilateral</td><td>3x12</td><td>4x10</td><td>Foco isolado.</td></tr>
+        <tr><td>Tríceps Corda Aberta</td><td>3x15</td><td>4x15</td><td>Abre para fora.</td></tr>
+        <tr><td>Kickback Halteres</td><td>3x15</td><td>4x15</td><td>Repetir.</td></tr>
+        <tr><td class="note" colspan="4">Extras: Curl Banco Scott, Curl W com corda, Mergulho (banco).</td></tr>
+        <tr><td class="note" colspan="4">+ Supino & Remada Técnica 2x10 leves.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details><summary>Ver instruções passo a passo dos exercícios de Quinta (Bloco B)</summary>
+    <div class="exercise">
+      <h4>Barra Fixa Supinada</h4>
+      <ol class="exercise-steps">
+        <li>Pega supinada (palmas para você).</li>
+        <li>Tração até que o queixo passe a barra.</li>
+        <li>Desce controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/08/02/17/25/man-2576706_960_720.jpg" alt="Barra fixa supinada início" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/08/02/17/26/man-2576709_960_720.jpg" alt="Barra fixa supinada topo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/fV7-F9JxI5E" title="Barra Fixa Supinada - Tutorial" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Curl Martelo Cruzado</h4>
+      <ol class="exercise-steps">
+        <li>Pega neutra.</li>
+        <li>Cruza halteres na frente do corpo.</li>
+        <li>Volta devagar.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/07/11/21/03/arm-2497456_960_720.jpg" alt="Curl martelo cruzado flex" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/07/11/21/03/arm-2497457_960_720.jpg" alt="Curl martelo cruzado topo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/GM6ndyHZ6Go" title="Curl Martelo Cruzado" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Tríceps Testa Unilateral</h4>
+      <ol class="exercise-steps">
+        <li>Sentado, halter atrás da cabeça.</li>
+        <li>Estende até braço reto.</li>
+        <li>Volta devagar.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/dumbbell-2178577_960_720.jpg" alt="Tríceps unilateral topo" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/dumbbell-2178579_960_720.jpg" alt="Tríceps unilateral flex" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/soxrZlIl35U" title="Tríceps Testa Unilateral" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Tríceps Corda Aberta</h4>
+      <ol class="exercise-steps">
+        <li>Corda no cabo alto.</li>
+        <li>Estende cotovelos, abrindo pontas.</li>
+        <li>Volta devagar.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/triceps-pushdown-1994740_960_720.jpg" alt="Tríceps corda aberta cima" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/triceps-pushdown-1994741_960_720.jpg" alt="Tríceps corda aberta baixo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/YnHltmgHc4w" title="Tríceps Corda Aberta" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Kickback Halteres</h4>
+      <ol class="exercise-steps">
+        <li>Inclina tronco; cotovelo 90º.</li>
+        <li>Estende braço atrás.</li>
+        <li>Volta controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2018/03/11/17/16/kickback-3215364_960_720.jpg" alt="Kickback flex" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2018/03/11/17/16/kickback-3215365_960_720.jpg" alt="Kickback extensão" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/I8WE_fOEVHs" title="Tríceps Kickback" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </details>
+
+  <h4><span class="week-badge week-badge-c">Bloco C Sem.3/6</span></h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exercício</th><th>S3</th><th>S6</th><th>Notas</th></tr></thead>
+      <tbody>
+        <tr><td>Curl Concentrado</td><td>3x10</td><td>4x8</td><td>Foco isolado, lenta descida.</td></tr>
+        <tr><td>Curl Martelo Alternado</td><td>3x12</td><td>4x10</td><td>Controle total.</td></tr>
+        <tr><td>Tríceps Corda</td><td>3x15</td><td>4x12</td><td>Abre final.</td></tr>
+        <tr><td>Tríceps Unilateral Halteres</td><td>3x12</td><td>4x10</td><td>Amplitude máxima.</td></tr>
+        <tr><td>Kickback Halteres</td><td>3x15</td><td>4x15</td><td>Contração topo.</td></tr>
+        <tr><td class="note" colspan="4">Extras: Preacher Curl, Cable Curl, Fundos banco.</td></tr>
+        <tr><td class="note" colspan="4">+ Supino & Remada Técnica 2x10.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details><summary>Ver instruções passo a passo dos exercícios de Sexta (Bloco C)</summary>
+    <div class="exercise">
+      <h4>Curl Concentrado</h4>
+      <ol class="exercise-steps">
+        <li>Sentado, braço apoiado na coxa.</li>
+        <li>Flexiona devagar.</li>
+        <li>Volta controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2016/06/08/10/02/dumbbell-1440992_960_720.jpg" alt="Curl concentrado flex" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2016/06/08/10/02/dumbbell-1440993_960_720.jpg" alt="Curl concentrado topo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/UZGwQgx7d9E" title="Curl Concentrado" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Curl Martelo Alternado</h4>
+      <ol class="exercise-steps">
+        <li>Pega neutra.</li>
+        <li>Flexiona alternando braços.</li>
+        <li>Desce lento.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/dumbbell-2178573_960_720.jpg" alt="Curl martelo alternado topo" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/dumbbell-2178574_960_720.jpg" alt="Curl martelo alternado baixo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/zC3nLlEvin4" title="Curl Martelo Alternado" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Tríceps Corda</h4>
+      <ol class="exercise-steps">
+        <li>Corda no cabo alto.</li>
+        <li>Estende cotovelos abrindo ponta.</li>
+        <li>Volta controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/triceps-pushdown-1994739_960_720.jpg" alt="Tríceps corda cima" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/triceps-pushdown-1994740_960_720.jpg" alt="Tríceps corda baixo" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/vbWFWmsPHkA" title="Tríceps Corda" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Tríceps Unilateral Halteres</h4>
+      <ol class="exercise-steps">
+        <li>Haltere atrás da cabeça.</li>
+        <li>Estende cotovelo.</li>
+        <li>Volta controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/dumbbell-2178577_960_720.jpg" alt="Tríceps unilateral topo" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/dumbbell-2178579_960_720.jpg" alt="Tríceps unilateral flex" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/soxrZlIl35U" title="Tríceps Unilateral Halteres" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="exercise">
+      <h4>Kickback Halteres</h4>
+      <ol class="exercise-steps">
+        <li>Inclina tronco; cotovelo 90º.</li>
+        <li>Estende braço atrás.</li>
+        <li>Volta controlado.</li>
+      </ol>
+      <div class="img-grid">
+        <img src="https://cdn.pixabay.com/photo/2018/03/11/17/16/kickback-3215364_960_720.jpg" alt="Kickback flex" width="150" />
+        <img src="https://cdn.pixabay.com/photo/2018/03/11/17/16/kickback-3215365_960_720.jpg" alt="Kickback extensão" width="150" />
+      </div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/I8WE_fOEVHs" title="Tríceps Kickback" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </details>
+</article>
+
+<!-- ============================ FIM DIAS DETALHADOS ============================ -->
 
 <section id="tabata">
   <h2>6. Tabata Diário (4 minutos / 8 rondas 20" trabalho + 10" pausa)</h2>
@@ -431,12 +1118,34 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
 
   <h3>Sequência de Mobilidade Pré-Treino (5 min)</h3>
   <ol>
-    <li>Círculos de Ombro (10 para cada lado) — Dinâmico.</li>
+    <li>
+      <button type="button" class="vid-toggle" data-target="vid-Circulos-Ombros">Círculos de Ombro (10 para cada lado) — Dinâmico.</button>
+      <div id="vid-Circulos-Ombros" class="vid-collapsed" aria-hidden="true">
+        <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/5I4Ywtref9M?si=_Cp6XOdaWwZG7CpQ&amp;start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </li>
+
     <li>Abraço + Abertura Peitoral (braços cruzam/abrem) x15 — Dinâmico.</li>
-    <li>Rotação Torácica em Quadrupedia (mão na nuca, roda cotovelo) x10/lado — Dinâmico.</li>
+    <li>
+      <button type="button" class="vid-toggle" data-target="vid-Rotacao-Toracica-Quadrupeda">Rotação Torácica em Quadrupedia (mão na nuca, roda cotovelo) x10/lado — Dinâmico.</button>
+      <div id="vid-Rotacao-Toracica-Quadrupeda" class="vid-collapsed" aria-hidden="true">
+        <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/HSwX8DZmrPY?si=E60fw_uBG-_09ugk&amp;start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </li>
     <li>Círculos Anca (hula-hoop) 10 sentido/10 contrário — Dinâmico.</li>
     <li>Joelho ao Peito Caminhando x10 passos/lado — Dinâmico.</li>
-    <li>Swing de Pernas Frente-Trás x15/lado & Lateral x15/lado — Dinâmico.</li>
+    <li>
+      <button type="button" class="vid-toggle" data-target="vid-leg-sing-back-front">Swing de Pernas Frente-Trás x15/lado & Lateral x15/lado — Dinâmico.</button>
+      <div id="vid-leg-sing-back-front" class="vid-collapsed" aria-hidden="true">
+        <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/E68-pMl1Im8?si=Kg2lCR0RDSWwWA3D&amp;start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </li>
   </ol>
 
   <h3>Alongamentos Pós-Treino (30s cada, 1–2 rondas)</h3>
@@ -453,15 +1162,55 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
   <h3>Treino de Elasticidade (Sessão Extra 2x/semana opcional)</h3>
   <p>Realiza em dias de descanso ativo (sábado/domingo) ou à noite 3+ horas após treino:</p>
   <ol>
-    <li><button type="button" class="vid-toggle" data-target="vid-dislocates">PVC Shoulder Dislocates 2x15.</button>
-      <div id="vid-dislocates" class="vid-collapsed" aria-hidden="true"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/gXE-gVzYD9w" title="PVC Shoulder Dislocates" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
-    </li>
-    <li>Wall Slides 2x12.</li>
-    <li>Deep Squat Hold c/apoio 3x30s.</li>
-    <li>Hip Flexor Stretch 3x30s/lado.</li>
-    <li>Hamstring Band Stretch 3x30s/lado.</li>
-    <li>Ankle Dorsiflexion Mobilization 2x15 pulsos/lado.</li>
-  </ol>
+  <li>
+    <button type="button" class="vid-toggle" data-target="vid-dislocates">PVC Shoulder Dislocates 2x15.</button>
+    <div id="vid-dislocates" class="vid-collapsed" aria-hidden="true">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/gXE-gVzYD9w" title="PVC Shoulder Dislocates" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </li>
+  <li>
+    <button type="button" class="vid-toggle" data-target="vid-Wall-Slides">Wall Slides 2x12.</button>
+    <div id="vid-Wall-Slides" class="vid-collapsed" aria-hidden="true">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/OtgQDv7u1TM" title="Wall Slides" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </li>
+  <li>
+    <button type="button" class="vid-toggle" data-target="vid-Squat-Squat-Hold">Deep Squat Hold c/apoio 3x30s.</button>
+    <div id="vid-Squat-Squat-Hold" class="vid-collapsed" aria-hidden="true">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/0wzrgyAurT8" title="Deep Squat Hold c/apoio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </li>
+  <li>
+    <button type="button" class="vid-toggle" data-target="vid-Flexor-Stretch">Hip Flexor Stretch 3x30s/lado.</button>
+    <div id="vid-Flexor-Stretch" class="vid-collapsed" aria-hidden="true">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/rwkQzNJCAiI" title="Hip Flexor Stretch" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </li>
+  <li>
+    <button type="button" class="vid-toggle" data-target="vid-Band-Stretch">Hamstring Band Stretch 3x30s/lado.</button>
+    <div id="vid-Band-Stretch" class="vid-collapsed" aria-hidden="true">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/T9XNBI5YbS8" title="Hamstring Band Stretch" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </li>
+  <li>
+    <button type="button" class="vid-toggle" data-target="vid-Dorsiflexion-Mobilization">Ankle Dorsiflexion Mobilization 2x15 pulsos/lado.</button>
+    <div id="vid-Dorsiflexion-Mobilization" class="vid-collapsed" aria-hidden="true">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/7jOwuwNk8OM" title="Ankle Dorsiflexion Mobilization" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </li>
+</ol>
   <p class="note">Mantém respiração calma; nunca alongar com dor aguda.</p>
 </section>
 
@@ -523,7 +1272,6 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
 <footer style="padding:2rem var(--gap);text-align:center;font-size:var(--fs-xs);color:var(--c4);border-top:1px solid #ccc;">
   <p>Documento gerado em HTML — imprime ou exporta para PDF conforme necessário.</p>
 </footer>
-
 <script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.vid-toggle').forEach(function(btn){btn.addEventListener('click',function(){var id=this.getAttribute('data-target');var panel=document.getElementById(id);if(!panel)return;var isOpen=panel.classList.toggle('open');panel.setAttribute('aria-hidden',(!isOpen).toString());});});});</script>
 </body>
 </html>
