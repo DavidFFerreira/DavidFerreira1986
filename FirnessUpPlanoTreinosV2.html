@@ -74,10 +74,41 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
 /* --- Semana Highlight Badges --- */
 .week-badge{display:inline-block;margin-left:.5em;padding:.1em .4em;font-size:var(--fs-xs);border-radius:var(--radius);background:var(--c2);color:#fff;}
 .week-badge-b{background:var(--c3);}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+body.dark-mode header,
+body.dark-mode section:nth-of-type(odd),
+body.dark-mode .card,
+body.dark-mode table th,
+body.dark-mode .sticky-nav {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0;
+}
+body.dark-mode table, body.dark-mode th, body.dark-mode td {
+  border-color: #444 !important;
+}
+body.dark-mode a { color: #90caf9; }
+
 </style>
 </head>
 <body>
 <header>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+    <div>
+      <h1>Plano de Treino (1 Mês) — 5 Dias/Semana + Tabata Diário + Mobilidade</h1>
+      <p><strong>Atleta:</strong> David Ferreira </p>
+      <p><strong>Data de Início:</strong> ____________________</p>
+      <p><strong>Personal Trainer Virtual:</strong> ChatGPT </p>
+      <p><strong>Prompts para obtenção de resultado final:</strong> David Ferreira </p>
+    </div>
+    <div style="text-align:right;">
+      <button onclick="toggleDarkMode()" style="margin:0.25rem 0.5rem;">🌙 Modo Escuro</button>
+      <button onclick="window.print()" style="margin:0.25rem 0.5rem;">🖨️ Imprimir</button>
+    </div>
+  </div>
   <h1>Plano de Treino (1 Mês) — 5 Dias/Semana + Tabata Diário + Mobilidade</h1>
   <p><strong>Atleta:</strong> David Ferreira </p>
   <p><strong>Data de Início:</strong> ____________________</p>
@@ -85,9 +116,9 @@ figure{margin:1rem 0;text-align:center;}figure svg{max-width:100%;height:auto;}f
   <p><strong>Prompts para obtenção de resultado final:</strong> David Ferreira </p>
 </header>
 <nav class="sticky-nav">
-  <a href="#resumo">Resumo & Progresso</a>
-  <a href="#estrutura">Estrutura Mensal</a>
-  <a href="#template-dia">Template Diário</a>
+  <a href="#resumo">📈 Resumo & Progresso</a>
+  <a href="#estrutura">🗓️ Estrutura Mensal</a>
+  <a href="#template-dia">🧩 Template Diário</a>
   <a href="#dias-detalhe">Dias Detalhados</a>
   <a href="#tabata">Tabata</a>
   <a href="#mobilidade">Mobilidade & Alongamentos</a>
@@ -288,9 +319,29 @@ function desenharGrafico() {
 
 window.addEventListener("load", desenharGrafico);
 </script>
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+}
+window.addEventListener("load", function(){
+  if(localStorage.getItem("darkMode") === "true") document.body.classList.add("dark-mode");
+});
+</script>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+}
+window.addEventListener("load", function(){
+  if(localStorage.getItem("darkMode") === "true") document.body.classList.add("dark-mode");
+});
+</script>
+
 <script>
 const ctx = document.getElementById('graficoInBody').getContext('2d');
 new Chart(ctx, {
@@ -327,6 +378,16 @@ new Chart(ctx, {
   }
 });
 </script>
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+}
+window.addEventListener("load", function(){
+  if(localStorage.getItem("darkMode") === "true") document.body.classList.add("dark-mode");
+});
+</script>
+
 
 <section id="estrutura">
   <h2>3. Estrutura Mensal (4 Semanas)</h2>
@@ -1367,5 +1428,15 @@ new Chart(ctx, {
   <p>Documento gerado em HTML — imprime ou exporta para PDF conforme necessário.</p>
 </footer>
 <script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.vid-toggle').forEach(function(btn){btn.addEventListener('click',function(){var id=this.getAttribute('data-target');var panel=document.getElementById(id);if(!panel)return;var isOpen=panel.classList.toggle('open');panel.setAttribute('aria-hidden',(!isOpen).toString());});});});</script>
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+}
+window.addEventListener("load", function(){
+  if(localStorage.getItem("darkMode") === "true") document.body.classList.add("dark-mode");
+});
+</script>
+
 </body>
 </html>
