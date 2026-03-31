@@ -3,252 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suavit - Suavidade que Transforma</title>
+    <title>Suavit | Limpeza Profissional com Resultados Impecáveis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
-        .heading-font { font-family: 'Playfair Display', serif; }
         
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url('https://picsum.photos/id/1011/2000/1200') center/cover no-repeat;
         }
         
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        .nav-scroll { 
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
         }
         
         .faq-question {
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        
+        .section-title {
+            font-size: 2.75rem;
+            line-height: 1.1;
+            font-weight: 700;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-white text-gray-800">
 
-    <!-- HEADER -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+    <!-- HEADER / NAV -->
+    <header class="sticky top-0 z-50 bg-white border-b">
+        <div class="max-w-screen-2xl mx-auto px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">S</div>
-                <h1 class="text-3xl font-bold heading-font tracking-tight text-gray-900">Suavit</h1>
+                <div class="w-11 h-11 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-inner">S</div>
+                <div>
+                    <span class="text-3xl font-bold tracking-tighter">SUAVIT</span>
+                    <p class="text-[10px] -mt-1 text-gray-500 tracking-[1px]">Limpeza Profissional</p>
+                </div>
             </div>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#" class="hover:text-pink-600 transition">Início</a>
-                <a href="#" class="hover:text-pink-600 transition">Benefícios</a>
-                <a href="#" class="hover:text-pink-600 transition">Como funciona</a>
-                <a href="#" class="hover:text-pink-600 transition">Depoimentos</a>
-                <a href="#" class="hover:text-pink-600 transition">FAQ</a>
+
+            <!-- Navigation Bar -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium uppercase tracking-widest text-gray-600">
+                <a href="#" class="hover:text-teal-600 transition">SUAVIT</a>
+                <a href="#" class="hover:text-teal-600 transition">LIMPEZA PROFISSIONAL</a>
+                <a href="#" class="hover:text-teal-600 transition">SUAVIT</a>
+                <a href="#" class="hover:text-teal-600 transition">LIMPEZA PROFISSIONAL</a>
+                <a href="#" class="hover:text-teal-600 transition">SUAVIT</a>
+                <a href="#" class="hover:text-teal-600 transition">LIMPEZA PROFISSIONAL</a>
             </nav>
-            <button onclick="document.getElementById('cta-section').scrollIntoView({behavior:'smooth'})" 
-                    class="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-8 py-3 rounded-2xl font-semibold hover:brightness-110 transition">
-                Quero Experimentar
+
+            <button onclick="document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' })"
+                    class="bg-teal-600 hover:bg-teal-700 text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 transition">
+                Falar com especialista
+                <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
     </header>
 
     <!-- HERO -->
     <section class="hero-bg h-screen flex items-center text-white">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-6xl md:text-7xl font-bold heading-font leading-tight mb-6">
-                Suavidade que<br><span class="text-pink-300">transforma</span> seu dia
-            </h2>
-            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-100">
-                Descubra o poder da suavidade real. Produtos Suavit com fórmula única que cuidam de você e do que você ama.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onclick="document.getElementById('cta-section').scrollIntoView({behavior:'smooth'})" 
-                        class="bg-white text-gray-900 px-10 py-5 rounded-3xl text-lg font-semibold hover:bg-gray-100 transition flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-arrow-down"></i>
-                    Quero conhecer agora
-                </button>
-                <button onclick="window.open('https://wa.me/5511999999999', '_blank')" 
-                        class="border-2 border-white px-10 py-5 rounded-3xl text-lg font-semibold hover:bg-white hover:text-gray-900 transition">
-                    Falar com consultora
-                </button>
-            </div>
-            <div class="mt-16 flex justify-center gap-8 text-sm">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-check text-green-400"></i>
-                    <span>Frete grátis acima de R$150</span>
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center h-full">
+            <div class="space-y-8">
+                <h1 class="text-6xl md:text-7xl font-bold leading-none section-title">
+                    Limpeza Profissional<br>com Resultados Impecáveis
+                </h1>
+                <p class="text-2xl max-w-lg text-white/90">
+                    Mais de 25 anos a garantir espaços limpos, organizados e prontos para uso, com qualidade, rapidez e atenção ao detalhe.
+                </p>
+                <div class="flex items-center gap-4">
+                    <button onclick="document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' })"
+                            class="bg-white text-teal-700 hover:bg-teal-50 px-10 py-5 rounded-2xl font-semibold text-lg flex items-center gap-3">
+                        Falar com especialista
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-check text-green-400"></i>
-                    <span>Garantia de 30 dias</span>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hidden md:block">
+                <img src="https://picsum.photos/id/1011/800/900" alt="Suavit - Equipe de limpeza profissional" 
+                     class="rounded-3xl shadow-2xl w-full max-w-lg ml-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIÊNCIA QUE FAZ A DIFERENÇA -->
+    <section class="py-20 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-5xl font-bold leading-tight">Experiência que<br>faz a diferença</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Com mais de 25 anos de experiência no setor, a Suavit é referência em serviços de limpeza profissional em Portugal. 
+                        Trabalhamos com empresas exigentes que valorizam qualidade, organização e resultados consistentes.
+                    </p>
+                    <button onclick="document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' })"
+                            class="inline-flex items-center gap-3 border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white px-8 py-4 rounded-2xl font-semibold transition">
+                        Falar com especialista
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <img src="https://picsum.photos/id/1015/600/600" alt="Sala de estar limpa" class="rounded-3xl shadow-lg">
+                    <img src="https://picsum.photos/id/106/600/600" alt="Cozinha moderna limpa" class="rounded-3xl shadow-lg">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BENEFÍCIOS -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold heading-font mb-4">Por que escolher Suavit?</h2>
-                <p class="text-xl text-gray-600 max-w-xl mx-auto">Mais que um produto, uma experiência de cuidado e bem-estar.</p>
+    <!-- STATS -->
+    <section class="bg-gray-50 py-12">
+        <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-5xl font-bold text-teal-600">+25 anos</div>
+                <p class="mt-2 text-gray-600 font-medium">de experiência no setor da limpeza profissional</p>
+            </div>
+            <div>
+                <div class="text-5xl font-bold text-teal-600">+1.000</div>
+                <p class="mt-2 text-gray-600 font-medium">espaços limpos e entregues com excelência</p>
+            </div>
+            <div>
+                <div class="text-5xl font-bold text-teal-600">100%</div>
+                <p class="mt-2 text-gray-600 font-medium">foco na satisfação e qualidade do serviço</p>
+            </div>
+            <div>
+                <div class="text-5xl font-bold text-teal-600">24 horas</div>
+                <p class="mt-2 text-gray-600 font-medium">de atendimento rápido e humanizado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS + EQUIPE + TÉCNICAS -->
+    <section class="py-20 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-3 gap-8">
+            <!-- Produtos -->
+            <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <img src="https://picsum.photos/id/201/800/500" alt="Produtos profissionais" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-4">Produtos profissionais de alta eficácia e segurança</h3>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white border border-gray-100 rounded-3xl p-10 card-hover">
-                    <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fa-solid fa-leaf text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4">Fórmula Natural</h3>
-                    <p class="text-gray-600 leading-relaxed">Ingredientes selecionados que respeitam sua pele e o meio ambiente.</p>
+            <!-- Equipe -->
+            <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <img src="https://picsum.photos/id/1011/800/500" alt="Equipe treinada" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-4">Equipe treinada e especializada</h3>
                 </div>
+            </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white border border-gray-100 rounded-3xl p-10 card-hover">
-                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fa-solid fa-heart text-3xl"></i>
+            <!-- Técnicas -->
+            <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Técnicas específicas para cada tipo de espaço</h3>
+                    <div class="flex justify-center">
+                        <img src="https://picsum.photos/id/866/400/300" alt="Técnicas de limpeza" class="rounded-2xl">
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4">Suavidade Extrema</h3>
-                    <p class="text-gray-600 leading-relaxed">Textura única que proporciona sensação de maciez imediata e duradoura.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Card 3 -->
-                <div class="bg-white border border-gray-100 rounded-3xl p-10 card-hover">
-                    <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fa-solid fa-shield-halved text-3xl"></i>
+    <!-- SOLUÇÕES COMPLETAS -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5">
+                <img src="https://picsum.photos/id/106/900/700" alt="Espaço limpo Suavit" class="rounded-3xl shadow-2xl">
+            </div>
+            <div class="md:col-span-7">
+                <h2 class="text-5xl font-bold mb-10">Soluções completas de limpeza profissional</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start">
+                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-xl">Limpeza Pós-Obra</h4>
+                            <p class="text-gray-600">Remoção completa de resíduos após obras.</p>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4">Resultados Visíveis</h3>
-                    <p class="text-gray-600 leading-relaxed">Resultados que você sente e vê desde a primeira aplicação.</p>
+                    <div class="flex gap-4 items-start">
+                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-xl">Limpeza de Escritórios e Empresas</h4>
+                            <p class="text-gray-600">Manutenção organizada e impecável.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-xl">Limpeza de Condomínios</h4>
+                            <p class="text-gray-600">Manutenção de áreas comuns com elevado padrão.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-xl">Limpeza Profunda e Manutenção</h4>
+                            <p class="text-gray-600">Serviços regulares ou pontuais.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-xl">Limpeza de Espaços Comerciais</h4>
+                            <p class="text-gray-600">Lojas e espaços comerciais sempre prontos para receber clientes.</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O MÉTODO SUAVIT -->
+    <section class="py-20 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-5xl font-bold mb-8">O Método Suavit de Limpeza Profissional</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl">1</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-xl">Avaliação Inicial</h4>
+                                <p class="text-gray-600">Análise do espaço e identificação das necessidades específicas.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl">2</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-xl">Planeamento Personalizado</h4>
+                                <p class="text-gray-600">Definição de prazos, produtos e cronograma ideal para o serviço.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl">3</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-xl">Execução Profissional</h4>
+                                <p class="text-gray-600">Realizamos a limpeza com rigor, eficiência e atenção ao detalhe.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl">4</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-xl">Inspeção Final</h4>
+                                <p class="text-gray-600">Verificamos todos os pontos para garantir um resultado impecável.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://picsum.photos/id/160/800/900" alt="Método Suavit" class="rounded-3xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA / FUNDADORA -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+            <img src="https://picsum.photos/id/1009/700/900" alt="Fundadora Suavit" class="rounded-3xl shadow-2xl">
+            <div>
+                <h2 class="text-5xl font-bold mb-8">Uma história construída com dedicação e excelência</h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                    Por trás da Suavit está uma liderança experiente, dedicada e apaixonada pelo que faz. Com mais de 25 anos de experiência no setor da limpeza profissional, a fundadora construiu uma empresa sólida, baseada em valores como rigor, confiança e resultados consistentes.
+                </p>
+                <p class="italic text-xl text-gray-500">"Mais do que limpar espaços, o nosso objetivo é criar ambientes prontos para funcionar com qualidade e segurança."</p>
             </div>
         </div>
     </section>
 
     <!-- CTA INTERMEDIÁRIO -->
-    <section id="cta-section" class="bg-gradient-to-r from-pink-600 to-purple-600 py-20 text-white">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-5xl font-bold heading-font mb-6">Pronto para sentir a diferença?</h2>
-            <p class="text-2xl mb-10">Experimente Suavit hoje e transforme sua rotina de cuidados.</p>
-            
-            <form id="leadForm" class="max-w-md mx-auto space-y-4">
-                <input type="text" id="nome" placeholder="Seu nome completo" 
-                       class="w-full px-8 py-5 rounded-3xl focus:outline-none text-gray-900">
-                <input type="email" id="email" placeholder="Seu melhor e-mail" 
-                       class="w-full px-8 py-5 rounded-3xl focus:outline-none text-gray-900">
-                <button type="button" onclick="enviarFormulario()" 
-                        class="w-full bg-white text-pink-600 font-bold py-6 rounded-3xl text-xl hover:bg-gray-100 transition">
-                    Quero meu kit Suavit
-                </button>
-            </form>
-            <p class="text-sm mt-6 opacity-80">* Oferta válida por tempo limitado</p>
+    <section id="cta-final" class="bg-gradient-to-r from-teal-600 to-blue-600 py-20 text-white">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <h2 class="text-5xl font-bold mb-6">Precisa de um serviço de limpeza profissional?</h2>
+            <p class="text-2xl mb-12 max-w-2xl mx-auto">Na Suavit, cada cliente é único. Desde o primeiro contacto, garantimos uma comunicação clara, rápida e eficiente.</p>
+            <button onclick="alert('Formulário enviado! Entraremos em contacto em breve.')"
+                    class="bg-white text-teal-700 hover:bg-teal-50 px-12 py-6 rounded-3xl text-2xl font-semibold">
+                Falar com especialista →
+            </button>
         </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-bold heading-font text-center mb-16">O que estão dizendo</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl">
-                    <p class="italic text-gray-600 mb-6">"Nunca usei algo tão suave. Minha pele agradece todos os dias!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
-                        <div>
-                            <p class="font-semibold">Ana Clara Mendes</p>
-                            <p class="text-sm text-gray-500">São Paulo - SP</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-3xl">
-                    <p class="italic text-gray-600 mb-6">"O cheiro é incrível e dura o dia todo. Recomendo demais!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
-                        <div>
-                            <p class="font-semibold">Mariana Oliveira</p>
-                            <p class="text-sm text-gray-500">Rio de Janeiro - RJ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-3xl">
-                    <p class="italic text-gray-600 mb-6">"Melhor investimento em autocuidado que fiz esse ano."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
-                        <div>
-                            <p class="font-semibold">Juliana Costa</p>
-                            <p class="text-sm text-gray-500">Belo Horizonte - MG</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- GALERIA DE ESPAÇOS -->
+    <section class="py-20 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="text-center text-4xl font-bold mb-12">Alguns dos nossos trabalhos</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <img src="https://picsum.photos/id/160/600/400" alt="" class="rounded-3xl">
+                <img src="https://picsum.photos/id/201/600/400" alt="" class="rounded-3xl">
+                <img src="https://picsum.photos/id/106/600/400" alt="" class="rounded-3xl">
+                <img src="https://picsum.photos/id/133/600/400" alt="" class="rounded-3xl">
+                <img src="https://picsum.photos/id/1015/600/400" alt="" class="rounded-3xl">
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="py-24 bg-white">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-5xl font-bold heading-font text-center mb-12">Perguntas Frequentes</h2>
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="text-5xl font-bold text-center mb-16">Dúvidas Frequentes</h2>
             
-            <div class="space-y-6">
-                <div class="border border-gray-200 rounded-3xl p-8">
-                    <div onclick="this.nextElementSibling.classList.toggle('hidden')" class="faq-question flex justify-between items-center">
-                        <h3 class="font-semibold text-lg">Quanto tempo dura o efeito da suavidade?</h3>
-                        <i class="fa-solid fa-chevron-down"></i>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="faq-item bg-white rounded-3xl border border-gray-200 overflow-hidden">
+                    <div onclick="toggleFAQ(this)" class="faq-question p-8 flex justify-between items-center">
+                        <h3 class="font-semibold text-xl">Quais tipos de limpeza realizam?</h3>
+                        <i class="fa-solid fa-chevron-down text-teal-600"></i>
                     </div>
-                    <div class="hidden mt-4 text-gray-600">O efeito de maciez pode durar até 48 horas após a aplicação, dependendo do tipo de pele.</div>
+                    <div class="faq-answer px-8 pb-8 text-gray-600">Oferecemos limpeza profissional completa para empresas, construtoras, condomínios e espaços comerciais, incluindo limpeza pós-obra, escritórios, manutenção profunda e espaços comerciais.</div>
                 </div>
-                
-                <div class="border border-gray-200 rounded-3xl p-8">
-                    <div onclick="this.nextElementSibling.classList.toggle('hidden')" class="faq-question flex justify-between items-center">
-                        <h3 class="font-semibold text-lg">É indicado para peles sensíveis?</h3>
-                        <i class="fa-solid fa-chevron-down"></i>
+
+                <div class="faq-item bg-white rounded-3xl border border-gray-200 overflow-hidden">
+                    <div onclick="toggleFAQ(this)" class="faq-question p-8 flex justify-between items-center">
+                        <h3 class="font-semibold text-xl">Como funciona o processo de atendimento?</h3>
+                        <i class="fa-solid fa-chevron-down text-teal-600"></i>
                     </div>
-                    <div class="hidden mt-4 text-gray-600">Sim! A fórmula de Suavit foi desenvolvida especialmente para peles sensíveis e testada dermatologicamente.</div>
+                    <div class="faq-answer px-8 pb-8 text-gray-600">Desde o primeiro contacto, garantimos uma comunicação clara, rápida e eficiente. Adaptamos cada serviço às necessidades do espaço.</div>
+                </div>
+
+                <div class="faq-item bg-white rounded-3xl border border-gray-200 overflow-hidden">
+                    <div onclick="toggleFAQ(this)" class="faq-question p-8 flex justify-between items-center">
+                        <h3 class="font-semibold text-xl">Qual é o diferencial da Suavit?</h3>
+                        <i class="fa-solid fa-chevron-down text-teal-600"></i>
+                    </div>
+                    <div class="faq-answer px-8 pb-8 text-gray-600">Mais de 25 anos de experiência, equipa altamente treinada, produtos profissionais e um método próprio que garante resultados consistentes.</div>
+                </div>
+
+                <!-- Mais FAQs conforme o PDF -->
+                <div class="faq-item bg-white rounded-3xl border border-gray-200 overflow-hidden">
+                    <div onclick="toggleFAQ(this)" class="faq-question p-8 flex justify-between items-center">
+                        <h3 class="font-semibold text-xl">Utilizam produtos agressivos?</h3>
+                        <i class="fa-solid fa-chevron-down text-teal-600"></i>
+                    </div>
+                    <div class="faq-answer px-8 pb-8 text-gray-600">Não. Utilizamos apenas produtos profissionais de alta eficácia e segurança, adequados a cada tipo de superfície.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex justify-center mb-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">S</div>
-                    <span class="text-3xl font-bold heading-font">Suavit</span>
+    <!-- FINAL CTA + IMAGEM -->
+    <section class="bg-gray-900 text-white py-20">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="inline-flex items-center gap-3 mb-6">
+                    <div class="text-4xl">S</div>
+                    <span class="text-4xl font-bold">SUAVIT</span>
                 </div>
+                <h2 class="text-5xl font-bold mb-6">Garante um espaço limpo, organizado e pronto para uso.</h2>
+                <p class="text-xl text-gray-300 mb-10">Confie na experiência da Suavit para cuidar da limpeza do seu espaço com excelência, segurança e profissionalismo.</p>
+                <button onclick="alert('Formulário enviado! Entraremos em contacto em breve.')"
+                        class="bg-white text-teal-700 hover:bg-teal-50 px-10 py-5 rounded-3xl font-semibold text-lg">
+                    Falar com especialista →
+                </button>
             </div>
-            <p class="text-gray-400 mb-8">© 2026 Suavit. Todos os direitos reservados.</p>
-            <div class="flex justify-center gap-6 text-gray-400">
-                <a href="#" class="hover:text-white">Instagram</a>
-                <a href="#" class="hover:text-white">WhatsApp</a>
-                <a href="#" class="hover:text-white">Contato</a>
+            <img src="https://picsum.photos/id/201/900/600" alt="Mão com luva roxa a limpar" class="rounded-3xl shadow-2xl">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t py-16">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-12">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="text-5xl">S</div>
+                        <span class="text-5xl font-bold">SUAVIT</span>
+                    </div>
+                    <p class="text-gray-600">Confiança, Eficiência &amp; Excelência Em Cada Limpeza</p>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h5 class="font-semibold mb-4">Menu</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-teal-600">Início</a></li>
+                        <li><a href="#" class="hover:text-teal-600">Experiência</a></li>
+                        <li><a href="#" class="hover:text-teal-600">Soluções</a></li>
+                        <li><a href="#" class="hover:text-teal-600">Como funciona</a></li>
+                        <li><a href="#" class="hover:text-teal-600">Dúvidas Frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h5 class="font-semibold mb-4">Contacto</h5>
+                    <p class="flex items-center gap-3"><i class="fa-solid fa-phone"></i> 964 757 489</p>
+                    <p class="flex items-center gap-3"><i class="fa-solid fa-envelope"></i> comercial@suavit.pt</p>
+                </div>
+
+                <div class="md:col-span-3 text-sm">
+                    <p class="text-gray-500">© 2026 Suavit. Todos os direitos reservados.</p>
+                    <div class="flex gap-6 mt-6 text-2xl">
+                        <i class="fa-brands fa-facebook hover:text-teal-600 cursor-pointer"></i>
+                        <i class="fa-brands fa-instagram hover:text-teal-600 cursor-pointer"></i>
+                        <i class="fa-brands fa-linkedin hover:text-teal-600 cursor-pointer"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        function enviarFormulario() {
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
+        function toggleFAQ(el) {
+            const answer = el.nextElementSibling;
+            const icon = el.querySelector('i');
             
-            if (nome && email) {
-                alert(`Obrigado, ${nome}!\n\nSeu interesse em Suavit foi registrado.\nEm breve entraremos em contato pelo e-mail ${email}.`);
-                document.getElementById('leadForm').reset();
+            if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                answer.style.maxHeight = '0px';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
             } else {
-                alert('Por favor, preencha todos os campos.');
+                // Fecha todos os outros
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = '0px');
+                document.querySelectorAll('.faq-question i').forEach(i => {
+                    i.classList.remove('fa-chevron-up');
+                    i.classList.add('fa-chevron-down');
+                });
+                
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
             }
         }
 
-        // Animação suave ao scroll
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('.card-hover').forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                if (cardTop < window.innerHeight - 100) {
-                    card.style.opacity = '1';
-                }
-            });
-        });
+        // Tailwind script
+        tailwind.config = {
+            content: ["./**/*.{html,js}"],
+            theme: { extend: {} }
+        }
     </script>
 </body>
 </html>
