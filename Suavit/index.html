@@ -1,440 +1,1365 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suavit | Limpeza Profissional com Resultados Impecáveis</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url('https://picsum.photos/id/1011/2000/1200') center/cover no-repeat;
-        }
-        
-        .nav-scroll { 
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        .faq-question {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-        }
-        
-        .section-title {
-            font-size: 2.75rem;
-            line-height: 1.1;
-            font-weight: 700;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suavit | Limpeza Profissional — Resultados Impecáveis</title>
+
+  <!-- ═══════════════════════════════════════════
+       SEO & OPEN GRAPH
+  ═══════════════════════════════════════════ -->
+  <meta name="description" content="Suavit — mais de 25 anos de limpeza profissional em Portugal. Escritórios, pós-obra, condomínios e espaços comerciais. Atendimento rápido e humanizado 24 horas." />
+  <meta name="keywords" content="limpeza profissional, limpeza pós-obra, limpeza escritórios, limpeza condomínios, limpeza comercial, Portugal" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Suavit Higiene e Limpeza" />
+  <link rel="canonical" href="https://www.suavit.pt/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Suavit | Limpeza Profissional com Resultados Impecáveis" />
+  <meta property="og:description" content="Mais de 25 anos a garantir espaços limpos, organizados e prontos para uso, com qualidade, rapidez e atenção ao detalhe." />
+  <meta property="og:url" content="https://www.suavit.pt/" />
+  <meta property="og:image" content="suavit_images/hero-mulher.jpg" />
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Suavit Higiene e Limpeza",
+    "description": "Empresa de limpeza profissional com mais de 25 anos de experiência em Portugal.",
+    "telephone": "+351964757489",
+    "email": "comercial@suavit.pt",
+    "address": { "@type": "PostalAddress", "addressCountry": "PT" },
+    "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ════════════════════════════════════════
+       CSS CUSTOM PROPERTIES
+    ════════════════════════════════════════ */
+    :root {
+      --navy:     #1a3a5c;
+      --navy-mid: #2d5478;
+      --teal:     #3d7a8a;
+      --teal-light: #5ba4b4;
+      --accent:   #4a8fa0;
+      --bg-light: #eef3f8;
+      --bg-pale:  #f0f5fb;
+      --bg-mid:   #dce8f0;
+      --white:    #ffffff;
+      --text:     #1e2d3d;
+      --text-mid: #4a5e6e;
+      --text-light:#6b7f8f;
+      --radius:   16px;
+      --radius-sm:10px;
+      --shadow:   0 4px 24px rgba(26,58,92,.10);
+      --shadow-lg:0 12px 48px rgba(26,58,92,.15);
+      --font-head:"Playfair Display", Georgia, serif;
+      --font-body:"DM Sans", system-ui, sans-serif;
+      --max-w:    1200px;
+      --nav-h:    76px;
+    }
+
+    /* ════════════════════════════════════════
+       RESET & BASE
+    ════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display:block; max-width:100%; }
+    a  { text-decoration:none; color:inherit; }
+    ul { list-style:none; }
+
+    .container { max-width:var(--max-w); margin:0 auto; padding:0 32px; }
+
+    /* ════════════════════════════════════════
+       BUTTON
+    ════════════════════════════════════════ */
+    .btn {
+      display:inline-flex; align-items:center; gap:8px;
+      background: var(--navy-mid);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: .93rem;
+      font-weight: 500;
+      padding: 13px 26px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background .25s, transform .2s, box-shadow .25s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,122,138,.35); }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.15); }
+
+    /* ════════════════════════════════════════
+       NAVBAR
+    ════════════════════════════════════════ */
+    #navbar {
+      position: fixed; top:0; left:0; right:0; z-index:900;
+      height: var(--nav-h);
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(26,58,92,.08);
+      transition: box-shadow .3s;
+    }
+    #navbar.scrolled { box-shadow: var(--shadow); }
+    .nav-inner {
+      height: 100%;
+      display: flex; align-items:center; justify-content:space-between;
+    }
+    .nav-logo {
+      display:flex; align-items:center; gap:10px;
+    }
+    .nav-logo svg { width:40px; height:40px; }
+    .nav-logo-text { display:flex; flex-direction:column; line-height:1.1; }
+    .nav-logo-text span:first-child {
+      font-family:var(--font-head); font-size:1.25rem; font-weight:700;
+      color:var(--navy); letter-spacing:.04em;
+    }
+    .nav-logo-text span:last-child {
+      font-size:.6rem; color:var(--text-light); letter-spacing:.12em; text-transform:uppercase;
+    }
+    .nav-links { display:flex; gap:32px; }
+    .nav-links a {
+      font-size:.88rem; font-weight:500; color:var(--text-mid);
+      position:relative; padding-bottom:4px;
+      transition:color .2s;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; bottom:0; left:0; width:0; height:2px;
+      background:var(--teal); transition:width .25s;
+    }
+    .nav-links a:hover { color:var(--navy); }
+    .nav-links a:hover::after { width:100%; }
+    .nav-contact {
+      display:flex; align-items:center; gap:20px; font-size:.85rem;
+    }
+    .nav-contact a { color:var(--text-mid); font-weight:500; transition:color .2s; }
+    .nav-contact a:hover { color:var(--navy); }
+    .nav-phone { color:var(--navy) !important; font-weight:600 !important; }
+    .burger {
+      display:none; background:none; border:none; cursor:pointer; padding:4px;
+    }
+    .burger span {
+      display:block; width:24px; height:2px; background:var(--navy);
+      margin:5px 0; border-radius:2px; transition:.3s;
+    }
+
+    /* ════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════ */
+    #hero {
+      position:relative;
+      min-height:100vh;
+      padding-top: var(--nav-h);
+      background: linear-gradient(135deg, #1a3a5c 0%, #2d6177 50%, #3d7a8a 100%);
+      overflow:hidden;
+      display:flex; align-items:center;
+    }
+    .hero-bg-img {
+      position:absolute; inset:0;
+      background: url('suavit_images/hero-mulher.jpg') center 20% / cover no-repeat;
+      opacity:.18;
+    }
+    .hero-overlay {
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(26,58,92,.92) 45%, rgba(26,58,92,.2) 100%);
+    }
+    .hero-inner {
+      position:relative; z-index:2;
+      display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:60px;
+      padding: 80px 32px 100px;
+      max-width:var(--max-w); margin:0 auto; width:100%;
+    }
+    .hero-content { max-width:560px; }
+    .hero-tag {
+      display:inline-flex; align-items:center; gap:8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.9);
+      font-size:.78rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase;
+      padding:6px 16px; border-radius:50px; margin-bottom:24px;
+    }
+    .hero-tag::before { content:''; width:6px; height:6px; border-radius:50%; background:#7dd3e8; }
+    .hero-content h1 {
+      font-family:var(--font-head);
+      font-size:clamp(2.2rem, 4vw, 3.4rem);
+      font-weight:700; line-height:1.15;
+      color:var(--white); margin-bottom:20px;
+    }
+    .hero-content h1 em { font-style:normal; color:#7dd3e8; }
+    .hero-content p {
+      font-size:1.05rem; color:rgba(255,255,255,.82);
+      line-height:1.7; margin-bottom:12px;
+    }
+    .hero-content p strong { color:var(--white); }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
+    .hero-img-wrap {
+      position:relative; display:flex; justify-content:center; align-items:flex-end;
+    }
+    .hero-img-wrap img {
+      width:100%; max-width:480px;
+      object-fit:cover; border-radius:24px 24px 0 0;
+      filter:drop-shadow(0 24px 48px rgba(0,0,0,.4));
+    }
+    /* Chat bubble */
+    .chat-bubble {
+      position:absolute; bottom:100px; right:0;
+      background:var(--white); border-radius:14px 14px 4px 14px;
+      padding:14px 18px; max-width:220px;
+      box-shadow:0 8px 32px rgba(0,0,0,.18);
+      display:flex; align-items:flex-start; gap:10px;
+      animation: floatBubble 3s ease-in-out infinite;
+    }
+    @keyframes floatBubble {
+      0%,100% { transform:translateY(0); }
+      50% { transform:translateY(-8px); }
+    }
+    .chat-avatar {
+      width:38px; height:38px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    }
+    .chat-text p:first-child { font-size:.78rem; font-weight:700; color:var(--navy); margin-bottom:3px; }
+    .chat-text p:last-child  { font-size:.72rem; color:var(--text-mid); line-height:1.4; }
+
+    /* Marquee bar */
+    .marquee-bar {
+      background:var(--navy);
+      color:rgba(255,255,255,.9);
+      overflow:hidden; padding:12px 0;
+      border-top:1px solid rgba(255,255,255,.1);
+    }
+    .marquee-track {
+      display:flex; width:max-content;
+      animation:marquee 28s linear infinite;
+    }
+    .marquee-track span {
+      font-size:.78rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+      padding:0 20px; white-space:nowrap;
+    }
+    .marquee-track span strong { color:#7dd3e8; font-weight:700; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ════════════════════════════════════════
+       SECTION GENERIC
+    ════════════════════════════════════════ */
+    section { padding:90px 0; }
+    .section-label {
+      font-size:.72rem; font-weight:600; letter-spacing:.15em; text-transform:uppercase;
+      color:var(--teal); margin-bottom:12px;
+    }
+    .section-title {
+      font-family:var(--font-head);
+      font-size:clamp(1.9rem, 3vw, 2.8rem);
+      font-weight:700; line-height:1.2;
+      color:var(--navy);
+    }
+    .section-title em { font-style:normal; color:var(--teal); }
+    .section-sub {
+      font-size:1rem; color:var(--text-mid); line-height:1.75; margin-top:16px;
+    }
+
+    /* ════════════════════════════════════════
+       EXPERIENCE SECTION
+    ════════════════════════════════════════ */
+    #experiencia { background:var(--white); }
+    .exp-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+    }
+    .exp-images {
+      display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    }
+    .exp-img-main {
+      grid-column:1; grid-row:1/3;
+      border-radius:var(--radius); overflow:hidden;
+      box-shadow:var(--shadow-lg);
+    }
+    .exp-img-main img { width:100%; height:100%; object-fit:cover; }
+    .exp-img-sec {
+      border-radius:var(--radius); overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .exp-img-sec img { width:100%; height:100%; object-fit:cover; }
+    .exp-content {}
+    .exp-content .btn { margin-top:30px; }
+
+    /* Stats row */
+    .stats-row {
+      background:var(--bg-pale);
+      padding:50px 0;
+      border-top:1px solid var(--bg-mid);
+      border-bottom:1px solid var(--bg-mid);
+    }
+    .stats-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family:var(--font-head);
+      font-size:clamp(2.2rem,4vw,3rem);
+      font-weight:700; color:var(--navy); line-height:1;
+    }
+    .stat-desc { font-size:.85rem; color:var(--text-mid); margin-top:8px; line-height:1.45; }
+
+    /* ════════════════════════════════════════
+       FEATURES MOSAIC
+    ════════════════════════════════════════ */
+    #features { background:var(--bg-pale); padding:70px 0; }
+    .features-mosaic {
+      display:grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap:16px;
+      height:500px;
+    }
+    .feat-card {
+      border-radius:var(--radius);
+      overflow:hidden;
+      position:relative;
+      display:flex; align-items:flex-end;
+    }
+    .feat-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .feat-card-label {
+      position:relative; z-index:2;
+      padding:24px;
+      font-family:var(--font-head);
+      font-size:1.2rem;
+      font-weight:600;
+      color:var(--navy);
+      line-height:1.3;
+    }
+    .feat-card-label em { font-style:normal; color:var(--teal); }
+    .feat-main {
+      grid-row:1/3;
+      background:var(--white);
+    }
+    .feat-main::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(255,255,255,.9) 35%, rgba(255,255,255,.0) 100%);
+    }
+    .feat-main .feat-card-label { font-size:1.5rem; }
+    .feat-side {
+      background:var(--white);
+    }
+    .feat-side::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(255,255,255,.9) 40%, transparent 100%);
+    }
+
+    /* ════════════════════════════════════════
+       SOLUTIONS
+    ════════════════════════════════════════ */
+    #solucoes { background:var(--white); }
+    .sol-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;
+    }
+    .sol-img { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-lg); }
+    .sol-img img { width:100%; height:480px; object-fit:cover; }
+    .sol-list { margin-top:32px; display:flex; flex-direction:column; gap:0; }
+    .sol-item {
+      display:flex; align-items:flex-start; gap:16px;
+      padding:20px 0;
+      border-bottom:1px solid var(--bg-mid);
+      cursor:default;
+      transition:background .2s;
+    }
+    .sol-item:first-child { border-top:1px solid var(--bg-mid); }
+    .sol-item:hover { padding-left:6px; }
+    .sol-icon {
+      width:44px; height:44px; border-radius:10px;
+      background:var(--bg-pale); display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; font-size:1.3rem;
+      transition:background .2s;
+    }
+    .sol-item:hover .sol-icon { background:var(--bg-mid); }
+    .sol-title { font-size:.95rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .sol-desc  { font-size:.85rem; color:var(--text-mid); line-height:1.5; }
+
+    /* ════════════════════════════════════════
+       METHOD
+    ════════════════════════════════════════ */
+    #metodo { background:var(--bg-pale); }
+    .method-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;
+    }
+    .method-steps { display:flex; flex-direction:column; gap:0; }
+    .method-step {
+      display:flex; gap:20px; padding:24px 0;
+      border-bottom:1px solid var(--bg-mid); position:relative;
+    }
+    .method-step:first-child { border-top:1px solid var(--bg-mid); }
+    .step-num {
+      width:44px; height:44px; border-radius:50%;
+      background:var(--navy); color:var(--white);
+      font-family:var(--font-head); font-size:1rem; font-weight:700;
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0;
+    }
+    .step-body {}
+    .step-title { font-size:.97rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .step-desc  { font-size:.85rem; color:var(--text-mid); line-height:1.55; }
+    .method-img { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-lg); }
+    .method-img img { width:100%; height:520px; object-fit:cover; }
+
+    /* ════════════════════════════════════════
+       FOUNDER
+    ════════════════════════════════════════ */
+    #fundadora { background:var(--white); }
+    .founder-grid {
+      display:grid; grid-template-columns:1fr 1.1fr; gap:70px; align-items:center;
+    }
+    .founder-img {
+      border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-lg);
+      max-height:580px;
+    }
+    .founder-img img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .founder-content .section-title { margin-bottom:20px; }
+    .founder-content p { color:var(--text-mid); line-height:1.75; margin-bottom:14px; font-size:.97rem; }
+    .founder-quote {
+      margin-top:28px; padding:22px 26px;
+      background:var(--bg-pale);
+      border-left:4px solid var(--teal);
+      border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .founder-quote p {
+      font-family:var(--font-head);
+      font-size:1.05rem; font-style:italic;
+      color:var(--navy); margin:0; line-height:1.6;
+    }
+
+    /* ════════════════════════════════════════
+       CTA SECTION
+    ════════════════════════════════════════ */
+    #cta { background:var(--bg-pale); padding:90px 0 0; }
+    .cta-top { text-align:center; padding-bottom:60px; }
+    .cta-top .section-title { margin-bottom:16px; }
+    .cta-top .section-sub { max-width:520px; margin:0 auto 30px; }
+    .gallery-strip {
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:0;
+      height:280px;
+      overflow:hidden;
+    }
+    .gallery-strip-item {
+      overflow:hidden; position:relative; cursor:pointer;
+    }
+    .gallery-strip-item img {
+      width:100%; height:100%; object-fit:cover;
+      transition:transform .5s ease;
+    }
+    .gallery-strip-item:hover img { transform:scale(1.08); }
+
+    /* ════════════════════════════════════════
+       FAQ
+    ════════════════════════════════════════ */
+    #faq { background:var(--white); }
+    .faq-title {
+      font-family:var(--font-head);
+      font-size:clamp(1.8rem,3vw,2.4rem);
+      font-weight:700; color:var(--navy);
+      margin-bottom:40px;
+    }
+    .faq-title em { font-style:normal; color:var(--teal); }
+    .faq-list { display:flex; flex-direction:column; gap:0; max-width:900px; }
+    .faq-item {
+      border:1px solid var(--bg-mid);
+      border-radius:var(--radius-sm);
+      margin-bottom:10px;
+      overflow:hidden;
+      transition:box-shadow .2s;
+    }
+    .faq-item.open { box-shadow:var(--shadow); }
+    .faq-q {
+      width:100%; text-align:left;
+      background:var(--bg-pale);
+      border:none; cursor:pointer;
+      padding:20px 24px;
+      display:flex; justify-content:space-between; align-items:center; gap:16px;
+      font-family:var(--font-body); font-size:.96rem; font-weight:600;
+      color:var(--navy);
+      transition:background .2s;
+    }
+    .faq-item.open .faq-q { background:var(--bg-mid); }
+    .faq-q:hover { background:var(--bg-mid); }
+    .faq-icon {
+      width:28px; height:28px; border-radius:50%;
+      background:var(--navy); color:var(--white);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.1rem; flex-shrink:0;
+      transition:transform .3s, background .2s;
+    }
+    .faq-item.open .faq-icon { transform:rotate(45deg); background:var(--teal); }
+    .faq-a {
+      max-height:0; overflow:hidden;
+      transition:max-height .35s ease, padding .35s;
+      background:var(--white);
+    }
+    .faq-item.open .faq-a { max-height:200px; }
+    .faq-a-inner { padding:18px 24px 22px; font-size:.9rem; color:var(--text-mid); line-height:1.7; }
+
+    /* ════════════════════════════════════════
+       FOOTER CTA BANNER
+    ════════════════════════════════════════ */
+    #footer-cta {
+      position:relative; overflow:hidden;
+      background:linear-gradient(135deg, #1a3a5c 0%, #2d6177 60%, #3d7a8a 100%);
+      padding:80px 0;
+    }
+    .footer-cta-bg {
+      position:absolute; right:0; bottom:0; top:0; width:55%;
+      background:url('suavit_images/galeria-056.jpg') center / cover no-repeat;
+      opacity:.22;
+    }
+    .footer-cta-inner {
+      position:relative; z-index:2;
+      max-width:580px;
+    }
+    .footer-cta-inner .nav-logo-text span:first-child { color:var(--white); font-size:1.6rem; }
+    .footer-cta-inner .nav-logo-text span:last-child  { color:rgba(255,255,255,.6); }
+    .footer-logo { margin-bottom:28px; display:flex; align-items:center; gap:12px; }
+    .footer-logo svg path { fill:var(--white); }
+    .footer-cta-inner h2 {
+      font-family:var(--font-head);
+      font-size:clamp(1.9rem,3.5vw,3rem);
+      font-weight:700; color:var(--white); line-height:1.2; margin-bottom:16px;
+    }
+    .footer-cta-inner h2 em { font-style:normal; font-weight:700; }
+    .footer-cta-inner p { color:rgba(255,255,255,.8); font-size:1rem; margin-bottom:30px; line-height:1.65; }
+
+    /* ════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════ */
+    footer {
+      background:var(--navy);
+      padding:50px 0 28px;
+      color:rgba(255,255,255,.75);
+    }
+    .footer-grid {
+      display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px;
+      padding-bottom:40px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+      margin-bottom:28px;
+    }
+    .footer-brand .nav-logo-text span:first-child { color:var(--white); }
+    .footer-brand .nav-logo-text span:last-child  { color:rgba(255,255,255,.5); }
+    .footer-brand .nav-logo { margin-bottom:16px; }
+    .footer-brand p { font-size:.84rem; line-height:1.65; color:rgba(255,255,255,.6); max-width:240px; }
+    .footer-col h4 {
+      font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--white); margin-bottom:18px;
+    }
+    .footer-col ul li { margin-bottom:10px; }
+    .footer-col ul li a {
+      font-size:.88rem; color:rgba(255,255,255,.6);
+      transition:color .2s;
+    }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-contact-item {
+      display:flex; align-items:center; gap:10px;
+      font-size:.88rem; color:rgba(255,255,255,.6);
+      margin-bottom:10px;
+    }
+    .footer-contact-item svg { flex-shrink:0; opacity:.7; }
+    .footer-contact-item a { color:rgba(255,255,255,.6); transition:color .2s; }
+    .footer-contact-item a:hover { color:var(--white); }
+    .footer-bottom {
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    }
+    .footer-bottom p { font-size:.78rem; }
+    .social-links { display:flex; gap:10px; }
+    .social-links a {
+      width:34px; height:34px; border-radius:50%;
+      background:rgba(255,255,255,.1);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(255,255,255,.7); font-size:.85rem;
+      transition:background .2s, color .2s;
+    }
+    .social-links a:hover { background:var(--teal); color:var(--white); }
+
+    /* ════════════════════════════════════════
+       MOBILE NAV OVERLAY
+    ════════════════════════════════════════ */
+    .mobile-nav {
+      display:none;
+      position:fixed; inset:0; z-index:850;
+      background:var(--navy);
+      flex-direction:column;
+      padding:calc(var(--nav-h) + 32px) 32px 40px;
+      gap:28px;
+    }
+    .mobile-nav.open { display:flex; }
+    .mobile-nav a {
+      font-family:var(--font-head); font-size:1.6rem;
+      color:var(--white); font-weight:600;
+      opacity:.9; transition:opacity .2s;
+    }
+    .mobile-nav a:hover { opacity:1; }
+    .mobile-nav .mobile-contact {
+      margin-top:auto; display:flex; flex-direction:column; gap:12px;
+    }
+    .mobile-nav .mobile-contact a { font-family:var(--font-body); font-size:1rem; }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+    @media(max-width:1024px) {
+      .hero-inner { grid-template-columns:1fr; }
+      .hero-img-wrap { display:none; }
+      .exp-grid, .sol-grid, .method-grid, .founder-grid { grid-template-columns:1fr; gap:40px; }
+      .exp-images { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+      .exp-img-main { grid-row:auto; }
+      .stats-grid { grid-template-columns:repeat(2,1fr); }
+      .features-mosaic { height:auto; grid-template-columns:1fr; }
+      .feat-main { grid-row:auto; }
+      .feat-card { height:240px; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:768px) {
+      .nav-links, .nav-contact { display:none; }
+      .burger { display:block; }
+      .container { padding:0 20px; }
+      section { padding:64px 0; }
+      .stats-grid { grid-template-columns:repeat(2,1fr); }
+      .gallery-strip { grid-template-columns:repeat(3,1fr); }
+      .gallery-strip-item:nth-child(4),
+      .gallery-strip-item:nth-child(5) { display:none; }
+      .footer-grid { grid-template-columns:1fr; gap:28px; }
+      .footer-bottom { flex-direction:column; align-items:flex-start; }
+    }
+    @media(max-width:480px) {
+      .hero-actions { flex-direction:column; }
+      .stats-grid { grid-template-columns:1fr 1fr; gap:16px; }
+      .gallery-strip { grid-template-columns:repeat(2,1fr); height:200px; }
+      .gallery-strip-item:nth-child(3),
+      .gallery-strip-item:nth-child(4),
+      .gallery-strip-item:nth-child(5) { display:none; }
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
 
-    <!-- HEADER / NAV -->
-    <header class="sticky top-0 z-50 bg-white border-b">
-        <div class="max-w-screen-2xl mx-auto px-8 py-4 flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center gap-3">
-                <div class="w-11 h-11 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-inner">S</div>
-                <div>
-                    <span class="text-3xl font-bold tracking-tighter">SUAVIT</span>
-                    <p class="text-[10px] -mt-1 text-gray-500 tracking-[1px]">Limpeza Profissional</p>
-                </div>
-            </div>
-
-            <!-- Navigation Bar -->
-            <nav class="hidden md:flex items-center gap-6 text-sm font-medium uppercase tracking-widest text-gray-600">
-                <a href="#" class="hover:text-teal-600 transition">SUAVIT</a>
-                <a href="#" class="hover:text-teal-600 transition">LIMPEZA PROFISSIONAL</a>
-                <a href="#" class="hover:text-teal-600 transition">SUAVIT</a>
-                <a href="#" class="hover:text-teal-600 transition">LIMPEZA PROFISSIONAL</a>
-                <a href="#" class="hover:text-teal-600 transition">SUAVIT</a>
-                <a href="#" class="hover:text-teal-600 transition">LIMPEZA PROFISSIONAL</a>
-            </nav>
-
-            <button onclick="document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' })"
-                    class="bg-teal-600 hover:bg-teal-700 text-white px-7 py-3 rounded-full font-semibold flex items-center gap-2 transition">
-                Falar com especialista
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo" aria-label="Suavit — Página inicial">
+        <!-- Logo SVG inline -->
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4z" fill="#eef3f8"/>
+          <path d="M20 8c-2.8 0-5 2-5 4.5 0 3 2.5 4.5 5 6.5 2.5-2 5-3.5 5-6.5C25 10 22.8 8 20 8z" fill="#2d5478"/>
+          <path d="M14 20c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm12 0c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z" fill="#3d7a8a"/>
+          <path d="M16 28c0 2.2 1.8 4 4 4s4-1.8 4-4" stroke="#2d5478" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="nav-logo-text">
+          <span>SUAVIT</span>
+          <span>Higiene e Limpeza</span>
         </div>
-    </header>
+      </a>
 
-    <!-- HERO -->
-    <section class="hero-bg h-screen flex items-center text-white">
-        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center h-full">
-            <div class="space-y-8">
-                <h1 class="text-6xl md:text-7xl font-bold leading-none section-title">
-                    Limpeza Profissional<br>com Resultados Impecáveis
-                </h1>
-                <p class="text-2xl max-w-lg text-white/90">
-                    Mais de 25 anos a garantir espaços limpos, organizados e prontos para uso, com qualidade, rapidez e atenção ao detalhe.
-                </p>
-                <div class="flex items-center gap-4">
-                    <button onclick="document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' })"
-                            class="bg-white text-teal-700 hover:bg-teal-50 px-10 py-5 rounded-2xl font-semibold text-lg flex items-center gap-3">
-                        Falar com especialista
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
+      <ul class="nav-links" role="list">
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#metodo">Como funciona</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+      </ul>
 
-            <!-- Hero Image -->
-            <div class="hidden md:block">
-                <img src="https://picsum.photos/id/1011/800/900" alt="Suavit - Equipe de limpeza profissional" 
-                     class="rounded-3xl shadow-2xl w-full max-w-lg ml-auto">
-            </div>
+      <div class="nav-contact">
+        <a href="tel:+351964757489" class="nav-phone">964 757 489</a>
+        <a href="https://wa.me/351964757489" class="btn" style="padding:9px 20px;font-size:.82rem;">
+          Falar com especialista →
+        </a>
+      </div>
+
+      <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#experiencia" onclick="closeMob()">Experiência</a>
+    <a href="#solucoes"    onclick="closeMob()">Soluções</a>
+    <a href="#metodo"      onclick="closeMob()">Como funciona</a>
+    <a href="#fundadora"   onclick="closeMob()">Sobre nós</a>
+    <a href="#faq"         onclick="closeMob()">Dúvidas</a>
+    <div class="mobile-contact">
+      <a href="tel:+351964757489">📞 964 757 489</a>
+      <a href="mailto:comercial@suavit.pt">✉ comercial@suavit.pt</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section id="hero" aria-label="Secção principal">
+    <div class="hero-bg-img" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">Limpeza Profissional</div>
+        <h1>Limpeza Profissional com <em>Resultados Impecáveis</em></h1>
+        <p>Mais de 25 anos a garantir espaços limpos, organizados e prontos para uso, com qualidade, rapidez e atenção ao detalhe.</p>
+        <p><strong>Atendimento rápido e personalizado para empresas, condomínios e construtoras.</strong></p>
+        <div class="hero-actions">
+          <a href="https://wa.me/351964757489" class="btn">Falar com especialista →</a>
+          <a href="#solucoes" class="btn btn-outline">Ver soluções</a>
         </div>
-    </section>
+      </div>
 
-    <!-- EXPERIÊNCIA QUE FAZ A DIFERENÇA -->
-    <section class="py-20 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8">
-                    <h2 class="text-5xl font-bold leading-tight">Experiência que<br>faz a diferença</h2>
-                    <p class="text-xl text-gray-600 leading-relaxed">
-                        Com mais de 25 anos de experiência no setor, a Suavit é referência em serviços de limpeza profissional em Portugal. 
-                        Trabalhamos com empresas exigentes que valorizam qualidade, organização e resultados consistentes.
-                    </p>
-                    <button onclick="document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' })"
-                            class="inline-flex items-center gap-3 border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white px-8 py-4 rounded-2xl font-semibold transition">
-                        Falar com especialista
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-2 gap-6">
-                    <img src="https://picsum.photos/id/1015/600/600" alt="Sala de estar limpa" class="rounded-3xl shadow-lg">
-                    <img src="https://picsum.photos/id/106/600/600" alt="Cozinha moderna limpa" class="rounded-3xl shadow-lg">
-                </div>
-            </div>
+      <div class="hero-img-wrap" aria-hidden="true">
+        <img
+          src="suavit_images/hero-mulher.jpg"
+          alt="Profissional de limpeza Suavit"
+          width="480" height="560"
+          loading="eager"
+        />
+        <div class="chat-bubble">
+          <img src="suavit_images/equipa-uniforme.jpg" class="chat-avatar" alt="Avatar equipa Suavit" width="38" height="38" />
+          <div class="chat-text">
+            <p>Olá! Como podemos ajudar?</p>
+            <p>A nossa equipa está pronta para o(a) ajudar no que precisar.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- STATS -->
-    <section class="bg-gray-50 py-12">
-        <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-5xl font-bold text-teal-600">+25 anos</div>
-                <p class="mt-2 text-gray-600 font-medium">de experiência no setor da limpeza profissional</p>
-            </div>
-            <div>
-                <div class="text-5xl font-bold text-teal-600">+1.000</div>
-                <p class="mt-2 text-gray-600 font-medium">espaços limpos e entregues com excelência</p>
-            </div>
-            <div>
-                <div class="text-5xl font-bold text-teal-600">100%</div>
-                <p class="mt-2 text-gray-600 font-medium">foco na satisfação e qualidade do serviço</p>
-            </div>
-            <div>
-                <div class="text-5xl font-bold text-teal-600">24 horas</div>
-                <p class="mt-2 text-gray-600 font-medium">de atendimento rápido e humanizado</p>
-            </div>
+    <!-- Marquee bar -->
+    <div class="marquee-bar" aria-hidden="true">
+      <div class="marquee-track">
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <!-- duplicado para loop contínuo -->
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+        <span><strong>SUAVIT</strong> | LIMPEZA PROFISSIONAL |</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       EXPERIÊNCIA
+  ═══════════════════════════════════════ -->
+  <section id="experiencia" aria-labelledby="exp-heading">
+    <div class="container">
+      <div class="exp-grid">
+        <div class="exp-images">
+          <div class="exp-img-main">
+            <img
+              src="suavit_images/luva-limpeza.jpg"
+              alt="Técnica de limpeza profissional com luva"
+              width="400" height="480"
+              loading="lazy"
+            />
+          </div>
+          <div class="exp-img-sec" style="height:230px;">
+            <img
+              src="suavit_images/cozinha-interior.jpg"
+              alt="Cozinha limpa e organizada"
+              width="280" height="230"
+              loading="lazy"
+            />
+          </div>
+          <div class="exp-img-sec" style="height:230px;">
+            <img
+              src="suavit_images/galeria-escadaria.jpg"
+              alt="Espaço limpo após intervenção da Suavit"
+              width="280" height="230"
+              loading="lazy"
+            />
+          </div>
         </div>
-    </section>
 
-    <!-- PRODUTOS + EQUIPE + TÉCNICAS -->
-    <section class="py-20 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-3 gap-8">
-            <!-- Produtos -->
-            <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-                <img src="https://picsum.photos/id/201/800/500" alt="Produtos profissionais" class="w-full h-64 object-cover">
-                <div class="p-8">
-                    <h3 class="text-2xl font-semibold mb-4">Produtos profissionais de alta eficácia e segurança</h3>
-                </div>
-            </div>
-
-            <!-- Equipe -->
-            <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-                <img src="https://picsum.photos/id/1011/800/500" alt="Equipe treinada" class="w-full h-64 object-cover">
-                <div class="p-8">
-                    <h3 class="text-2xl font-semibold mb-4">Equipe treinada e especializada</h3>
-                </div>
-            </div>
-
-            <!-- Técnicas -->
-            <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-                <div class="p-8">
-                    <h3 class="text-2xl font-semibold mb-6">Técnicas específicas para cada tipo de espaço</h3>
-                    <div class="flex justify-center">
-                        <img src="https://picsum.photos/id/866/400/300" alt="Técnicas de limpeza" class="rounded-2xl">
-                    </div>
-                </div>
-            </div>
+        <div class="exp-content">
+          <p class="section-label">Sobre a Suavit</p>
+          <h2 id="exp-heading" class="section-title">
+            Experiência que<br>faz a <em>diferença</em>
+          </h2>
+          <p class="section-sub">
+            Com mais de 25 anos de experiência no setor, a Suavit é referência em serviços de limpeza profissional em Portugal. Trabalhamos com empresas exigentes que valorizam qualidade, organização e resultados consistentes.
+          </p>
+          <p class="section-sub" style="margin-top:14px;">
+            A nossa equipa é altamente treinada, utilizamos equipamentos modernos e produtos profissionais, garantindo um serviço eficiente e seguro em qualquer tipo de espaço.
+          </p>
+          <a href="https://wa.me/351964757489" class="btn">Falar com especialista →</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- SOLUÇÕES COMPLETAS -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-5">
-                <img src="https://picsum.photos/id/106/900/700" alt="Espaço limpo Suavit" class="rounded-3xl shadow-2xl">
-            </div>
-            <div class="md:col-span-7">
-                <h2 class="text-5xl font-bold mb-10">Soluções completas de limpeza profissional</h2>
-                <div class="space-y-6">
-                    <div class="flex gap-4 items-start">
-                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-xl">Limpeza Pós-Obra</h4>
-                            <p class="text-gray-600">Remoção completa de resíduos após obras.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-xl">Limpeza de Escritórios e Empresas</h4>
-                            <p class="text-gray-600">Manutenção organizada e impecável.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-xl">Limpeza de Condomínios</h4>
-                            <p class="text-gray-600">Manutenção de áreas comuns com elevado padrão.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-xl">Limpeza Profunda e Manutenção</h4>
-                            <p class="text-gray-600">Serviços regulares ou pontuais.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <i class="fa-solid fa-check-circle text-teal-600 text-3xl mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-xl">Limpeza de Espaços Comerciais</h4>
-                            <p class="text-gray-600">Lojas e espaços comerciais sempre prontos para receber clientes.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- STATS -->
+  <div class="stats-row" aria-label="Números da Suavit">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">+25 anos</div>
+          <div class="stat-desc">de experiência no setor<br>da limpeza profissional</div>
         </div>
-    </section>
+        <div class="stat-item">
+          <div class="stat-num">+1.000</div>
+          <div class="stat-desc">espaços limpos e<br>entregues com excelência</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-desc">foco na satisfação e<br>qualidade do serviço</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24 horas</div>
+          <div class="stat-desc">de atendimento rápido<br>e humanizado</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- O MÉTODO SUAVIT -->
-    <section class="py-20 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="text-5xl font-bold mb-8">O Método Suavit de Limpeza Profissional</h2>
-                    <div class="space-y-8">
-                        <div class="flex gap-6">
-                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl">1</div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-xl">Avaliação Inicial</h4>
-                                <p class="text-gray-600">Análise do espaço e identificação das necessidades específicas.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl">2</div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-xl">Planeamento Personalizado</h4>
-                                <p class="text-gray-600">Definição de prazos, produtos e cronograma ideal para o serviço.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl">3</div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-xl">Execução Profissional</h4>
-                                <p class="text-gray-600">Realizamos a limpeza com rigor, eficiência e atenção ao detalhe.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl">4</div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-xl">Inspeção Final</h4>
-                                <p class="text-gray-600">Verificamos todos os pontos para garantir um resultado impecável.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src="https://picsum.photos/id/160/800/900" alt="Método Suavit" class="rounded-3xl shadow-2xl">
+  <!-- ═══════════════════════════════════════
+       FEATURES MOSAIC
+  ═══════════════════════════════════════ -->
+  <section id="features" aria-label="Diferenciais da Suavit">
+    <div class="container">
+      <div class="features-mosaic">
+        <!-- Main left card -->
+        <div class="feat-card feat-main">
+          <img src="suavit_images/luva-limpeza.jpg" alt="Produtos profissionais de alta eficácia" loading="lazy" />
+          <div class="feat-card-label">
+            <em>Produtos profissionais</em> de alta<br>eficácia e segurança.
+          </div>
+        </div>
+        <!-- Top right -->
+        <div class="feat-card feat-side">
+          <img src="suavit_images/equipa-uniforme.jpg" alt="Equipa treinada e especializada" loading="lazy" />
+          <div class="feat-card-label">
+            <em>Equipa<br>treinada</em> e especializada
+          </div>
+        </div>
+        <!-- Bottom right -->
+        <div class="feat-card feat-side" style="background:var(--bg-pale);">
+          <img src="suavit_images/galeria-030.jpg" alt="Técnicas específicas para cada espaço" loading="lazy" style="opacity:.85;"/>
+          <div class="feat-card-label">
+            <em>Técnicas<br>específicas</em> para cada tipo<br>de espaço.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SOLUÇÕES
+  ═══════════════════════════════════════ -->
+  <section id="solucoes" aria-labelledby="sol-heading">
+    <div class="container">
+      <div class="sol-grid">
+        <div class="sol-img">
+          <img
+            src="suavit_images/escadaria-pos-obra.jpg"
+            alt="Limpeza pós-obra — espaço impecável"
+            width="560" height="480"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <p class="section-label">Os nossos serviços</p>
+          <h2 id="sol-heading" class="section-title">
+            Soluções completas de<br><em>limpeza profissional</em>
+          </h2>
+          <ul class="sol-list" role="list">
+            <li class="sol-item">
+              <div class="sol-icon" aria-hidden="true">🏗️</div>
+              <div>
+                <div class="sol-title">Limpeza Pós-Obra</div>
+                <div class="sol-desc">Remoção completa de resíduos e sujidade após obras, deixando o espaço pronto para utilização.</div>
+              </div>
+            </li>
+            <li class="sol-item">
+              <div class="sol-icon" aria-hidden="true">🏢</div>
+              <div>
+                <div class="sol-title">Limpeza de Escritórios e Empresas</div>
+                <div class="sol-desc">Ambientes organizados, higienizados e ideais para produtividade.</div>
+              </div>
+            </li>
+            <li class="sol-item">
+              <div class="sol-icon" aria-hidden="true">🏘️</div>
+              <div>
+                <div class="sol-title">Limpeza de Condomínios</div>
+                <div class="sol-desc">Manutenção de áreas comuns com elevado padrão de limpeza e apresentação.</div>
+              </div>
+            </li>
+            <li class="sol-item">
+              <div class="sol-icon" aria-hidden="true">✨</div>
+              <div>
+                <div class="sol-title">Limpeza Profunda e Manutenção</div>
+                <div class="sol-desc">Serviços regulares ou pontuais para manter o espaço sempre impecável.</div>
+              </div>
+            </li>
+            <li class="sol-item">
+              <div class="sol-icon" aria-hidden="true">🛍️</div>
+              <div>
+                <div class="sol-title">Limpeza de Espaços Comerciais</div>
+                <div class="sol-desc">Lojas e espaços comerciais limpos, organizados e prontos para receber clientes.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       MÉTODO
+  ═══════════════════════════════════════ -->
+  <section id="metodo" aria-labelledby="met-heading">
+    <div class="container">
+      <div class="method-grid">
+        <div>
+          <p class="section-label">O nosso processo</p>
+          <h2 id="met-heading" class="section-title">
+            O Método Suavit de<br><em>Limpeza Profissional</em>
+          </h2>
+          <p class="section-sub">
+            O nosso método combina experiência, técnica e eficiência para garantir resultados superiores em cada serviço.
+          </p>
+          <div class="method-steps" style="margin-top:32px;">
+            <div class="method-step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <div class="step-title">Avaliação Inicial</div>
+                <div class="step-desc">Analisamos o espaço e identificamos as necessidades específicas de limpeza.</div>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- HISTÓRIA / FUNDADORA -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
-            <img src="https://picsum.photos/id/1009/700/900" alt="Fundadora Suavit" class="rounded-3xl shadow-2xl">
-            <div>
-                <h2 class="text-5xl font-bold mb-8">Uma história construída com dedicação e excelência</h2>
-                <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                    Por trás da Suavit está uma liderança experiente, dedicada e apaixonada pelo que faz. Com mais de 25 anos de experiência no setor da limpeza profissional, a fundadora construiu uma empresa sólida, baseada em valores como rigor, confiança e resultados consistentes.
-                </p>
-                <p class="italic text-xl text-gray-500">"Mais do que limpar espaços, o nosso objetivo é criar ambientes prontos para funcionar com qualidade e segurança."</p>
+            <div class="method-step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <div class="step-title">Planeamento Personalizado</div>
+                <div class="step-desc">Definimos a equipa, os produtos e o cronograma ideal para o serviço.</div>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA INTERMEDIÁRIO -->
-    <section id="cta-final" class="bg-gradient-to-r from-teal-600 to-blue-600 py-20 text-white">
-        <div class="max-w-screen-2xl mx-auto px-8 text-center">
-            <h2 class="text-5xl font-bold mb-6">Precisa de um serviço de limpeza profissional?</h2>
-            <p class="text-2xl mb-12 max-w-2xl mx-auto">Na Suavit, cada cliente é único. Desde o primeiro contacto, garantimos uma comunicação clara, rápida e eficiente.</p>
-            <button onclick="alert('Formulário enviado! Entraremos em contacto em breve.')"
-                    class="bg-white text-teal-700 hover:bg-teal-50 px-12 py-6 rounded-3xl text-2xl font-semibold">
-                Falar com especialista →
-            </button>
-        </div>
-    </section>
-
-    <!-- GALERIA DE ESPAÇOS -->
-    <section class="py-20 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <h2 class="text-center text-4xl font-bold mb-12">Alguns dos nossos trabalhos</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <img src="https://picsum.photos/id/160/600/400" alt="" class="rounded-3xl">
-                <img src="https://picsum.photos/id/201/600/400" alt="" class="rounded-3xl">
-                <img src="https://picsum.photos/id/106/600/400" alt="" class="rounded-3xl">
-                <img src="https://picsum.photos/id/133/600/400" alt="" class="rounded-3xl">
-                <img src="https://picsum.photos/id/1015/600/400" alt="" class="rounded-3xl">
+            <div class="method-step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <div class="step-title">Execução Profissional</div>
+                <div class="step-desc">Realizamos a limpeza com rigor, eficiência e atenção ao detalhe.</div>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <h2 class="text-5xl font-bold text-center mb-16">Dúvidas Frequentes</h2>
-            
-            <div class="max-w-4xl mx-auto space-y-4">
-                <div class="faq-item bg-white rounded-3xl border border-gray-200 overflow-hidden">
-                    <div onclick="toggleFAQ(this)" class="faq-question p-8 flex justify-between items-center">
-                        <h3 class="font-semibold text-xl">Quais tipos de limpeza realizam?</h3>
-                        <i class="fa-solid fa-chevron-down text-teal-600"></i>
-                    </div>
-                    <div class="faq-answer px-8 pb-8 text-gray-600">Oferecemos limpeza profissional completa para empresas, construtoras, condomínios e espaços comerciais, incluindo limpeza pós-obra, escritórios, manutenção profunda e espaços comerciais.</div>
-                </div>
-
-                <div class="faq-item bg-white rounded-3xl border border-gray-200 overflow-hidden">
-                    <div onclick="toggleFAQ(this)" class="faq-question p-8 flex justify-between items-center">
-                        <h3 class="font-semibold text-xl">Como funciona o processo de atendimento?</h3>
-                        <i class="fa-solid fa-chevron-down text-teal-600"></i>
-                    </div>
-                    <div class="faq-answer px-8 pb-8 text-gray-600">Desde o primeiro contacto, garantimos uma comunicação clara, rápida e eficiente. Adaptamos cada serviço às necessidades do espaço.</div>
-                </div>
-
-                <div class="faq-item bg-white rounded-3xl border border-gray-200 overflow-hidden">
-                    <div onclick="toggleFAQ(this)" class="faq-question p-8 flex justify-between items-center">
-                        <h3 class="font-semibold text-xl">Qual é o diferencial da Suavit?</h3>
-                        <i class="fa-solid fa-chevron-down text-teal-600"></i>
-                    </div>
-                    <div class="faq-answer px-8 pb-8 text-gray-600">Mais de 25 anos de experiência, equipa altamente treinada, produtos profissionais e um método próprio que garante resultados consistentes.</div>
-                </div>
-
-                <!-- Mais FAQs conforme o PDF -->
-                <div class="faq-item bg-white rounded-3xl border border-gray-200 overflow-hidden">
-                    <div onclick="toggleFAQ(this)" class="faq-question p-8 flex justify-between items-center">
-                        <h3 class="font-semibold text-xl">Utilizam produtos agressivos?</h3>
-                        <i class="fa-solid fa-chevron-down text-teal-600"></i>
-                    </div>
-                    <div class="faq-answer px-8 pb-8 text-gray-600">Não. Utilizamos apenas produtos profissionais de alta eficácia e segurança, adequados a cada tipo de superfície.</div>
-                </div>
+            <div class="method-step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <div class="step-title">Inspeção Final</div>
+                <div class="step-desc">Verificamos todos os pontos para garantir um resultado impecável.</div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+        <div class="method-img">
+          <img
+            src="suavit_images/salao-comercial.jpg"
+            alt="Espaço comercial limpo pela equipa Suavit"
+            width="560" height="520"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- FINAL CTA + IMAGEM -->
-    <section class="bg-gray-900 text-white py-20">
-        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <div class="inline-flex items-center gap-3 mb-6">
-                    <div class="text-4xl">S</div>
-                    <span class="text-4xl font-bold">SUAVIT</span>
-                </div>
-                <h2 class="text-5xl font-bold mb-6">Garante um espaço limpo, organizado e pronto para uso.</h2>
-                <p class="text-xl text-gray-300 mb-10">Confie na experiência da Suavit para cuidar da limpeza do seu espaço com excelência, segurança e profissionalismo.</p>
-                <button onclick="alert('Formulário enviado! Entraremos em contacto em breve.')"
-                        class="bg-white text-teal-700 hover:bg-teal-50 px-10 py-5 rounded-3xl font-semibold text-lg">
-                    Falar com especialista →
-                </button>
+  <!-- ═══════════════════════════════════════
+       FUNDADORA
+  ═══════════════════════════════════════ -->
+  <section id="fundadora" aria-labelledby="founder-heading">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-img">
+          <img
+            src="suavit_images/fundadora-retrato.jpg"
+            alt="Fundadora da Suavit — liderança experiente e dedicada"
+            width="500" height="580"
+            loading="lazy"
+          />
+        </div>
+        <div class="founder-content">
+          <p class="section-label">A nossa história</p>
+          <h2 id="founder-heading" class="section-title">
+            Uma história construída<br>com <em>dedicação e excelência.</em>
+          </h2>
+          <p class="section-sub">
+            Por trás da Suavit está uma liderança experiente, dedicada e apaixonada pelo que faz. Com mais de 25 anos de experiência no setor da limpeza profissional, a fundadora da Suavit construiu uma empresa sólida, baseada em valores como rigor, confiança e atenção ao detalhe.
+          </p>
+          <p class="section-sub">
+            Ao longo dos anos, desenvolveu um método próprio que garante não apenas limpeza, mas organização, eficiência e resultados consistentes, independentemente da dimensão ou complexidade do espaço.
+          </p>
+          <p class="section-sub">
+            O seu compromisso vai além do serviço: cada cliente é acompanhado de perto, assegurando que todas as necessidades são compreendidas e superadas.
+          </p>
+          <div class="founder-quote">
+            <p>"Mais do que limpar espaços, o nosso objetivo é criar ambientes prontos para funcionar com qualidade e segurança."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA + GALLERY
+  ═══════════════════════════════════════ -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <div class="container cta-top">
+      <p class="section-label">Pronto para começar?</p>
+      <h2 id="cta-heading" class="section-title">
+        Precisa de um serviço de<br><em>limpeza profissional?</em>
+      </h2>
+      <p class="section-sub">
+        Na Suavit, cada cliente é único. Desde o primeiro contacto, garantimos uma comunicação clara, rápida e eficiente. Adaptamos cada serviço às necessidades do espaço, assegurando um resultado final que cumpre todos os requisitos de qualidade e segurança.
+      </p>
+      <a href="https://wa.me/351964757489" class="btn">Falar com especialista →</a>
+    </div>
+
+    <!-- Gallery strip -->
+    <div class="gallery-strip" aria-label="Galeria de trabalhos realizados">
+      <div class="gallery-strip-item">
+        <img src="suavit_images/galeria-042.jpg" alt="Espaço comercial limpo" loading="lazy" />
+      </div>
+      <div class="gallery-strip-item">
+        <img src="suavit_images/galeria-escadaria.jpg" alt="Escadaria após limpeza" loading="lazy" />
+      </div>
+      <div class="gallery-strip-item">
+        <img src="suavit_images/galeria-mesa.jpg" alt="Sala de reuniões limpa" loading="lazy" />
+      </div>
+      <div class="gallery-strip-item">
+        <img src="suavit_images/galeria-sala.jpg" alt="Sala de estar limpa" loading="lazy" />
+      </div>
+      <div class="gallery-strip-item">
+        <img src="suavit_images/galeria-salon.jpg" alt="Cozinha limpa" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════ -->
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <h2 id="faq-heading" class="faq-title">Dúvidas <em>Frequentes</em></h2>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item open" role="listitem">
+          <button class="faq-q" aria-expanded="true" onclick="toggleFaq(this)">
+            Quais tipos de limpeza realizam?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              Oferecemos limpeza profissional completa para empresas, construtoras, condomínios e espaços comerciais, incluindo limpeza pós-obra, escritórios, manutenção, limpeza profunda e espaços comerciais.
             </div>
-            <img src="https://picsum.photos/id/201/900/600" alt="Mão com luva roxa a limpar" class="rounded-3xl shadow-2xl">
+          </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-white border-t py-16">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="grid md:grid-cols-12 gap-12">
-                <div class="md:col-span-4">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="text-5xl">S</div>
-                        <span class="text-5xl font-bold">SUAVIT</span>
-                    </div>
-                    <p class="text-gray-600">Confiança, Eficiência &amp; Excelência Em Cada Limpeza</p>
-                </div>
-
-                <div class="md:col-span-2">
-                    <h5 class="font-semibold mb-4">Menu</h5>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-teal-600">Início</a></li>
-                        <li><a href="#" class="hover:text-teal-600">Experiência</a></li>
-                        <li><a href="#" class="hover:text-teal-600">Soluções</a></li>
-                        <li><a href="#" class="hover:text-teal-600">Como funciona</a></li>
-                        <li><a href="#" class="hover:text-teal-600">Dúvidas Frequentes</a></li>
-                    </ul>
-                </div>
-
-                <div class="md:col-span-3">
-                    <h5 class="font-semibold mb-4">Contacto</h5>
-                    <p class="flex items-center gap-3"><i class="fa-solid fa-phone"></i> 964 757 489</p>
-                    <p class="flex items-center gap-3"><i class="fa-solid fa-envelope"></i> comercial@suavit.pt</p>
-                </div>
-
-                <div class="md:col-span-3 text-sm">
-                    <p class="text-gray-500">© 2026 Suavit. Todos os direitos reservados.</p>
-                    <div class="flex gap-6 mt-6 text-2xl">
-                        <i class="fa-brands fa-facebook hover:text-teal-600 cursor-pointer"></i>
-                        <i class="fa-brands fa-instagram hover:text-teal-600 cursor-pointer"></i>
-                        <i class="fa-brands fa-linkedin hover:text-teal-600 cursor-pointer"></i>
-                    </div>
-                </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+            Como funciona o processo de atendimento?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              Basta entrar em contacto através do WhatsApp ou email. Fazemos uma avaliação do espaço, apresentamos uma proposta personalizada e agendamos o serviço de acordo com a sua disponibilidade.
             </div>
+          </div>
         </div>
-    </footer>
 
-    <script>
-        function toggleFAQ(el) {
-            const answer = el.nextElementSibling;
-            const icon = el.querySelector('i');
-            
-            if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
-                answer.style.maxHeight = '0px';
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
-            } else {
-                // Fecha todos os outros
-                document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = '0px');
-                document.querySelectorAll('.faq-question i').forEach(i => {
-                    i.classList.remove('fa-chevron-up');
-                    i.classList.add('fa-chevron-down');
-                });
-                
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            }
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+            Qual é o diferencial da Suavit?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              Mais de 25 anos de experiência, equipa especializada, método próprio de trabalho e acompanhamento próximo de cada cliente. Garantimos resultados consistentes e comunicação transparente em todo o processo.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+            Utilizam produtos agressivos?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              Não. Utilizamos produtos profissionais de alta eficácia, certificados e seguros para pessoas, animais e superfícies. Adaptamos sempre os produtos ao tipo de espaço e às necessidades específicas do cliente.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+            Como posso solicitar um orçamento?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              Pode contactar-nos pelo número 964 757 489 (chamada ou WhatsApp) ou por email para comercial@suavit.pt. Respondemos em menos de 24 horas com uma proposta adaptada às suas necessidades.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+            Qual é a área de atuação?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              Atuamos em todo o território nacional, com foco principal em Lisboa, Porto e arredores. Para projetos fora destas áreas, avaliamos caso a caso. Entre em contacto para confirmar disponibilidade na sua região.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+            É necessário preparar o espaço antes?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              Dependendo do serviço, pode ser útil retirar objetos pessoais das superfícies. A nossa equipa orienta-o sobre eventuais preparações necessárias aquando da marcação do serviço.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER CTA BANNER
+  ═══════════════════════════════════════ -->
+  <section id="footer-cta" aria-label="Chamada para ação final">
+    <div class="footer-cta-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-cta-inner">
+        <div class="footer-logo" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
+            <path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4z" fill="rgba(255,255,255,.15)"/>
+            <path d="M20 8c-2.8 0-5 2-5 4.5 0 3 2.5 4.5 5 6.5 2.5-2 5-3.5 5-6.5C25 10 22.8 8 20 8z" fill="white"/>
+            <path d="M14 20c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm12 0c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z" fill="rgba(255,255,255,.7)"/>
+            <path d="M16 28c0 2.2 1.8 4 4 4s4-1.8 4-4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="nav-logo-text">
+            <span>SUAVIT</span>
+            <span>Higiene e Limpeza</span>
+          </div>
+        </div>
+        <h2>Garanta um espaço limpo, organizado e <em>pronto para uso.</em></h2>
+        <p>Confie na experiência da Suavit para cuidar da limpeza do seu espaço com excelência, segurança e profissionalismo.</p>
+        <a href="https://wa.me/351964757489" class="btn btn-outline" style="font-size:1rem;padding:15px 32px;">
+          Falar com especialista →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="nav-logo footer-logo-brand" style="margin-bottom:16px;">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="38" height="38" aria-hidden="true">
+              <path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4z" fill="rgba(255,255,255,.1)"/>
+              <path d="M20 8c-2.8 0-5 2-5 4.5 0 3 2.5 4.5 5 6.5 2.5-2 5-3.5 5-6.5C25 10 22.8 8 20 8z" fill="rgba(255,255,255,.8)"/>
+              <path d="M14 20c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm12 0c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z" fill="rgba(255,255,255,.5)"/>
+              <path d="M16 28c0 2.2 1.8 4 4 4s4-1.8 4-4" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <div class="nav-logo-text">
+              <span>SUAVIT</span>
+              <span>Higiene e Limpeza</span>
+            </div>
+          </div>
+          <p>Confiança, eficiência e excelência em cada limpeza. Mais de 25 anos ao serviço de empresas, condomínios e construtoras em Portugal.</p>
+        </div>
+
+        <!-- Menu -->
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#solucoes">Soluções</a></li>
+            <li><a href="#metodo">Como funciona</a></li>
+            <li><a href="#faq">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Serviços -->
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#solucoes">Limpeza Pós-Obra</a></li>
+            <li><a href="#solucoes">Escritórios e Empresas</a></li>
+            <li><a href="#solucoes">Condomínios</a></li>
+            <li><a href="#solucoes">Limpeza Profunda</a></li>
+            <li><a href="#solucoes">Espaços Comerciais</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato -->
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+351964757489">964 757 489</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:comercial@suavit.pt">comercial@suavit.pt</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Suavit Higiene e Limpeza. Todos os direitos reservados.</p>
+        <div class="social-links" aria-label="Redes sociais">
+          <a href="#" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/351964757489" aria-label="WhatsApp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.12 1.528 5.845L0 24l6.335-1.518A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.213-3.724.975.992-3.63-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════ -->
+  <script>
+    // ── Navbar scroll shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // ── Mobile menu
+    const burgerBtn   = document.getElementById('burgerBtn');
+    const mobileNav   = document.getElementById('mobileNav');
+    let menuOpen = false;
+
+    burgerBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      burgerBtn.setAttribute('aria-expanded', menuOpen);
+      mobileNav.setAttribute('aria-hidden', !menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      // animate burger to X
+      const spans = burgerBtn.querySelectorAll('span');
+      if (menuOpen) {
+        spans[0].style.cssText = 'transform:translateY(7px) rotate(45deg)';
+        spans[1].style.cssText = 'opacity:0';
+        spans[2].style.cssText = 'transform:translateY(-7px) rotate(-45deg)';
+      } else {
+        spans.forEach(s => s.style.cssText = '');
+      }
+    });
+
+    function closeMob() {
+      menuOpen = false;
+      mobileNav.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      burgerBtn.querySelectorAll('span').forEach(s => s.style.cssText = '');
+    }
+
+    // ── FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked if was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // ── Smooth scroll offset for fixed nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 76;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    // ── Scroll reveal (IntersectionObserver)
+    const revealEls = document.querySelectorAll('.exp-grid, .sol-grid, .method-grid, .founder-grid, .stat-item, .sol-item, .method-step, .faq-item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeUp .6s ease forwards';
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.1 });
 
-        // Tailwind script
-        tailwind.config = {
-            content: ["./**/*.{html,js}"],
-            theme: { extend: {} }
-        }
-    </script>
+    // Inject keyframe once
+    const style = document.createElement('style');
+    style.textContent = '@keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }';
+    document.head.appendChild(style);
+
+    revealEls.forEach(el => {
+      el.style.opacity = '0';
+      observer.observe(el);
+    });
+  </script>
+
 </body>
 </html>
